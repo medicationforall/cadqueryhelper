@@ -1,0 +1,8 @@
+part = cq.Workplane()
+box = part.box(1,1,1)
+tag = box.tag("base")
+wires = tag.wires(">Z").toPending()
+translate = wires.translate((0.5, 0.1, 1.0)).toPending()
+loft = translate.loft()
+front = loft.faces(">>X", tag="base")
+center = front.workplane(centerOption="CenterOfMass")

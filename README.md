@@ -1,2 +1,2 @@
 # cq-helper
-cadquery helper library
+CADQuery helper library
