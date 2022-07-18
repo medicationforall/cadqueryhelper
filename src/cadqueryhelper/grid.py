@@ -16,6 +16,9 @@ import cadquery as cq
 from cadqueryhelper import parts
 
 def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
+    '''
+        returns an assembly
+    '''
     #print('attempting to make grid');
     grid = cq.Assembly()
     #print('bounds', dir(part.plane))
