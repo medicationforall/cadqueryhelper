@@ -16,7 +16,7 @@ import cadquery as cq
 from cadqueryhelper import parts
 
 def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
-    print('attempting to make grid');
+    #print('attempting to make grid');
     grid = cq.Assembly()
     #print('bounds', dir(part.plane))
     for row_i in range(rows):
@@ -34,7 +34,7 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
     return grid
 
 if __name__ == "__main__":
-    print('this is the grid running as main')
+    #print('this is the grid running as main')
     cube = parts.make_cube(5,5,2)
     cylinder = parts.make_cylinder(2.5,2)
     cone = parts.make_cone()
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     comp = grid.toCompound()
     cq.exporters.export(comp,'out/grid.stl')
 elif __name__ == "temp":
-        log('this is the grid in cq-editor')
+        #log('this is the grid in cq-editor')
         cube = parts.make_cube(5,5,2)
         #cylinder = parts.make_cylinder(2.5,5)
 

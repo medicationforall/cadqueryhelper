@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import cadquery as cq
+import math
 
 def make_cube(length = 5, width = 5, height = 5 ):
     cube = cq.Workplane().box(length, width, height)
@@ -23,9 +24,22 @@ def make_cylinder(radius = 2.5, height = 5 ):
     cylinder = cq.Workplane().cylinder(height, radius)
     return cylinder
 
-def make_hexagon(radius = 2.5, height = 5):
-    cube = cq.Workplane().box(length, width, height)
-    return cube
+def __generate_hex_points(radius):
+    '''
+        https://stackoverflow.com/a/52172400
+    '''
+    hex_points = []
+    for  i  in range(6):
+        angle_deg = 60 * i - 30
+        angle_rad = (math.pi / 180) * angle_deg;
+        hex_points.append((radius * math.cos(angle_rad),
+            radius * math.sin(angle_rad)))
+    return hex_points
+
+def make_hexagon(radius = 5, height = 5):
+    points = __generate_hex_points(radius)
+    work = cq.Workplane().polyline(points).close().extrude(5)
+    return work
 
 def make_cone():
     cone = cq.Solid.makeCone(1, 0, 2)
