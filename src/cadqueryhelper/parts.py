@@ -73,6 +73,16 @@ def make_cylinder(radius = 2.5, height = 5 ):
     cylinder = cq.Workplane().cylinder(height, radius)
     return cylinder
 
+def make_rhombus(width = 10, offset = 4, height=5):
+    points = [
+        (0,0),
+        (0,width),
+        (width, width + offset),
+        (width, 0 + offset)
+        ]
+    work = cq.Workplane().center(-(width/2),-(offset/2)-(width/2)).polyline(points).close().extrude(height)
+    return work
+
 def __generate_polygon_points(radius, point_count, deg, rad):
     '''
         https://stackoverflow.com/a/52172400
