@@ -23,7 +23,7 @@ def make_triangle(radius = 5, height = 5):
     points = __generate_polygon_points(radius, 3, 60, 90)
     work = cq.Workplane().polyline(points).close().extrude(height)
 
-    meta = {'type':'triangle', 'radius':radius, 'height':height}
+    meta = {'type':'triangle', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
 
@@ -41,7 +41,7 @@ def make_pentagon(radius = 5, height = 5):
     points = __generate_polygon_points(radius, 5, 72, 180)
     work = cq.Workplane().polyline(points).close().extrude(height)
 
-    meta = {'type':'pentagon', 'radius':radius, 'height':height}
+    meta = {'type':'pentagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
 
@@ -52,7 +52,7 @@ def make_hexagon(radius = 5, height = 5):
     points = __generate_polygon_points(radius, 6, 60, 180)
     work = cq.Workplane().polyline(points).close().extrude(height)
 
-    meta = {'type':'hexagon', 'radius':radius, 'height':height}
+    meta = {'type':'hexagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
 
@@ -63,7 +63,7 @@ def make_heptagon(radius = 10, height = 5):
     points = __generate_polygon_points(radius, 7, 51.428571428571428571428571428571, 180)
     work = cq.Workplane().polyline(points).close().extrude(height)
 
-    meta = {'type':'heptagon', 'radius':radius, 'height':height}
+    meta = {'type':'heptagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
 
@@ -74,7 +74,7 @@ def make_octagon(radius = 10, height = 5):
     points = __generate_polygon_points(radius, 8, 45, 180)
     work = cq.Workplane().polyline(points).close().extrude(height)
 
-    meta = {'type':'octagon', 'radius':radius, 'height':height}
+    meta = {'type':'octagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
 
@@ -85,7 +85,7 @@ def make_nonagon(radius = 10, height = 5):
     points = __generate_polygon_points(radius, 9, 40, 180)
     work = cq.Workplane().polyline(points).close().extrude(height)
 
-    meta = {'type':'nonagon', 'radius':radius, 'height':height}
+    meta = {'type':'nonagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
 
@@ -93,7 +93,7 @@ def make_cylinder(radius = 2.5, height = 5 ):
     #cylinder = cq.Workplane().circle(diameter).extrude(height)
     work = cq.Workplane().cylinder(height, radius)
 
-    meta = {'type':'cylinder', 'radius':radius, 'height':height}
+    meta = {'type':'cylinder', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
 
@@ -106,7 +106,7 @@ def make_rhombus(width = 10, offset = 4, height=5):
         ]
     work = cq.Workplane().center(-(width/2),-(offset/2)-(width/2)).polyline(points).close().extrude(height)
 
-    meta = {'type':'rhombus', 'radius':radius, 'height':height}
+    meta = {'type':'rhombus','height':height, 'length':width, 'width':width+offset}
     work.metadata = meta
     return work
 
