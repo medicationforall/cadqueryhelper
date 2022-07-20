@@ -52,6 +52,22 @@ def make_heptagon(radius = 10, height = 5):
     work = cq.Workplane().polyline(points).close().extrude(height)
     return work
 
+def make_octagon(radius = 10, height = 5):
+    '''
+        8 sided polygon
+    '''
+    points = __generate_polygon_points(radius, 8, 45, 180)
+    work = cq.Workplane().polyline(points).close().extrude(height)
+    return work
+
+def make_nonagon(radius = 10, height = 5):
+    '''
+        9 sided polygon
+    '''
+    points = __generate_polygon_points(radius, 9, 40, 180)
+    work = cq.Workplane().polyline(points).close().extrude(height)
+    return work
+
 def make_cylinder(radius = 2.5, height = 5 ):
     #cylinder = cq.Workplane().circle(diameter).extrude(height)
     cylinder = cq.Workplane().cylinder(height, radius)
