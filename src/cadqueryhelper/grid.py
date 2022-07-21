@@ -23,9 +23,9 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
     grid = cq.Assembly()
     #print('bounds', dir(part.plane))
     for row_i in range(rows):
-        row_offset = dim[0] * row_i
+        row_offset = (dim[0] * row_i) + (dim[0]/2)
         for col_i in range(columns):
-            col_offset = dim[1] * col_i
+            col_offset = (dim[1] * col_i) + (dim[0]/2)
 
             col_push_x = 0
             col_push_y = 0
@@ -34,7 +34,13 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
                 col_push_y = odd_col_push[1]
             grid.add(part, loc=cq.Location(cq.Vector(row_offset + col_push_x, col_offset + col_push_y, 0)))
 
-    return grid
+    comp = grid.toCompound()
+    work = cq.Workplane("XZ").center(50, 0).workplane()
+    work.add(comp)
+    width = dim[0] * columns
+    height = dim[1] * rows
+    work = work.translate((-(width/2),-(height/2),0))
+    return work
 
 if __name__ == "__main__":
     #print('this is the grid running as main')

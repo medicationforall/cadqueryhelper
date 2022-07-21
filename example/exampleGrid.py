@@ -11,5 +11,5 @@ if __name__ == "__main__":
 
 
     ex_grid = grid.make_grid(part=cube, dim = [6,6])
-    comp = ex_grid.toCompound()
-    cq.exporters.export(comp,'out/grid.stl')
+    #comp = ex_grid.toCompound()
+    cq.exporters.export(ex_grid,'out/grid.stl')
