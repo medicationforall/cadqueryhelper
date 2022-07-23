@@ -110,6 +110,15 @@ def make_rhombus(width = 10, offset = 4, height=5):
     work.metadata = meta
     return work
 
+def make_sphere(radius = 5):
+    diameter = radius * 2
+    work = cq.Workplane().sphere(radius)
+
+    #meta = {'type':'rhombus','height':diameter, 'length':diameter, 'width':diameter}
+    meta = {'type':'rhombus','height':diameter, 'length':diameter, 'width':diameter}
+    work.metadata = meta
+    return work
+
 def __generate_polygon_points(radius, point_count, deg, rad):
     '''
         https://stackoverflow.com/a/52172400
