@@ -1,7 +1,7 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-part = parts.make_cylinder()
+part = shape.cylinder()
 cq.exporters.export(part,'out/cylinder.stl')
 
 if part.metadata:

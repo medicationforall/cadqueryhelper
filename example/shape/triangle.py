@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-part = parts.make_triangle()
+part = shape.regular_polygon(radius=5, sides=3)
 cq.exporters.export(part,'out/triangle.stl')

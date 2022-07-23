@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-hex = parts.make_octagon()
-cq.exporters.export(hex,'out/octagon.stl')
+part = shape.regular_polygon(radius=10, sides=8)
+cq.exporters.export(part,'out/octagon.stl')

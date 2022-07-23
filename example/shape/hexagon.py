@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-hex = parts.make_hexagon()
-cq.exporters.export(hex,'out/hexagon.stl')
+part = shape.regular_polygon(sides=6)
+cq.exporters.export(part,'out/hexagon.stl')

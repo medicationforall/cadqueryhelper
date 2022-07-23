@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-hex = parts.make_rhombus()
-cq.exporters.export(hex,'out/rhombus.stl')
+part = shape.rhombus()
+cq.exporters.export(part,'out/rhombus.stl')

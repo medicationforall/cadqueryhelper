@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-part = parts.make_cone()
+part = shape.cone()
 cq.exporters.export(part,'out/cone.stl')

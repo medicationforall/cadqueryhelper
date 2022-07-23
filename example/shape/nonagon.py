@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-hex = parts.make_nonagon()
-cq.exporters.export(hex,'out/nonagon.stl')
+part = shape.regular_polygon(radius=10, sides=9)
+cq.exporters.export(part,'out/nonagon.stl')

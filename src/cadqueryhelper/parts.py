@@ -15,9 +15,14 @@
 import cadquery as cq
 import math
 
+import cqmore as cqm
+from cqmore.polygon import star
+
+#
 def make_cone():
     cone = cq.Solid.makeCone(1, 0, 2)
     return cone
+
 
 def make_triangle(radius = 5, height = 5):
     points = __generate_polygon_points(radius, 3, 60, 90)
@@ -27,13 +32,14 @@ def make_triangle(radius = 5, height = 5):
     work.metadata = meta
     return work
 
+#
 def make_cube(length = 5, width = 5, height = 5 ):
     work = cq.Workplane().box(length, width, height)
 
     meta = {'type':'cube', 'length':length, 'width':width, 'height':height}
     work.metadata = meta
     return work
-
+#
 def make_pentagon(radius = 5, height = 5):
     '''
         5 sided polygon
@@ -44,7 +50,7 @@ def make_pentagon(radius = 5, height = 5):
     meta = {'type':'pentagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
-
+#
 def make_hexagon(radius = 5, height = 5):
     '''
         6 sided polygon
@@ -55,7 +61,7 @@ def make_hexagon(radius = 5, height = 5):
     meta = {'type':'hexagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
-
+#
 def make_heptagon(radius = 10, height = 5):
     '''
         7 sided polygon
@@ -66,7 +72,7 @@ def make_heptagon(radius = 10, height = 5):
     meta = {'type':'heptagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
-
+#
 def make_octagon(radius = 10, height = 5):
     '''
         8 sided polygon
@@ -77,7 +83,7 @@ def make_octagon(radius = 10, height = 5):
     meta = {'type':'octagon', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
     work.metadata = meta
     return work
-
+#
 def make_nonagon(radius = 10, height = 5):
     '''
         9 sided polygon
@@ -89,6 +95,7 @@ def make_nonagon(radius = 10, height = 5):
     work.metadata = meta
     return work
 
+#
 def make_cylinder(radius = 2.5, height = 5 ):
     #cylinder = cq.Workplane().circle(diameter).extrude(height)
     work = cq.Workplane().cylinder(height, radius)
@@ -97,6 +104,7 @@ def make_cylinder(radius = 2.5, height = 5 ):
     work.metadata = meta
     return work
 
+#
 def make_rhombus(width = 10, offset = 4, height=5):
     points = [
         (0,0),
@@ -110,12 +118,20 @@ def make_rhombus(width = 10, offset = 4, height=5):
     work.metadata = meta
     return work
 
+#
 def make_sphere(radius = 5):
     diameter = radius * 2
     work = cq.Workplane().sphere(radius)
 
-    #meta = {'type':'rhombus','height':diameter, 'length':diameter, 'width':diameter}
-    meta = {'type':'rhombus','height':diameter, 'length':diameter, 'width':diameter}
+    meta = {'type':'sphere','height':diameter, 'length':diameter, 'width':diameter}
+    work.metadata = meta
+    return work
+
+#
+def make_star(outer_radius = 10, inner_radius = 5, points = 5, height = 3):
+    diameter = outer_radius * 2
+    work = cqm.Workplane().makePolygon(star(outerRadius = outer_radius, innerRadius = inner_radius, n = points)).extrude(height)
+    meta = {'type':'star','height':height, 'length':outer_radius*2, 'width':outer_radius*2}
     work.metadata = meta
     return work
 

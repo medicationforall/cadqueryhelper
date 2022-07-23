@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-part = parts.make_heptagon()
+part = shape.regular_polygon(radius=10, sides=7)
 cq.exporters.export(part,'out/heptagon.stl')

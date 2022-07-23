@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
-hex = parts.make_pentagon()
-cq.exporters.export(hex,'out/pentagon.stl')
+part = shape.regular_polygon(radius=10, sides=5)
+cq.exporters.export(part,'out/pentagon.stl')

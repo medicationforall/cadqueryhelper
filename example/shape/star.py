@@ -1,8 +1,8 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-part = shape.sphere()
-cq.exporters.export(part,'out/sphere.stl')
+part = shape.star()
+cq.exporters.export(part,'out/star.stl')
 
 if part.metadata:
     print(part.metadata)
