@@ -2,7 +2,7 @@
 CadQuery Helper library
 
 # Dependencies
-* [CadQuery](https://github.com/CadQuery/cadquery)
+* [CadQuery 2.1](https://github.com/CadQuery/cadquery)
 * [cqMore](https://github.com/JustinSDK/cqMore)
 
 ## Installation
