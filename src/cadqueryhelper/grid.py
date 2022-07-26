@@ -37,9 +37,9 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
     comp = grid.toCompound()
     work = cq.Workplane("XZ").center(50, 0).workplane()
     work.add(comp)
-    width = dim[0] * columns
-    height = dim[1] * rows
-    work = work.translate((-(width/2),-(height/2),0))
+    width = dim[0] * rows
+    length = dim[1] * columns
+    work = work.translate((-(length/2),-(width/2),0))
     return work
 
 if __name__ == "__main__":
