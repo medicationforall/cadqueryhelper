@@ -34,12 +34,19 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
                 col_push_y = odd_col_push[1]
             grid.add(part, loc=cq.Location(cq.Vector(row_offset + col_push_x, col_offset + col_push_y, 0)))
 
-    comp = grid.toCompound()
-    work = cq.Workplane("XZ").center(50, 0).workplane()
-    work.add(comp)
-    width = dim[0] * rows
     length = dim[1] * columns
-    work = work.translate((-(length/2),-(width/2),0))
+    width = dim[0] * rows
+
+    comp = grid.toCompound()
+    work = cq.Workplane("XZ").center(0, 0).workplane()
+    work.add(comp)
+
+    print(f'I think the width is {dim[0]} * {rows} equals: {width}', -1*(width/2) )
+    print(f'I think the length is {dim[1]} * {columns} equals: {length}', -1*(length/2) )
+
+    work = work.translate((-1*(width/2),-1*(length/2)))
+
+
     return work
 
 if __name__ == "__main__":
