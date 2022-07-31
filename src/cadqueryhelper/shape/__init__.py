@@ -5,3 +5,4 @@ from .regularPolygon import regular_polygon
 from .rhombus import rhombus
 from .sphere import sphere
 from .star import star
+from .rail import rail
