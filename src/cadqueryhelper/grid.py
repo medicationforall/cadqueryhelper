@@ -13,11 +13,11 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
 def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
     '''
-        returns an assembly
+        returns a shape or solid
     '''
     #print('attempting to make grid');
     grid = cq.Assembly()
@@ -51,16 +51,15 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
 
 if __name__ == "__main__":
     #print('this is the grid running as main')
-    cube = parts.make_cube(5,5,2)
-    cylinder = parts.make_cylinder(2.5,2)
-    cone = parts.make_cone()
+    cube = shape.cube(5,5,2)
+    cylinder = shape.cylinder(2.5,2)
+    cone = shape.cone()
     grid = make_grid(part=cone, dim = [6,6])
     comp = grid.toCompound()
     cq.exporters.export(comp,'out/grid.stl')
 elif __name__ == "temp":
         #log('this is the grid in cq-editor')
         cube = parts.make_cube(5,5,2)
-        #cylinder = parts.make_cylinder(2.5,5)
 
         grid = make_grid(part=cube, dim = [6,6], columns = 8)
         show_object(grid)
