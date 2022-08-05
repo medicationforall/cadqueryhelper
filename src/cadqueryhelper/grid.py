@@ -45,8 +45,6 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
     print(f'I think the length is {dim[1]} * {columns} equals: {length}', -1*(length/2) )
 
     work = work.translate((-1*(width/2),-1*(length/2)))
-
-
     return work
 
 if __name__ == "__main__":

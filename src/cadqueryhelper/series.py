@@ -15,26 +15,47 @@ def make_series(shape, size = 5, length_offset=None, width_offset=None, height_o
     series = cq.Assembly()
     length, width, height = __resolve_hit_box(shape)
 
+    bounding_box = {
+        "length":length,
+        "width":width,
+        "height":height
+    }
+
     for i in range(size):
-        print(f'loop iteration {length} {width} {height}')
+        #print(f'loop iteration {length} {width} {height}')
         x_coord = 0
         y_coord = 0
         z_coord = 0
 
         if length_offset != None:
             x_coord = i * (length + length_offset)
+            if i != 0:
+                bounding_box['length'] += length + length_offset
 
         if width_offset != None:
             y_coord = i * (width + width_offset)
+            if i != 0:
+                bounding_box['width'] += width + width_offset
 
         if height_offset != None:
             z_coord = i * (height + height_offset)
+            if i != 0:
+                bounding_box['height'] += height + height_offset
 
         series.add(shape,  loc=cq.Location(cq.Vector(x_coord, y_coord, z_coord)))
 
     comp = series.toCompound()
     work = cq.Workplane("XZ").center(0, 0).workplane()
     work.add(comp)
+
+    print(f'I think the bounding box is', bounding_box)
+    # zero out the offset caused by the first node
+    work = work.translate((length/2,width/2,height/2))
+
+    # center based on bounding box
+    work = work.translate((-1*(bounding_box['length']/2), -1*(bounding_box['width']/2), -1*(bounding_box['height']/2)))
+    meta = {'type':'series', 'length':bounding_box['length'], 'width':bounding_box['width'], 'height':bounding_box['height']}
+    work.metadata = meta
     return work
 
 def __resolve_hit_box(shape):
