@@ -14,3 +14,7 @@ To install CadQuery Helper directly from GitHub, run the following `pip` command
 From the cloned cadqueryhelper directory run.
 
 	pip install ./
+
+---
+# Documentation
+* [Shapes](./documentation/shape.md)

@@ -37,8 +37,8 @@ Metadata / bounding box
 
 # Shapes
 
-## Arrow Shape
-### Arrow Parameters
+## Arrow
+### Parameters
 * length
 * inner_length
 * width
@@ -47,7 +47,7 @@ Metadata / bounding box
 
 ![](image/04.png)
 
-### Arrow Examples
+### Examples
 
 #### Negative width_outset
 
