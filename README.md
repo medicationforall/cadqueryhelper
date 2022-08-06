@@ -17,4 +17,4 @@ From the cloned cadqueryhelper directory run.
 
 ---
 # Documentation
-* [Shapes](./documentation/shape.md)
+* [Shapes](./documentation/shapes.md)
