@@ -2,12 +2,6 @@
 
 ## Example Usage
 
-The following code:
-* Imports the required libraries.
-* Generates a solid using default setting.
-* Exports the solid to a file.
-* Prints the parts metadata to the console.
-
 ``` python
 import cadquery as cq #main cadquery library
 from cadqueryhelper import shape # The shape library this document is about
@@ -19,4 +13,46 @@ if part.metadata:
     print(part.metadata) # print the parts bounding box
 ```
 
+The code above:
+* Imports the required libraries.
+* Generates a solid using default setting.
+* Exports the solid to a file.
+* Prints the parts metadata to the console.
+
 #### Generated Output
+![](image/01.png)
+
+Metadata / bounding box
+<br />![](image/02.png)
+
+----
+
+## Shape Conventions
+* **Length** is along the **X** axis
+* **Width** is along the **Y** axis
+* **Height** is along the **Z** axis
+* Shapes are centered along the X, Y, and Z axis.
+
+---
+
+# Shapes
+
+## Arrow Shape
+### Arrow Parameters
+* length
+* inner_length
+* width
+* width_outset
+* height
+
+![](image/04.png)
+
+### Arrow Examples
+
+#### Negative width_outset
+
+``` python
+part = shape.arrow(width_outset=-1)
+```
+
+![](image/05.png)
