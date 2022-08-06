@@ -12,7 +12,20 @@ def arrow(length=10, inner_length=5, width=5, width_outset=2, height=3):
         ]
     work = cq.Workplane().center(0,0).polyline(points).close().extrude(height)
 
+    # zero out the offset caused by the first node
+    y_offset = 0
+
+    if width_outset > 0:
+         y_offset = width_outset
+    work = work.translate((0,y_offset,0))
+
+    # center shape
+    box_width = width+y_offset+y_offset
+
+    # center shape
+    work = work.translate((-1*(length/2),-1*(box_width/2),-1*(height/2)))
+
     #todo need to address width when outset is positive
-    meta = {'type':'arrow','height':height, 'length':length, 'width':width}
+    meta = {'type':'arrow','height':height, 'length':length, 'width':box_width}
     work.metadata = meta
     return work
