@@ -1,20 +1,19 @@
 # cadqueryhelper
 CadQuery Helper library
 
-# Dependencies
+## Documentation
+* [Shapes](./documentation/shapes.md)
+
+## Dependencies
 * [CadQuery 2.1](https://github.com/CadQuery/cadquery)
 * [cqMore](https://github.com/JustinSDK/cqMore)
 
-## Installation
+### Installation
 To install CadQuery Helper directly from GitHub, run the following `pip` command:
 
 	pip install git+https://github.com/medicationforall/cadqueryhelper
 
-## Local Installation
+### Local Installation
 From the cloned cadqueryhelper directory run.
 
 	pip install ./
-
----
-# Documentation
-* [Shapes](./documentation/shapes.md)
