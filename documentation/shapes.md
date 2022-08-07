@@ -49,7 +49,7 @@ Metadata / bounding box
 
 ![](image/04.png)
 
-[stl](../example/shape/arrow.stl)
+[stl](../out/arrow.stl)
 
 ### Examples
 
