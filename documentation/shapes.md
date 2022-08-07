@@ -67,3 +67,20 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/06.png)
+
+---
+## Cube
+### Parameters
+* length
+* width
+* height
+
+![](image/07.png)
+
+---
+## Cylinder
+### Parameters
+* radius
+* height
+
+![](image/08.png)
