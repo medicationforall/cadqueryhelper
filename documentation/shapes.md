@@ -49,6 +49,8 @@ Metadata / bounding box
 
 ![](image/04.png)
 
+[stl](../example/shape/arrow.stl)
+
 ### Examples
 
 #### Negative width_outset
