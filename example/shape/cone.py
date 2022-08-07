@@ -3,3 +3,6 @@ from cadqueryhelper import shape
 
 part = shape.cone()
 cq.exporters.export(part,'out/cone.stl')
+
+if part.metadata:
+    print(part.metadata)

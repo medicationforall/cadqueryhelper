@@ -37,6 +37,8 @@ Metadata / bounding box
 
 # Shapes
 
+---
+
 ## Arrow
 ### Parameters
 * length
@@ -56,3 +58,12 @@ part = shape.arrow(width_outset=-1)
 ```
 
 ![](image/05.png)
+
+---
+## Cone
+### Parameters
+* radius - base
+* radius_top
+* height
+
+![](image/06.png)
