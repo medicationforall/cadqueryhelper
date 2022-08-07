@@ -69,6 +69,7 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/06.png)
+[stl](../out/cone.stl)
 
 ---
 ## Cube
@@ -78,6 +79,7 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/07.png)
+[stl](../out/cube.stl)
 
 ---
 ## Cylinder
@@ -86,3 +88,4 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/08.png)
+[stl](../out/cylinder.stl)
