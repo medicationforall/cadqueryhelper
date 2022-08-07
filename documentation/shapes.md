@@ -92,3 +92,15 @@ part = shape.arrow(width_outset=-1)
 ![](image/08.png)
 <br />
 [stl](../out/cylinder.stl)
+
+---
+## Rail
+### Parameters
+* length
+* width
+* height
+* inner_height
+
+![](image/09.png)
+<br />
+[stl](../out/rail.stl)
