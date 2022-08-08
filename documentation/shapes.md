@@ -145,3 +145,14 @@ part = shape.arrow(width_outset=-1)
 * [source](../src/cadqueryhelper/shape/rhombus.py)
 * [example](../example/shape/rhombus.py)
 * [stl](../out/rhombus.stl)
+
+---
+## Sphere
+### Parameters
+* radius
+
+![](image/12.png)
+
+* [source](../src/cadqueryhelper/shape/sphere.py)
+* [example](../example/shape/sphere.py)
+* [stl](../out/sphere.stl)
