@@ -49,7 +49,7 @@ Metadata / bounding box
 
 ![](image/04.png)
 
-* [source](../src/shape/arrow.py)
+* [source](../src/cadqueryhelper/shape/arrow.py)
 * [example](../example/shape/arrow.py)
 * [stl](../out/arrow.stl)
 
@@ -73,7 +73,7 @@ part = shape.arrow(width_outset=-1)
 
 ![](image/06.png)
 
-* [source](../src/shape/cone.py)
+* [source](../src/cadqueryhelper/shape/cone.py)
 * [example](../example/shape/cone.py)
 * [stl](../out/cone.stl)
 
@@ -86,7 +86,7 @@ part = shape.arrow(width_outset=-1)
 
 ![](image/07.png)
 
-* [source](../src/shape/cube.py)
+* [source](../src/cadqueryhelper/shape/cube.py)
 * [example](../example/shape/cube.py)
 * [stl](../out/cube.stl)
 
@@ -98,7 +98,7 @@ part = shape.arrow(width_outset=-1)
 
 ![](image/08.png)
 
-* [source](../src/shape/cylinder.py)
+* [source](../src/cadqueryhelper/shape/cylinder.py)
 * [example](../example/shape/cylinder.py)
 * [stl](../out/cylinder.stl)
 
@@ -114,7 +114,7 @@ part = shape.arrow(width_outset=-1)
 ![](image/09.png)
 <br />
 
-* [source](../src/shape/rail.py)
+* [source](../src/cadqueryhelper/shape/rail.py)
 * [example](../example/shape/rail.py)
 * [stl](../out/rail.stl)
 
@@ -128,7 +128,7 @@ part = shape.arrow(width_outset=-1)
 
 ![](image/11.png)
 
-* [source](../src/shape/regularPolygon.py)
+* [source](../src/cadqueryhelper/shape/regularPolygon.py)
 * [example](../example/shape/hexagon.py)
 * [stl](../out/hexagon.stl)
 
@@ -142,6 +142,6 @@ part = shape.arrow(width_outset=-1)
 
 ![](image/10.png)
 
-* [source](../src/shape/rhombus.py)
+* [source](../src/cadqueryhelper/shape/rhombus.py)
 * [example](../example/shape/rhombus.py)
 * [stl](../out/rhombus.stl)
