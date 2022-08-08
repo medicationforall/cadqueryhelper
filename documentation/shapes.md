@@ -49,7 +49,10 @@ Metadata / bounding box
 
 ![](image/04.png)
 
-[stl](../out/arrow.stl)
+* [source](../src/shape/arrow.py)
+* [example](../example/shape/arrow.py)
+* [stl](../out/arrow.stl)
+
 
 ### Examples
 
@@ -69,8 +72,10 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/06.png)
-<br />
-[stl](../out/cone.stl)
+
+* [source](../src/shape/cone.py)
+* [example](../example/shape/cone.py)
+* [stl](../out/cone.stl)
 
 ---
 ## Cube
@@ -80,8 +85,10 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/07.png)
-<br />
-[stl](../out/cube.stl)
+
+* [source](../src/shape/cube.py)
+* [example](../example/shape/cube.py)
+* [stl](../out/cube.stl)
 
 ---
 ## Cylinder
@@ -90,8 +97,11 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/08.png)
-<br />
-[stl](../out/cylinder.stl)
+
+* [source](../src/shape/cylinder.py)
+* [example](../example/shape/cylinder.py)
+* [stl](../out/cylinder.stl)
+
 
 ---
 ## Rail
@@ -103,7 +113,25 @@ part = shape.arrow(width_outset=-1)
 
 ![](image/09.png)
 <br />
-[stl](../out/rail.stl)
+
+* [source](../src/shape/rail.py)
+* [example](../example/shape/rail.py)
+* [stl](../out/rail.stl)
+
+---
+## Regular Polygon
+[wikipedia](https://en.wikipedia.org/wiki/Regular_polygon)
+### Parameters
+* radius
+* sides
+* height
+
+![](image/11.png)
+
+* [source](../src/shape/regularPolygon.py)
+* [example](../example/shape/hexagon.py)
+* [stl](../out/hexagon.stl)
+
 
 ---
 ## Rhombus
@@ -113,5 +141,7 @@ part = shape.arrow(width_outset=-1)
 * height
 
 ![](image/10.png)
-<br />
-[stl](../out/rhombus.stl)
+
+* [source](../src/shape/rhombus.py)
+* [example](../example/shape/rhombus.py)
+* [stl](../out/rhombus.stl)

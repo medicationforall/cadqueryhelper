@@ -17,6 +17,8 @@ from cqmore.polygon import regularPolygon
 def regular_polygon(radius=5, sides=6, height=5):
     diameter = radius*2
     work = cqm.Workplane().makePolygon(regularPolygon(nSides = sides, radius = radius)).extrude(height)
+    work = work.translate((0,0,-1*(height/2)))
+    
     meta = {'type':'star','height':height, 'length':diameter, 'width':diameter}
     work.metadata = meta
     return work
