@@ -20,10 +20,10 @@ The code above:
 * Prints the parts metadata to the console.
 
 #### Generated Output
-![](image/01.png)
+![](image/shape/01.png)
 
 Metadata / bounding box
-<br />![](image/02.png)
+<br />![](image/shape/02.png)
 
 ----
 
@@ -47,7 +47,7 @@ Metadata / bounding box
 * width_outset
 * height
 
-![](image/04.png)
+![](image/shape/04.png)
 
 * [source](../src/cadqueryhelper/shape/arrow.py)
 * [example](../example/shape/arrow.py)
@@ -62,7 +62,7 @@ Metadata / bounding box
 part = shape.arrow(width_outset=-1)
 ```
 
-![](image/05.png)
+![](image/shape/05.png)
 
 ---
 ## Cone
@@ -71,7 +71,7 @@ part = shape.arrow(width_outset=-1)
 * radius_top
 * height
 
-![](image/06.png)
+![](image/shape/06.png)
 
 * [source](../src/cadqueryhelper/shape/cone.py)
 * [example](../example/shape/cone.py)
@@ -84,7 +84,7 @@ part = shape.arrow(width_outset=-1)
 * width
 * height
 
-![](image/07.png)
+![](image/shape/07.png)
 
 * [source](../src/cadqueryhelper/shape/cube.py)
 * [example](../example/shape/cube.py)
@@ -96,7 +96,7 @@ part = shape.arrow(width_outset=-1)
 * radius
 * height
 
-![](image/08.png)
+![](image/shape/08.png)
 
 * [source](../src/cadqueryhelper/shape/cylinder.py)
 * [example](../example/shape/cylinder.py)
@@ -111,7 +111,7 @@ part = shape.arrow(width_outset=-1)
 * height
 * inner_height
 
-![](image/09.png)
+![](image/shape/09.png)
 <br />
 
 * [source](../src/cadqueryhelper/shape/rail.py)
@@ -126,7 +126,7 @@ part = shape.arrow(width_outset=-1)
 * sides
 * height
 
-![](image/11.png)
+![](image/shape/11.png)
 
 * [source](../src/cadqueryhelper/shape/regularPolygon.py)
 * [example](../example/shape/hexagon.py)
@@ -140,7 +140,7 @@ part = shape.arrow(width_outset=-1)
 * offset
 * height
 
-![](image/10.png)
+![](image/shape/10.png)
 
 * [source](../src/cadqueryhelper/shape/rhombus.py)
 * [example](../example/shape/rhombus.py)
@@ -151,7 +151,7 @@ part = shape.arrow(width_outset=-1)
 ### Parameters
 * radius
 
-![](image/12.png)
+![](image/shape/12.png)
 
 * [source](../src/cadqueryhelper/shape/sphere.py)
 * [example](../example/shape/sphere.py)
@@ -165,7 +165,7 @@ part = shape.arrow(width_outset=-1)
 * points
 * height
 
-![](image/13.png)
+![](image/shape/13.png)
 
 * [source](../src/cadqueryhelper/shape/star.py)
 * [example](../example/shape/star.py)
