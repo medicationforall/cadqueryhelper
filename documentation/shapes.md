@@ -156,3 +156,17 @@ part = shape.arrow(width_outset=-1)
 * [source](../src/cadqueryhelper/shape/sphere.py)
 * [example](../example/shape/sphere.py)
 * [stl](../out/sphere.stl)
+
+---
+## Star
+### Parameters
+* outer_radius
+* inner_radius
+* points
+* height
+
+![](image/13.png)
+
+* [source](../src/cadqueryhelper/shape/star.py)
+* [example](../example/shape/star.py)
+* [stl](../out/star.stl)
