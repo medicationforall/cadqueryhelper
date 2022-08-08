@@ -1,8 +1,9 @@
 # cadqueryhelper
-CadQuery Helper library, has boilerplate code for shape primitives, and looping groups of shapes 
+CadQuery Helper library, has boilerplate code for shape primitives, and looping groups of shapes
 
 ## Documentation
 * [Shapes](./documentation/shapes.md)
+* [Series](./documentation/series.md)
 
 ## Dependencies
 * [CadQuery 2.1](https://github.com/CadQuery/cadquery)
