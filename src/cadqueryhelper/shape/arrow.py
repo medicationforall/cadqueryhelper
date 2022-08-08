@@ -31,15 +31,13 @@ def arrow(length=10, inner_length=5, width=5, width_outset=2, height=3):
 
     if width_outset > 0:
          y_offset = width_outset
-    work = work.translate((0,y_offset,0))
-
-    # center shape
+         
     box_width = width+y_offset+y_offset
 
     # center shape
+    work = work.translate((0,y_offset,0))
     work = work.translate((-1*(length/2),-1*(box_width/2),-1*(height/2)))
 
-    #todo need to address width when outset is positive
     meta = {'type':'arrow','height':height, 'length':length, 'width':box_width}
     work.metadata = meta
     return work
