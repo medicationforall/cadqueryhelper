@@ -22,11 +22,13 @@ def rail(length = 6, width = 1, height = 5, inner_height = 1.5):
     ]
 
     work = cq.Workplane().center(-(length/2),-(height/2)).polyline(points).close().extrude(width)
-    #work = work.rotate((1, 0, 0), (0, 0, 0), -90)
-    # @todo - center, extrude, rotate
+
+    # center, rotate
     work = work.translate((0,0,-1*(width/2)))
     work = work.rotate((1, 0, 0), (0, 0, 0), -90)
-    meta = {'type':'rail','height':height, 'length':length, 'width':width}
 
+    # bounding box
+    meta = {'type':'rail','height':height, 'length':length, 'width':width}
     work.metadata = meta
+
     return work
