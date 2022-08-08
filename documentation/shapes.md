@@ -104,3 +104,14 @@ part = shape.arrow(width_outset=-1)
 ![](image/09.png)
 <br />
 [stl](../out/rail.stl)
+
+---
+## Rhombus
+### Parameters
+* width
+* offset
+* height
+
+![](image/10.png)
+<br />
+[stl](../out/rhombus.stl)

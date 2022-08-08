@@ -21,7 +21,15 @@ def rhombus(width = 10, offset = 4, height=5):
         (width, 0 + offset)
         ]
     work = cq.Workplane().center(-(width/2),-(offset/2)-(width/2)).polyline(points).close().extrude(height)
+    work = work.translate((0,0,-1*(height/2)))
 
-    meta = {'type':'rhombus','height':height, 'length':width, 'width':width+offset}
+    bounding_width = width
+
+    if offset > -1:
+        bounding_width += offset
+    else:
+        bounding_width += -1*offset
+
+    meta = {'type':'rhombus','height':height, 'length':width, 'width':bounding_width}
     work.metadata = meta
     return work
