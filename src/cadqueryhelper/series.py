@@ -11,7 +11,7 @@
 
 import cadquery as cq
 
-def make_series(shape, size = 5, length_offset=None, width_offset=None, height_offset=None):
+def make_series(shape, size = 5, length_offset=None, width_offset=None, height_offset=None, skip_last=0, skip_first=0):
     series = cq.Assembly()
     length, width, height = __resolve_hit_box(shape)
 
@@ -42,7 +42,13 @@ def make_series(shape, size = 5, length_offset=None, width_offset=None, height_o
             if i != 0:
                 bounding_box['height'] += height + height_offset
 
-        series.add(shape,  loc=cq.Location(cq.Vector(x_coord, y_coord, z_coord)))
+        if i < size-skip_last:
+            if i >= skip_first:
+                series.add(shape,  loc=cq.Location(cq.Vector(x_coord, y_coord, z_coord)))
+            else:
+                print('skipping first series tile')
+        else:
+            print('skipping last series tile')
 
     comp = series.toCompound()
     work = cq.Workplane("XZ").center(0, 0).workplane()
