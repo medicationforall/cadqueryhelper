@@ -14,7 +14,17 @@ To install CadQuery Helper directly from GitHub, run the following `pip` command
 
 	pip install git+https://github.com/medicationforall/cadqueryhelper
 
+**OR**
+
 ### Local Installation
 From the cloned cadqueryhelper directory run.
 
 	pip install ./
+
+
+## Running Example Scripts
+* From the root of the project run one of example scripts:
+
+``` bash
+C:\Users\<user>\home\3d\cqterrain>python ./example/shape/arrow.py
+```
