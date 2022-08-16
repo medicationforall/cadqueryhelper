@@ -54,7 +54,7 @@ def make_series(shape, size = 5, length_offset=None, width_offset=None, height_o
     work = cq.Workplane("XZ").center(0, 0).workplane()
     work.add(comp)
 
-    print(f'I think the bounding box is', bounding_box)
+    #print(f'I think the bounding box is', bounding_box)
     # zero out the offset caused by the first node
     work = work.translate((length/2,width/2,height/2))
 
