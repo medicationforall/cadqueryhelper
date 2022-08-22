@@ -8,3 +8,5 @@ from .star import star
 from .rail import rail
 from .arrow import arrow
 from .pipe import pipe
+
+from .arch import arch_pointed
