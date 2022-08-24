@@ -76,6 +76,33 @@ part = shape.arrow(width_outset=-1)
 * [source](../src/cadqueryhelper/shape/cone.py)
 * [example](../example/shape/cone.py)
 * [stl](../out/cone.stl)
+---
+
+## Cross
+### Parameters
+* length
+* width
+* height
+* cross_length
+* cross_width
+* x_translate - Distance of length crossbeam from center.
+* y_translate - Distance of width crossbeam from center.
+
+![](image/shape/14.png)
+
+* [source](../src/cadqueryhelper/shape/cross.py)
+* [example](../example/shape/cross.py)
+* [stl](../out/cross.stl)
+
+### Examples
+
+#### Move crossbeams from center
+
+``` python
+part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.5)
+```
+
+![](image/shape/15.png)
 
 ---
 ## Cube

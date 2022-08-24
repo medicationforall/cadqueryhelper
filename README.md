@@ -26,5 +26,5 @@ From the cloned cadqueryhelper directory run.
 * From the root of the project run one of example scripts:
 
 ``` bash
-C:\Users\<user>\home\3d\cqterrain>python ./example/shape/arrow.py
+C:\Users\<user>\cadqueryhelper>python ./example/shape/arrow.py
 ```
