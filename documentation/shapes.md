@@ -129,6 +129,29 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * [example](../example/shape/cylinder.py)
 * [stl](../out/cylinder.stl)
 
+---
+
+## I-Beam
+### Parameters
+* length
+* width
+* height
+* web_thickness
+* flange_thickness
+* join_distance
+
+![](image/shape/16.png)
+<br /><br />
+![](image/shape/17.png)
+
+* [source](../src/cadqueryhelper/shape/iBeam.py)
+* [example](../example/shape/iBeam.py)
+* [stl](../out/ibeam.stl)
+
+### Wiki
+* [Wikpedia](https://en.wikipedia.org/wiki/I-beam)
+* [Wiki Image](https://en.wikipedia.org/wiki/File:I-BeamCrossSection.svg)
+
 
 ---
 ## Rail
