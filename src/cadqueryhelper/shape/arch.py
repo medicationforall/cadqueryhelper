@@ -14,7 +14,7 @@
 
 import cadquery as cq
 
-def arch_pointed(length=30, width=5, height=50, inner_height=25, inner_width=3):
+def arch_pointed(length=30, width=5, height=50, inner_height=25):
     m_length = length/2 #mirror length
     sPnts = [
         (inner_height+.00001, m_length+0),
