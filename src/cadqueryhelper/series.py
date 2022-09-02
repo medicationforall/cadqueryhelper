@@ -11,7 +11,7 @@
 
 import cadquery as cq
 
-def make_series(shape, size = 5, length_offset=None, width_offset=None, height_offset=None, skip_last=0, skip_first=0):
+def series(shape, size = 5, length_offset=None, width_offset=None, height_offset=None, skip_last=0, skip_first=0):
     series = cq.Assembly()
     length, width, height = __resolve_hit_box(shape)
 
@@ -72,5 +72,11 @@ def __resolve_hit_box(shape):
         width = meta['width']
         height = meta['height']
     else:
-        raise Exception('Could not resolve shape metadata for series.')
+        bounds = shape.val().BoundingBox()
+        if bounds:
+            length = bounds.xlen
+            width = bounds.ylen
+            height = bounds.zlen
+        else:
+            raise Exception('Could not resolve shape metadata for series. OR bounding box')
     return length, width, height

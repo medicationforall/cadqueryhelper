@@ -21,7 +21,7 @@ from cadqueryhelper import series
 if __name__ == "__main__":
     star = shape.star()
 
-    st_series = series.make_series(shape = star, length_offset=None, width_offset=-11, height_offset=0, size=4)
+    st_series = series(shape = star, length_offset=None, width_offset=-11, height_offset=0, size=4)
     cq.exporters.export(st_series,'out/series.stl')
 
     if st_series.metadata:
@@ -33,13 +33,13 @@ if __name__ == "__main__":
 
 #### Star series repeated over the y and z-axis
 ``` python
-  series.make_series(shape = star, length_offset=None, width_offset=-11, height_offset=0, size=4)
+  series(shape = star, length_offset=None, width_offset=-11, height_offset=0, size=4)
 ```
 ![](image/series/02.png)
 
 #### Star series repeated over the x, y and z-axis
 ``` python
-  series.make_series(shape = star, length_offset=1, width_offset=-11, height_offset=0, size=3)
+  series(shape = star, length_offset=1, width_offset=-11, height_offset=0, size=3)
 ```
 ![](image/series/03.png)
 
