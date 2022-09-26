@@ -19,13 +19,11 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
     '''
         returns a shape or solid
     '''
-    #print('attempting to make grid');
     grid = cq.Assembly()
-    #print('bounds', dir(part.plane))
     for row_i in range(rows):
-        row_offset = (dim[0] * row_i) + (dim[0]/2)
+        row_offset = (dim[0] * row_i)
         for col_i in range(columns):
-            col_offset = (dim[1] * col_i) + (dim[0]/2)
+            col_offset = (dim[1] * col_i)
 
             col_push_x = 0
             col_push_y = 0
@@ -41,10 +39,10 @@ def make_grid(part, dim, odd_col_push = [0,0], columns = 5, rows = 5):
     work = cq.Workplane("XZ").center(0, 0).workplane()
     work.add(comp)
 
-    print(f'I think the width is {dim[0]} * {rows} equals: {width}', -1*(width/2) )
-    print(f'I think the length is {dim[1]} * {columns} equals: {length}', -1*(length/2) )
-
+    # zero out the grid
+    work = work.translate(((dim[0]/2),(dim[1]/2)))
     work = work.translate((-1*(width/2),-1*(length/2)))
+
     return work
 
 if __name__ == "__main__":
