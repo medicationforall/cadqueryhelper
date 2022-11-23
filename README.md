@@ -5,6 +5,9 @@ CadQuery Helper library, has boilerplate code for shape primitives, and looping 
 * [Shapes](./documentation/shapes.md)
 * [Series](./documentation/series.md)
 
+## Changes
+* [Changelog](./changes.md)
+
 ## Dependencies
 * [CadQuery 2.1](https://github.com/CadQuery/cadquery)
 * [cqMore](https://github.com/JustinSDK/cqMore)

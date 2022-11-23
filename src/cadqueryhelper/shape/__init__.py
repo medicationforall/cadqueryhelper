@@ -12,3 +12,5 @@ from .pipe import pipe
 from .arch import arch_pointed
 from .iBeam import i_beam
 from .cross import cross
+
+from .diamond import diamond

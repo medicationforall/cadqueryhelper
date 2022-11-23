@@ -130,6 +130,18 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * [stl](../out/cylinder.stl)
 
 ---
+## Diamond
+### Parmeters
+* length
+* width
+* height
+
+![](image/shape/19.png)
+
+* [source](../src/cadqueryhelper/shape/diamond.py)
+* [example](../example/shape/diamond.py)
+* [stl](../out/diamond.stl)
+---
 
 ## I-Beam
 ### Parameters
