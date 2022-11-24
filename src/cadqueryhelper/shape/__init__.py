@@ -14,3 +14,4 @@ from .iBeam import i_beam
 from .cross import cross
 
 from .diamond import diamond
+from .chevron import chevron

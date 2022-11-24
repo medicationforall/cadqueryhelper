@@ -13,18 +13,30 @@
 # limitations under the License.
 import cadquery as cq
 
-def diamond(length = 6, width = 4, height = 2, ):
-    points = [
-        (length/2,0),
-        (length, width/2 ),
-        (length/2, width),
-        (0, width/2)
-    ]
+def chevron(length=10, width=7, height=2, inner_width=3, alt=False):
+    if alt==False:
+        points = [
+            (0,inner_width),
+            (length/2, width),
+            (length, inner_width),
+            (length, 0),
+            (length/2, width -inner_width ),
+            (0, 0)
+        ]
+    else:
+        points = [
+            (0,0),
+            (length/2, width),
+            (length, 0),
+            (length-inner_width, 0),
+            (length/2, width -inner_width ),
+            (inner_width, 0)
+        ]
 
     work = cq.Workplane("XY").polyline(points).close().extrude(height)
 
-    # center
+    # center, rotate
     work = work.translate((-1*(length/2),-1*(width/2),-1*(height/2)))
-    # scene = cq.Workplane("XY").rect(length, width).add(work)
-    # return scene
+    #scene = cq.Workplane("XY").rect(length, width).add(work)
+    #return scene
     return work

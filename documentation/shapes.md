@@ -62,7 +62,35 @@ Metadata / bounding box
 part = shape.arrow(width_outset=-1)
 ```
 
-![](image/shape/05.png)
+![](image/shape/05.png)<br />
+
+---
+
+## Chevron
+### Parameters
+* length
+* width
+* height
+* inner_width
+* alt
+
+![](image/shape/22.png)<br />
+
+* [source](../src/cadqueryhelper/shape/chevron.py)
+* [example](../example/shape/chevron.py)
+* [stl](../out/chevron.stl)
+
+
+### Example
+#### Chevron with alt set to True
+
+``` python
+alt = shape.chevron(length=10, width=7, height=2, inner_width=3, alt=True)
+```
+
+![](image/shape/21.png)<br />
+
+* [stl](../out/chevron_alt.stl)
 
 ---
 ## Cone
@@ -71,7 +99,7 @@ part = shape.arrow(width_outset=-1)
 * radius_top
 * height
 
-![](image/shape/06.png)
+![](image/shape/06.png)<br />
 
 * [source](../src/cadqueryhelper/shape/cone.py)
 * [example](../example/shape/cone.py)
@@ -88,7 +116,7 @@ part = shape.arrow(width_outset=-1)
 * x_translate - Distance of length crossbeam from center.
 * y_translate - Distance of width crossbeam from center.
 
-![](image/shape/14.png)
+![](image/shape/14.png)<br />
 
 * [source](../src/cadqueryhelper/shape/cross.py)
 * [example](../example/shape/cross.py)
@@ -102,7 +130,7 @@ part = shape.arrow(width_outset=-1)
 part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.5)
 ```
 
-![](image/shape/15.png)
+![](image/shape/15.png)<br />
 
 ---
 ## Cube
@@ -111,7 +139,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * width
 * height
 
-![](image/shape/07.png)
+![](image/shape/07.png)<br />
 
 * [source](../src/cadqueryhelper/shape/cube.py)
 * [example](../example/shape/cube.py)
@@ -123,7 +151,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * radius
 * height
 
-![](image/shape/08.png)
+![](image/shape/08.png)<br />
 
 * [source](../src/cadqueryhelper/shape/cylinder.py)
 * [example](../example/shape/cylinder.py)
@@ -136,7 +164,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * width
 * height
 
-![](image/shape/19.png)
+![](image/shape/19.png)<br />
 
 * [source](../src/cadqueryhelper/shape/diamond.py)
 * [example](../example/shape/diamond.py)
@@ -154,7 +182,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 
 ![](image/shape/16.png)
 <br /><br />
-![](image/shape/17.png)
+![](image/shape/17.png)<br />
 
 * [source](../src/cadqueryhelper/shape/iBeam.py)
 * [example](../example/shape/iBeam.py)
@@ -188,7 +216,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * sides
 * height
 
-![](image/shape/11.png)
+![](image/shape/11.png)<br />
 
 * [source](../src/cadqueryhelper/shape/regularPolygon.py)
 * [example](../example/shape/hexagon.py)
@@ -202,7 +230,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * offset
 * height
 
-![](image/shape/10.png)
+![](image/shape/10.png)<br />
 
 * [source](../src/cadqueryhelper/shape/rhombus.py)
 * [example](../example/shape/rhombus.py)
@@ -213,7 +241,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 ### Parameters
 * radius
 
-![](image/shape/12.png)
+![](image/shape/12.png)<br />
 
 * [source](../src/cadqueryhelper/shape/sphere.py)
 * [example](../example/shape/sphere.py)
@@ -227,7 +255,7 @@ part = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.
 * points
 * height
 
-![](image/shape/13.png)
+![](image/shape/13.png)<br />
 
 * [source](../src/cadqueryhelper/shape/star.py)
 * [example](../example/shape/star.py)
