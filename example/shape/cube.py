@@ -1,8 +1,8 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-part = shape.cube(length=5, width=5, height=5)
-cq.exporters.export(part,'out/cube.stl')
+result = shape.cube(length=5, width=5, height=5)
+cq.exporters.export(result,'out/cube.stl')
 
 if part.metadata:
-    print(part.metadata)
+    print(result.metadata)

@@ -34,7 +34,6 @@ def arch_pointed(length=30, width=5, height=50, inner_height=25):
     result = result.rotate((0, 1, 0), (0, 0, 0), 90)
     result = result.rotate((0, 0, 1), (0, 0, 0), 90)
 
-
     meta = {'type':'arch', 'height':height, 'length':length, 'width':width}
     result.metadata = meta
 

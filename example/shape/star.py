@@ -1,8 +1,8 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-part = shape.star(outer_radius=10, inner_radius=5, points=5, height=3)
-cq.exporters.export(part,'out/star.stl')
+result = shape.star(outer_radius=10, inner_radius=5, points=5, height=3)
+cq.exporters.export(result,'out/star.stl')
 
-if part.metadata:
-    print(part.metadata)
+if result.metadata:
+    print(result.metadata)
