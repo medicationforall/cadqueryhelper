@@ -19,7 +19,7 @@ classifiers = [
 ]
 dependencies = [
 "cadquery==2.2.0b0",
-'cqmore @ git+https://github.com/JustinSDK/cqMore'
+'cqmore @ git+https://github.com/JustinSDK/cqMore@a490603'
 ]
 
 [project.urls]

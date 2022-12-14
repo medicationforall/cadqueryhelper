@@ -1,6 +1,8 @@
 # cadqueryhelper Changelog
 
-## master wip
+## main wip
+
+## 0.0.7
 * Added Diamond, and Chevron shape
   * With example
 * Series now has support for providing an operation callback which is applied with each iteration of the loop.
@@ -9,6 +11,8 @@
   * Shapes
   * Series
   * Grid
+* Specified cqmore version dependency
+* cleaned up star grid example
 
 ## 0.0.6
 * Initial Release
