@@ -1,7 +1,9 @@
 # cadqueryhelper Changelog
 
 ## main wip
-Updated cadquery version
+
+## 0.0.8
+* Updated cadquery version
 
 ## 0.0.7
 * Added Diamond, and Chevron shape
