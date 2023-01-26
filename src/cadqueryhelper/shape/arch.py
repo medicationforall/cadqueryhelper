@@ -49,4 +49,4 @@ def arch_round(length=30, width=5, height=50):
     # round off the top
     arch = arch.faces("Z").edges("Y").fillet((length/2)-.01)
 
-    return arch
+    return arch.translate((0,0,-1*(height/2)))
