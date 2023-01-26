@@ -10,6 +10,7 @@ from .arrow import arrow
 from .pipe import pipe
 
 from .arch import arch_pointed
+from .arch import arch_round
 from .iBeam import i_beam
 from .cross import cross
 

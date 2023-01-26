@@ -54,7 +54,26 @@ result = shape.arch_pointed(length=30, width=5, height=50, inner_height=25)
 
 * [source](../src/cadqueryhelper/shape/arch.py)
 * [example](../example/shape/arch_pointed.py)
-* [stl](../out/arch.stl)
+* [stl](../out/arch_pointed.stl)
+
+---
+
+
+## Arch Round
+### Parameters
+* length
+* width
+* height
+
+``` python
+result = shape.arch_round(length=30, width=5, height=50)
+```
+
+![](image/shape/26.png)<br />
+
+* [source](../src/cadqueryhelper/shape/arch.py)
+* [example](../example/shape/arch_round.py)
+* [stl](../out/arch_round.stl)
 
 ---
 
