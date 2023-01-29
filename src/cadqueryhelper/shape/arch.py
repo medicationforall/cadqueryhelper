@@ -26,8 +26,11 @@ def arch_pointed(length=30, width=5, height=50, inner_height=25):
         .lineTo(0, m_length)
         .lineTo(inner_height, m_length)
         .spline(sPnts, includeCurrent=True)
-        .close().mirrorX().extrude(width)
+        .close().mirrorX()
     )
+
+    if width:
+        result = result.extrude(width)
 
     # center
     result = result.translate((-1*(height/2),0,-1*(width/2)))

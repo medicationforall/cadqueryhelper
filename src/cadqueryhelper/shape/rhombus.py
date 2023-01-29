@@ -20,7 +20,15 @@ def rhombus(width = 10, offset = 4, height=5):
         (width, width + offset),
         (width, 0 + offset)
         ]
-    work = cq.Workplane().center(-(width/2),-(offset/2)-(width/2)).polyline(points).close().extrude(height)
+    work = (
+        cq.Workplane()
+        .center(-(width/2),-(offset/2)-(width/2))
+        .polyline(points).close()
+
+    )
+    if height:
+        work = work.extrude(height)
+        
     work = work.translate((0,0,-1*(height/2)))
 
     bounding_width = width

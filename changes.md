@@ -9,6 +9,10 @@
   * 0 height returns line path
 * Chevron 0 height returns line path
 * Diamond 0 height returns line path
+* Rail 0 width returns line path
+* arch_pointed 0 width returns line path
+* regular_polygon 0 height returns line path
+* Star 0 height returns line path
 
 ## 0.0.8
 * Updated cadquery version

@@ -21,7 +21,14 @@ def rail(length = 6, width = 1, height = 5, inner_height = 1.5):
         (length, height - inner_height)
     ]
 
-    work = cq.Workplane().center(-(length/2),-(height/2)).polyline(points).close().extrude(width)
+    work = (
+        cq.Workplane()
+        .center(-(length/2),-(height/2))
+        .polyline(points).close()
+    )
+
+    if width:
+        work = work.extrude(width)
 
     # center, rotate
     work = work.translate((0,0,-1*(width/2)))
