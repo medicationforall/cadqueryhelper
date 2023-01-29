@@ -4,6 +4,7 @@
 * center round arch
 * Added arch round
 * Added wave triangle
+* Added wave sawtooth
 
 ## 0.0.8
 * Updated cadquery version
