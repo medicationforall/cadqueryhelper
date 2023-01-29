@@ -3,6 +3,7 @@
 ## main wip
 * center round arch
 * Added arch round
+* Added wave triangle
 
 ## 0.0.8
 * Updated cadquery version
