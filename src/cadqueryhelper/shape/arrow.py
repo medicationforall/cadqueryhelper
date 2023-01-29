@@ -14,7 +14,13 @@
 
 import cadquery as cq
 
-def arrow(length=10, inner_length=5, width=5, width_outset=2, height=3):
+def arrow(
+    length=10,
+    inner_length=5,
+    width=5,
+    width_outset=2,
+    height=3
+):
     points = [
         (0,0),
         (0,width),
@@ -24,19 +30,29 @@ def arrow(length=10, inner_length=5, width=5, width_outset=2, height=3):
         (inner_length, 0-width_outset),
         (inner_length, 0),
         ]
-    work = cq.Workplane().center(0,0).polyline(points).close().extrude(height)
+
+    work = (
+        cq.Workplane()
+        .center(0,0)
+        .polyline(points).close()
+    )
+
+    if height:
+        work = work.extrude(height)
 
     # zero out the offset caused by the first node
     y_offset = 0
-
     if width_outset > 0:
          y_offset = width_outset
 
     box_width = width+y_offset+y_offset
 
     # center shape
-    #work = work.translate((0,y_offset,0))
-    work = work.translate((-1*(length/2),-1*(box_width/2),-1*(height/2)))
+    work = work.translate((
+        -1*(length/2),
+        -1*(width/2),
+        -1*(height/2)
+    ))
 
     meta = {'type':'arrow','height':height, 'length':length, 'width':box_width}
     work.metadata = meta
