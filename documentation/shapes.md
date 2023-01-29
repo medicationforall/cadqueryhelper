@@ -47,7 +47,12 @@ Metadata / bounding box (Deprecated)
 * inner_height
 
 ``` python
-result = shape.arch_pointed(length=30, width=5, height=50, inner_height=25)
+result = shape.arch_pointed(
+  length=30,
+  width=5,
+  height=50,
+  inner_height=25
+)
 ```
 
 ![](image/shape/24.png)<br />
@@ -185,7 +190,15 @@ result = shape.cone(radius=1, radius_top=0, height=2)
 * y_translate - Distance of width crossbeam from center.
 
 ``` python
-result = shape.cross(length=10, width=10, height=2, cross_length=1, cross_width=1, x_translate=0, y_translate=0)
+result = shape.cross(
+  length=10,
+  width=10,
+  height=2,
+  cross_length=1,
+  cross_width=1,
+  x_translate=0,
+  y_translate=0
+)
 ```
 
 ![](image/shape/14.png)<br />
@@ -199,7 +212,12 @@ result = shape.cross(length=10, width=10, height=2, cross_length=1, cross_width=
 #### Move crossbeams from center
 
 ``` python
-result = shape.cross(cross_length=2, cross_width=2, x_translate=-1, y_translate=2.5)
+result = shape.cross(
+  cross_length=2,
+  cross_width=2,
+  x_translate=-1,
+  y_translate=2.5
+)
 ```
 
 ![](image/shape/15.png)<br />
@@ -265,7 +283,14 @@ result = shape.diamond(length=10, width=5, height=3)
 * join_distance
 
 ``` python
-result = shape.i_beam(length=30, width=5, height=10, web_thickness=2, flange_thickness=2, join_distance=1.3)
+result = shape.i_beam(
+  length=30,
+  width=5,
+  height=10,
+  web_thickness=2,
+  flange_thickness=2,
+  join_distance=1.3
+)
 ```
 
 ![](image/shape/16.png)
@@ -360,7 +385,12 @@ result = shape.sphere(radius=5)
 * height
 
 ``` python
-result = shape.star(outer_radius=10, inner_radius=5, points=5, height=3)
+result = shape.star(
+  outer_radius=10,
+  inner_radius=5,
+  points=5,
+  height=3
+)
 ```
 
 ![](image/shape/13.png)<br />
