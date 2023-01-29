@@ -8,6 +8,7 @@
 * Fix arrow center
   * 0 height returns line path
 * Chevron 0 height returns line path
+* Diamond 0 height returns line path
 
 ## 0.0.8
 * Updated cadquery version

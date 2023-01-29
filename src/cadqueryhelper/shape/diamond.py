@@ -21,10 +21,18 @@ def diamond(length = 6, width = 4, height = 2, ):
         (0, width/2)
     ]
 
-    work = cq.Workplane("XY").polyline(points).close().extrude(height)
+    work = (
+        cq.Workplane("XY")
+        .polyline(points).close()
+    )
+
+    if height:
+        work = work.extrude(height)
 
     # center
-    work = work.translate((-1*(length/2),-1*(width/2),-1*(height/2)))
-    # scene = cq.Workplane("XY").rect(length, width).add(work)
-    # return scene
+    work = work.translate((
+        -1*(length/2),
+        -1*(width/2),
+        -1*(height/2
+    )))
     return work
