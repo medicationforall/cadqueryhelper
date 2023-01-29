@@ -33,10 +33,18 @@ def chevron(length=10, width=7, height=2, inner_width=3, alt=False):
             (inner_width, 0)
         ]
 
-    work = cq.Workplane("XY").polyline(points).close().extrude(height)
+    work = (
+        cq.Workplane("XY")
+        .polyline(points).close()
+    )
+
+    if height:
+        work = work.extrude(height)
 
     # center, rotate
-    work = work.translate((-1*(length/2),-1*(width/2),-1*(height/2)))
-    #scene = cq.Workplane("XY").rect(length, width).add(work)
-    #return scene
+    work = work.translate((
+        -1*(length/2),
+        -1*(width/2),
+        -1*(height/2)
+    ))
     return work

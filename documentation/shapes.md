@@ -86,7 +86,13 @@ result = shape.arch_round(length=30, width=5, height=50)
 * height
 
 ``` python
-result = shape.arrow(length=10, inner_length=5, width=5, width_outset=2, height=3)
+result = shape.arrow(
+  length=10,
+  inner_length=5,
+  width=5,
+  width_outset=2,
+  height=3
+)
 ```
 
 ![](image/shape/04.png)<br />
@@ -117,7 +123,13 @@ result = shape.arrow(width_outset=-1)
 * alt
 
 ``` python
-result = shape.chevron(length=10, width=7, height=2, inner_width=3, alt=False)
+result = shape.chevron(
+  length=10,
+  width=7,
+  height=2,
+  inner_width=3,
+  alt=False
+)
 ```
 
 ![](image/shape/22.png)<br />
@@ -131,7 +143,13 @@ result = shape.chevron(length=10, width=7, height=2, inner_width=3, alt=False)
 #### Chevron with alt set to True
 
 ``` python
-alt = shape.chevron(length=10, width=7, height=2, inner_width=3, alt=True)
+alt = shape.chevron(
+  length=10,
+  width=7,
+  height=2,
+  inner_width=3,
+  alt=True
+)
 ```
 
 ![](image/shape/21.png)<br />
