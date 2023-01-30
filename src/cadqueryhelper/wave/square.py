@@ -1,27 +1,32 @@
 import cadquery as cq
 import math
 
-def triangle(
+def square(
         length = 60,
         width = 10,
         height=3,
         segment_length=5,
         inner_width = 7
+
     ):
     segment_count = math.ceil(length / segment_length)
 
-    pts = [(0,0),(inner_width,0)]
+    pts = [(0,0),(width,0)]
     x = width
     y = 0
 
     for i in range(segment_count):
         y = segment_length + (segment_length*i)
 
-        if i%2 ==0:
-            x = width
+        if i % 2 == 0:
+            #even
+            pts.append((width,y))
+            pts.append((inner_width,y))
+
         else:
-            x = inner_width
-        pts.append((x,y))
+            #odd
+            pts.append((inner_width,y))
+            pts.append((width,y))
 
     pts.append((0,y))
     result = cq.Workplane("XY").polyline(pts).close()

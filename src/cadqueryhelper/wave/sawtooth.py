@@ -9,7 +9,7 @@ def sawtooth(
         inner_width = 7
 
     ):
-    segment_count = math.floor(length / segment_length)
+    segment_count = math.ceil(length / segment_length)
 
     pts = [(0,0),(inner_width,0)]
     x = width
@@ -27,11 +27,26 @@ def sawtooth(
     if height:
         result = result.extrude(height)
 
-    result = (
-        result
-        .translate((-1*width/2,-1*length/2,-1*height/2))
-        .rotate((0,0,1),(0,0,0),90)
-        .rotate((1,0,0),(0,0,0),180)
-    )
+        result = (
+            result
+            .translate((-1*width/2,-1*length/2,-1*height/2))
+            .rotate((0,0,1),(0,0,0),90)
+            .rotate((1,0,0),(0,0,0),180)
+        )
 
-    return result
+        outline = cq.Workplane("XY").box(length, width, height)
+        scene = (
+            cq.Workplane("XY")
+            .add(outline)
+            .intersect(result)
+        )
+
+        return scene
+    else:
+        result = (
+            result
+            .translate((-1*width/2,-1*length/2,-1*height/2))
+            .rotate((0,0,1),(0,0,0),90)
+            .rotate((1,0,0),(0,0,0),180)
+        )
+        return result

@@ -5,6 +5,7 @@
 * Added arch round
 * Added wave triangle
 * Added wave sawtooth
+* Added wave square
 * Fix arrow center
   * 0 height returns line path
 * Chevron 0 height returns line path
