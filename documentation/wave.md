@@ -1,5 +1,25 @@
 # Wave Documentation
 
+## Example Usage
+``` python
+import cadquery as cq
+from cadqueryhelper import wave
+
+result = wave.triangle(
+    length=80,
+    width=20,
+    height=3,
+    segment_length=5,
+    inner_width=5
+)
+cq.exporters.export(result,'out/wave_triangle.stl')
+```
+
+The code above:
+* Imports the required libraries.
+* Generates a solid wave.
+* Exports the solid to a file.
+
 ---
 
 ## Conventions
@@ -38,7 +58,7 @@ result = pattern.triangle(
 ### Zero height
 
 ``` python
-result = pattern.triangle(
+result = wave.triangle(
   length=80,
   width=20,
   height=0,
@@ -78,7 +98,7 @@ result = wave.sawtooth(
 ### Zero height
 
 ``` python
-result = pattern.triangle(
+result = wave.triangle(
   length=80,
   width=20,
   height=0,
@@ -91,7 +111,29 @@ Returns the line segment for further operations.
 
 ---
 
-## square
+## Sine
+
+* length
+* width
+* height
+* segment_length
+* inner_width
+
+``` python
+result = wave.sine(
+    length=80,
+    width=20,
+    height=3,
+    segment_length=15,
+    inner_width=5
+)
+```
+
+![](image/wave/09.png)
+
+---
+
+## Square
 * length
 * width
 * height

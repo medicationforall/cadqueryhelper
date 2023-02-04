@@ -1,6 +1,7 @@
 # cadqueryhelper Changelog
 
 ## main wip
+* Built out wave documentation
 
 ## 0.1.0
 * center round arch
