@@ -1,11 +1,14 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+## 0.1.0
 * center round arch
 * Added arch round
 * Added wave triangle
 * Added wave sawtooth
 * Added wave square
+* Added rough sine wave
 * Fix arrow center
   * 0 height returns line path
 * Chevron 0 height returns line path
