@@ -16,3 +16,4 @@ from .cross import cross
 
 from .diamond import diamond
 from .chevron import chevron
+from .lightning import lightning

@@ -305,6 +305,32 @@ result = shape.i_beam(
 * [Wikpedia](https://en.wikipedia.org/wiki/I-beam)
 * [Wiki Image](https://en.wikipedia.org/wiki/File:I-BeamCrossSection.svg)
 
+---
+
+## Lightning
+### Parameters
+* length
+* width
+* height
+* x_dist
+* y_dist
+
+``` python
+result = shape.lightning(
+    length = 25,
+    width = 50,
+    height = 5,
+    x_dist = 3,
+    y_dist = 6
+)
+```
+
+![](image/shape/27.png)<br />
+
+* [source](../src/cadqueryhelper/shape/lightning.py)
+* [example](../example/shape/lightning.py)
+* [stl](../out/lightning.stl)
+
 
 ---
 ## Rail

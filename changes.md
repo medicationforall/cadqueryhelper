@@ -1,4 +1,5 @@
 # cadqueryhelper Changelog
+* Added lightning basic shape
 
 ## main wip
 * Built out wave documentation
