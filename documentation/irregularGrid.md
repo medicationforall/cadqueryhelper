@@ -19,7 +19,7 @@
 * **seed** = "test" - Pseudo random item placement is effected by this string, change this to get different output results.
 * **make_item** = None - Callback method for making items. Whatever method you feed this has to accept three parameters length, width, and height. The passed in method should return a workplane with a solid.
 
-### An uninteresting Grid
+### An Uninteresting Grid
 ![](image/irregularGrid/05.png)<br />
 
 ``` python
