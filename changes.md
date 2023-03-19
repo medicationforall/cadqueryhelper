@@ -1,9 +1,12 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+## 0.1.1
 * Built out wave documentation
 * Added lightning basic shape
 * Added Irregular Grid
+  * initial documentation
 
 ## 0.1.0
 * center round arch
