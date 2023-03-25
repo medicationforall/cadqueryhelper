@@ -18,6 +18,7 @@
 * **passes_count** = None - Max number of render passes, None means run until the grid is full.
 * **seed** = "test" - Pseudo random item placement is effected by this string, change this to get different output results.
 * **make_item** = None - Callback method for making items. Whatever method you feed this has to accept three parameters length, width, and height. The passed in method should return a workplane with a solid.
+* **fill_cells** = None - Allows you to hardcode items to specific start points and dimensions. 
 
 ### An Uninteresting Grid
 ![](image/irregularGrid/05.png)<br />

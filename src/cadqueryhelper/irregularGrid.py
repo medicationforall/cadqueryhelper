@@ -38,16 +38,15 @@ def irregular_grid(
         union_grid = True,
         passes_count = None,
         seed = "test",
-        make_item = None
+        make_item = None,
+        fill_cells = None
     ):
     #log('** make irregular_grid **')
     random.seed(seed)
     columns = math.floor(length/col_size)
     rows = math.floor(width / row_size)
     bool_grid = boolean_matrix(columns, rows)
-    position = [(0,0)]
     outline = cq.Workplane("XY").box(length, width, height)
-
     grid = (cq.Workplane("XY"))
 
     if include_outline:
@@ -56,9 +55,43 @@ def irregular_grid(
     if not max_columns:
         max_columns = columns
 
-
     if not max_rows:
         max_rows = rows
+
+    position = [__find_next_start_position(bool_grid)]
+
+    if fill_cells and len(fill_cells) > 0:
+        for fill in fill_cells:
+            position.append((fill[0], fill[1]))
+            item_length = fill[2]*col_size
+            item_width = fill[3]*row_size
+
+            if height == max_height or max_height == None:
+                item_height = height
+            else:
+                item_height = random.randrange(height, max_height)
+
+            grid = __add_item(
+                bool_grid,
+                grid,
+                length,
+                width,
+                item_length,
+                item_width,
+                item_height,
+                col_size,
+                row_size,
+                position,
+                align_z,
+                union_grid,
+                make_item
+            )
+            next_position = __find_next_start_position(bool_grid)
+            if next_position:
+                position.append(next_position)
+            else:
+                #log(f'Done! {len(position)}')
+                break
 
     while passes_count == None or len(position) <= passes_count:
         item_length = random.randrange(col_size,(max_columns+1)*col_size, col_size)
