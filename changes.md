@@ -2,6 +2,7 @@
 
 ## main wip
 * Irregular grid added support to hardcode cell items.
+* Updated the license
 
 ## 0.1.1
 * Built out wave documentation
