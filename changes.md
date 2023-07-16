@@ -1,8 +1,11 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+## 0.1.2
 * Irregular grid added support to hardcode cell items.
 * Updated the license
+* upped CadQuery version
 
 ## 0.1.1
 * Built out wave documentation
