@@ -1,6 +1,8 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+## 0.1.3
 * Refactored regular polygon code.
 
 ## 0.1.2
