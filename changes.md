@@ -1,6 +1,7 @@
 # cadqueryhelper Changelog
 
 ## main wip
+* Refactored regular polygon code.
 
 ## 0.1.2
 * Irregular grid added support to hardcode cell items.
