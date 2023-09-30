@@ -2,6 +2,11 @@
 
 ## main wip
 
+## 0.1.4
+* Add base class
+* Added Hinge Class
+* Added hinge example "python ./example/hinge.py"
+
 ## 0.1.3
 * Refactored regular polygon code.
 
