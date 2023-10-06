@@ -2,8 +2,16 @@
 
 ## main wip
 
+## 0.1.5
+* Union ibeam shape
+* Added corner_join shape
+  * example
+  * documentation
+* Added hinge documentation
+* Added hinge documentation link to README.md
+
 ## 0.1.4
-* Add base class
+* Add Base class
 * Added Hinge Class
 * Added hinge example "python ./example/hinge.py"
 

@@ -44,6 +44,6 @@ def i_beam(length=30, width=10, height=10, web_thickness=1, flange_thickness=1, 
 
     work = quarter.extrude(length).translate((0,0,-1*(length/2)))
     work2 = work.rotate((1,0,0),(0,0,0),180)
-    mirror_x = work.add(work2)
+    mirror_x = work.union(work2)
     work3 = mirror_x.rotate((0,1,0),(0,0,0), 180)
-    return mirror_x.add(work3).rotate((0,1,0),(0,0,0), 90)
+    return mirror_x.union(work3).rotate((0,1,0),(0,0,0), 90)

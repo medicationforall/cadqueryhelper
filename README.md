@@ -7,6 +7,7 @@ CadQuery Helper library, has boilerplate code for shape primitives, and looping 
 * [Grid](./documentation/grid.md)
 * [Irregular Grid](./documentation/irregularGrid.md)
 * [Wave](./documentation/wave.md)
+* [Hinge](./documentation/hinge.md)
 
 ## Changes
 * [Changelog](./changes.md)

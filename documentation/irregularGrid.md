@@ -1,7 +1,5 @@
 # Irregular Grid Documentation
 
-
-
 ## Irregular Grid
 ### Parameters
 * **length** = 75 - Length of the grid.
@@ -24,6 +22,9 @@
 ![](image/irregularGrid/05.png)<br />
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import irregular_grid
+
 grid = irregular_grid(
     length = 75,
     width = 50,

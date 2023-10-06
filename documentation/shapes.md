@@ -223,6 +223,31 @@ result = shape.cross(
 ![](image/shape/15.png)<br />
 
 ---
+## Corner Join
+### parameters
+* length
+* width
+* height
+* side_width = 1 
+* corner_chamfer = 0
+
+``` python
+chape = shape.corner_join(
+    length = 10,
+    width = 6,
+    height = 5,
+    side_width = 1,
+    corner_chamfer = 1
+)
+```
+
+![](image/shape/28.png)<br />
+
+* [source](../src/cadqueryhelper/shape/cornerJoin.py)
+* [example](../example/shape/cornerJoin.py)
+* [stl](../out/cornerJoin.stl)
+
+---
 ## Cube
 ### Parameters
 * length
