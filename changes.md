@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 0.1.6
+* Added pinwheel shape
+
 ## 0.1.5
 * Union ibeam shape
 * Added corner_join shape

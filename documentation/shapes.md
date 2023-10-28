@@ -356,6 +356,31 @@ result = shape.lightning(
 * [example](../example/shape/lightning.py)
 * [stl](../out/lightning.stl)
 
+---
+
+## Pinwheel
+### Parameters
+* count
+* height
+* ring_params - list of ring param dictionaries
+  * radius
+  * start_angle
+
+``` python
+ring_params = []
+ring_params.append({"radius": 150, "start_angle":0})
+ring_params.append({"radius":100,"start_angle":30})
+ring_params.append({"radius":30,"start_angle":80})
+result = shape.pinwheel(count = 10, height = 3, ring_params = ring_params)
+```
+
+![](image/shape/29.png)<br />
+![](image/shape/30.png)<br />
+
+* [source](../src/cadqueryhelper/shape/pinwheel.py)
+* [example](../example/shape/pinwheel.py)
+* [stl](../out/pinwheel.stl)
+
 
 ---
 ## Rail

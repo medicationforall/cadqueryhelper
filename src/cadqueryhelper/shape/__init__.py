@@ -18,3 +18,4 @@ from .diamond import diamond
 from .chevron import chevron
 from .lightning import lightning
 from .cornerJoin import corner_join
+from .pinwheel import make_circular_points, interweave_lists, pinwheel
