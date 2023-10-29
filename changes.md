@@ -1,6 +1,7 @@
 # cadqueryhelper Changelog
 
 ## main wip
+* remove irregular grid log reference.
 
 ## 0.1.6
 * Added pinwheel shape

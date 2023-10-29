@@ -17,7 +17,6 @@ import math
 import random
 
 def custom_item(length, width, height):
-    log('custom item')
     return (
         cq.Workplane("XY")
         .box(length-1, width-1, height)
