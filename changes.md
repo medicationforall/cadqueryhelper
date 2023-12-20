@@ -1,6 +1,9 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+### 0.2.0
+* Make Base class compatible with the "with" keyword.
 * remove irregular grid log reference.
 
 ## 0.1.6
