@@ -179,6 +179,34 @@ result = shape.cone(radius=1, radius_top=0, height=2)
 * [stl](../out/cone.stl)
 ---
 
+## Coffin
+### Parameters
+* length - Length between the two mid points
+* width - Distance between the top and base
+* height - Extruded height of the face, can be falsy
+* top_length - Length of the top
+* base_length - Length of the base
+* mid_offset - Middle points distance from the width center. Can be positive or negative.
+
+``` python
+result = shape.coffin(
+    length = 30, 
+    width = 36,
+    height =10,
+    top_length = 20,
+    base_length = 20, 
+    mid_offset = 5
+)
+```
+
+![](image/shape/31.png)<br />
+
+* [source](../src/cadqueryhelper/shape/coffin.py)
+* [example](../example/shape/coffin.py)
+* [stl](../out/coffin.stl)
+
+---
+
 ## Cross
 ### Parameters
 * length

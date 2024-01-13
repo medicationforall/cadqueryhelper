@@ -1,3 +1,4 @@
+from .coffin import coffin
 from .cone import cone
 from .cube import cube
 from .cylinder import cylinder

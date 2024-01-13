@@ -2,7 +2,13 @@
 
 ## main wip
 
-### 0.2.0
+## 0.2.1
+* Added shape.coffin
+  * Example
+  * Documentation
+  * out/stl
+
+## 0.2.0
 * Make Base class compatible with the "with" keyword.
 * remove irregular grid log reference.
 
