@@ -199,7 +199,7 @@ result = shape.coffin(
 )
 ```
 
-![](image/shape/31.png)<br />
+![](image/shape/32.png)<br />
 
 * [source](../src/cadqueryhelper/shape/coffin.py)
 * [example](../example/shape/coffin.py)

@@ -1,6 +1,7 @@
 # cadqueryhelper Changelog
 
 ## main wip
+* Update documentation shape coffin image
 
 ## 0.2.1
 * Added shape.coffin
