@@ -8,6 +8,7 @@
 * Update documentation shape coffin image
 * Removed *old* denoted examples
 * renamed out directory to stl to be more in line with other project structures
+* Added Trapezoid shape
 
 ## 0.2.1
 * Added shape.coffin

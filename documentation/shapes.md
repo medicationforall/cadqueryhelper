@@ -502,3 +502,46 @@ result = shape.star(
 * [source](../src/cadqueryhelper/shape/star.py)
 * [example](../example/shape/star.py)
 * [stl](../out/star.stl)
+
+---
+
+## Trapezoid
+### Parameters
+* length:float|None = 75
+* width:float = 25
+* height:float = 25
+* top_width:float = 10
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import trapezoid
+
+result = trapezoid(
+    length = 75,
+    width = 25,
+    height = 25,
+    top_width = 10
+)
+```
+
+![](image/shape/34.png)<br />
+
+* [source](../src/cadqueryhelper/shape/trapezoid.py)
+* [example](../example/shape/trapezoid.py)
+* [stl](../stl/shape_trapezoid.stl)
+
+Note - if given a length of zero or None will instead return the trapezoid wires.
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import trapezoid
+
+result = trapezoid(
+    length = None,
+    width = 25,
+    height = 25,
+    top_width = 10
+)
+```
+
+![](image/shape/35.png)<br />
