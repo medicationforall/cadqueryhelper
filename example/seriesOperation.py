@@ -29,4 +29,5 @@ frame = frame_shape(length=12, width = 5, height = 16)
 # appliy the operation in order to make alternating internal rail patern
 frame_series = series(shape=frame, size=5, length_offset=3, operation=rail_operation)
 
-cq.exporters.export(frame_series,'out/seriesOperation.stl')
+#show_object(frame_series)
+cq.exporters.export(frame_series,'stl/seriesOperation.stl')

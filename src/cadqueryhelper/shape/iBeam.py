@@ -14,7 +14,13 @@
 
 import cadquery as cq
 
-def __make_quarter(width, height, web_thickness, flange_thickness, join_distance):
+def __make_quarter(
+        width:float, 
+        height:float, 
+        web_thickness:float, 
+        flange_thickness:float, 
+        join_distance:float
+    ) -> cq.Workplane:
     sPnts = [
     ((height-flange_thickness)-1+.00001, (web_thickness/2)),
     ((height-flange_thickness)+.00001, (web_thickness/2)+join_distance)
@@ -32,7 +38,14 @@ def __make_quarter(width, height, web_thickness, flange_thickness, join_distance
     return quarter
 
 
-def i_beam(length=30, width=10, height=10, web_thickness=1, flange_thickness=1, join_distance=2):
+def i_beam(
+        length:float = 30, 
+        width:float = 10, 
+        height:float = 10, 
+        web_thickness:float = 1, 
+        flange_thickness:float = 1, 
+        join_distance:float = 2
+    ) -> cq.Workplane:
     '''
     https://en.wikipedia.org/wiki/I-beam
     https://en.wikipedia.org/wiki/File:I-BeamCrossSection.svg

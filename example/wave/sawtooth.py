@@ -9,4 +9,6 @@ result = wave.sawtooth(
     segment_length=15,
     inner_width=5
 )
-cq.exporters.export(result,'out/wave_sawtooth.stl')
+
+#show_object(result)
+cq.exporters.export(result,'stl/wave_sawtooth.stl')

@@ -1,13 +1,13 @@
 import cadquery as cq
 
 def coffin(
-    length = 30, # length between the two mid points
-    width = 36, # distance between the top and base
-    height = 10, # extruded height of the face, can be falsy
-    top_length = 20, # length of the top
-    base_length = 20, # length of the base
-    mid_offset = 5 # middle points distance from the width center. Can be positive or negative.
-):
+    length:float = 30, # length between the two mid points
+    width:float = 36, # distance between the top and base
+    height:float = 10, # extruded height of the face, can be falsy
+    top_length:float = 20, # length of the top
+    base_length:float = 20, # length of the base
+    mid_offset:float = 5 # middle points distance from the width center. Can be positive or negative.
+) -> cq.Workplane:
     top_offset = (length - top_length) / 2
     mid_offset = (width/2) + mid_offset
     base_offset = (length - base_length) / 2

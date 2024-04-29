@@ -1,6 +1,12 @@
 import cadquery as cq
 
-def lightning(length=25, width = 50, height = 5, x_dist = 3, y_dist=6):
+def lightning(
+        length:float = 25, 
+        width:float = 50, 
+        height:float = 5, 
+        x_dist:float = 3, 
+        y_dist:float = 6
+    ) -> cq.Workplane:
     x_actual = x_dist + y_dist
     pts = [
         (0,0),# origin point

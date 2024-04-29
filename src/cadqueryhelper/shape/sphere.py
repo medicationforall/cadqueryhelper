@@ -13,10 +13,10 @@
 # limitations under the License.
 import cadquery as cq
 
-def sphere(radius = 5):
-    diameter = radius * 2
+#@deprecated
+def sphere(
+        radius:float = 5
+    ) -> cq.Workplane:
+    print('Deprecated use cq.Workplane().sphere(radius) instead')
     work = cq.Workplane().sphere(radius)
-
-    meta = {'type':'sphere','height':diameter, 'length':diameter, 'width':diameter}
-    work.metadata = meta
     return work

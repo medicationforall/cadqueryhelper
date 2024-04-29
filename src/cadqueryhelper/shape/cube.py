@@ -14,9 +14,12 @@
 
 import cadquery as cq
 
-def cube(length = 5, width = 5, height = 5 ):
-    work = cq.Workplane().box(length, width, height)
-
-    meta = {'type':'cube', 'length':length, 'width':width, 'height':height}
-    work.metadata = meta
+#@deprecated
+def cube(
+        length:float = 5, 
+        width:float = 5, 
+        height:float = 5 
+    ) -> cq.Workplane:
+    print('Deprecated use cq.Workplane("XY").box(length, width, height) instead')
+    work = cq.Workplane("XY").box(length, width, height)
     return work

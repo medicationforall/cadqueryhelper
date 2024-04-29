@@ -11,4 +11,4 @@ result = shape.coffin(
 )
 
 #show_object(result)
-cq.exporters.export(result,'out/coffin.stl')
+cq.exporters.export(result,'stl/shape_coffin.stl')

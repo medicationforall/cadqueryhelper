@@ -15,8 +15,13 @@
 import cadquery as cq
 import math
 import random
+from typing import Callable
 
-def custom_item(length, width, height):
+def custom_item(
+        length:float, 
+        width:float, 
+        height:float
+    ) -> cq.Workplane:
     return (
         cq.Workplane("XY")
         .box(length-1, width-1, height)
@@ -24,27 +29,27 @@ def custom_item(length, width, height):
     )
 
 def irregular_grid(
-        length = 75,
-        width = 50,
-        height = 2,
-        col_size = 5,
-        row_size = 5,
-        max_columns = None,
-        max_rows = None,
-        max_height = 2,
-        align_z = False,
-        include_outline = False,
-        union_grid = True,
-        passes_count = None,
-        seed = "test",
-        make_item = None,
-        fill_cells = None
-    ):
+        length:float = 75,
+        width:float = 50,
+        height:float = 2,
+        col_size:float = 5,
+        row_size:float = 5,
+        max_columns:int|None = None,
+        max_rows:int|None = None,
+        max_height:float = 2,
+        align_z:bool = False,
+        include_outline:bool = False,
+        union_grid:bool = True,
+        passes_count:int|None = None,
+        seed:str = "test",
+        make_item:Callable[[float, float, float], cq.Workplane]|None = None,
+        fill_cells:list|None = None
+    ) -> cq.Workplane:
     #log('** make irregular_grid **')
     random.seed(seed)
     columns = math.floor(length/col_size)
     rows = math.floor(width / row_size)
-    bool_grid = boolean_matrix(columns, rows)
+    bool_grid = __boolean_matrix(columns, rows)
     outline = cq.Workplane("XY").box(length, width, height)
     grid = (cq.Workplane("XY"))
 
@@ -57,7 +62,7 @@ def irregular_grid(
     if not max_rows:
         max_rows = rows
 
-    position = [__find_next_start_position(bool_grid)]
+    position:list = [__find_next_start_position(bool_grid)]
 
     if fill_cells and len(fill_cells) > 0:
         for fill in fill_cells:
@@ -68,7 +73,7 @@ def irregular_grid(
             if height == max_height or max_height == None:
                 item_height = height
             else:
-                item_height = random.randrange(height, max_height)
+                item_height = random.uniform(height, max_height)
 
             grid = __add_item(
                 bool_grid,
@@ -93,13 +98,13 @@ def irregular_grid(
                 break
 
     while passes_count == None or len(position) <= passes_count:
-        item_length = random.randrange(col_size,(max_columns+1)*col_size, col_size)
-        item_width = random.randrange(row_size,(max_rows+1)*row_size, row_size)
+        item_length = random.randrange(int(col_size),int((max_columns+1)*col_size), int(col_size))
+        item_width = random.randrange(int(row_size),int((max_rows+1)*row_size), int(row_size))
 
         if height == max_height or max_height == None:
             item_height = height
         else:
-            item_height = random.randrange(height, max_height)
+            item_height = random.uniform(height, max_height)
 
         if __will_item_fit(
                 bool_grid,
@@ -135,12 +140,12 @@ def irregular_grid(
     return grid
 
 def __will_item_fit(
-        bool_grid,
-        position,
-        length,
-        width,
-        columns,
-        rows
+        bool_grid:list[list[bool]],
+        position:tuple[int,int],
+        length:float,
+        width:float,
+        columns:int,
+        rows:int
         ):
 
     if position[0]+length >columns:
@@ -153,8 +158,8 @@ def __will_item_fit(
         #log(f'item is too wide {position[1]+width} > {rows}')
         return False
 
-    for row in range(position[1],position[1]+width):
-        for col in range(position[0],position[0]+length):
+    for row in range(position[1],int(position[1]+width)):
+        for col in range(position[0],int(position[0]+length)):
             cell = bool_grid[row][col]
             if not cell:
                 #log(f'it doesn\'t fit {col},{row} - {position}')
@@ -163,20 +168,20 @@ def __will_item_fit(
     return True
 
 def __add_item(
-        bool_grid,
-        grid,
-        length,
-        width,
-        item_length,
-        item_width,
-        item_height,
-        col_size,
-        row_size,
-        position,
-        align_z = False,
-        union_grid = True,
-        make_item = None
-    ):
+        bool_grid:list[list[bool]],
+        grid:cq.Workplane,
+        length:float,
+        width:float,
+        item_length:float,
+        item_width:float,
+        item_height:float,
+        col_size:float,
+        row_size:float,
+        position:list[tuple[int,int]],
+        align_z:bool = False,
+        union_grid:bool = True,
+        make_item:Callable[[float, float, float], cq.Workplane]|None = None
+    ) -> cq.Workplane:
 
     if make_item:
         item = make_item(item_length, item_width, item_height)
@@ -217,14 +222,21 @@ def __add_item(
     return grid
     #print(bool_grid)
 
-def __mark_item_to_bool(bool_grid, position, x, y):
+def __mark_item_to_bool(
+        bool_grid:list[list[bool]], #pass by reference
+        position:tuple[int,int], 
+        x:int, 
+        y:int
+    ) -> None:
     #log(f'__mark_item_to_bool {position}, {x}, {y}')
 
     for row in range(position[1],position[1]+y):
         for col in range(position[0],position[0]+x):
             bool_grid[row][col]=False
 
-def __find_next_start_position(bool_grid):
+def __find_next_start_position(
+        bool_grid:list[list[bool]]
+    ) -> tuple[int,int]|None:
     #log('__find_next_start_position')
     for ri,row in enumerate(bool_grid):
         for ci, col in enumerate(row):
@@ -233,11 +245,18 @@ def __find_next_start_position(bool_grid):
                 return (ci, ri)
     return None
 
-def __make_item(length, width, height=2):
+def __make_item(
+        length:float, 
+        width:float, 
+        height:float = 2
+    ) -> cq.Workplane:
     item = cq.Workplane("XY").box(length, width, height)
     return item
 
-def boolean_matrix(columns=10, rows=10):
+def __boolean_matrix(
+        columns:int = 10, 
+        rows:int = 10
+    ) -> list[list[bool]]:
     matrix = []
     for r in range(rows):
         row = []

@@ -2,7 +2,7 @@ import cadquery as cq
 from cadqueryhelper import shape
 
 result = shape.pipe()
-cq.exporters.export(result,'out/pipe.stl')
 
-if result.metadata:
-    print(result.metadata)
+#show_object(result)
+cq.exporters.export(result,'stl/shape_pipe.stl')
+

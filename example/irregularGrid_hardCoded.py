@@ -13,4 +13,4 @@ ig = irregular_grid(
 )
 
 #show_object(ig)
-cq.exporters.export(ig, 'out/grid_irregular_hardcoded.stl')
+cq.exporters.export(ig, 'stl/grid_irregular_hardcoded.stl')

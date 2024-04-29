@@ -10,4 +10,5 @@ result = wave.square(
     inner_width=5
 )
 
-cq.exporters.export(result,'out/wave_square.stl')
+#show_object(result)
+cq.exporters.export(result,'stl/wave_square.stl')

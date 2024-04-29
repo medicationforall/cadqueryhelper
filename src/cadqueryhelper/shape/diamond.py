@@ -13,7 +13,11 @@
 # limitations under the License.
 import cadquery as cq
 
-def diamond(length = 6, width = 4, height = 2, ):
+def diamond(
+        length:float = 6, 
+        width:float = 4, 
+        height:float = 2
+    ) -> cq.Workplane:
     points = [
         (length/2,0),
         (length, width/2 ),

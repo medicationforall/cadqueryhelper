@@ -1,8 +1,10 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-result = shape.sphere(radius=5)
-cq.exporters.export(result,'out/sphere.stl')
+result = shape.sphere(
+    radius=5
+)
 
-if part.metadata:
-    print(result.metadata)
+#show_object(result)
+cq.exporters.export(result,'stl/shape_sphere.stl')
+

@@ -13,8 +13,18 @@
 # limitations under the License.
 
 import cadquery as cq
+from typing import Callable
 
-def series(shape, size = 5, length_offset=None, width_offset=None, height_offset=None, skip_last=0, skip_first=0, operation=None):
+def series(
+        shape:cq.Workplane, 
+        size:int = 5, 
+        length_offset:float|None = None, 
+        width_offset:float|None = None, 
+        height_offset:float|None = None, 
+        skip_last:int = 0, 
+        skip_first:int = 0, 
+        operation: Callable[[cq.Workplane, int, int, dict], cq.Workplane]|None=None
+    ) -> cq.Workplane:
     series = cq.Assembly()
     length, width, height = __resolve_hit_box(shape)
 
@@ -63,26 +73,16 @@ def series(shape, size = 5, length_offset=None, width_offset=None, height_offset
     #print(f'I think the bounding box is', bounding_box)
     # zero out the offset caused by the first node
     work = work.translate((length/2,width/2,height/2))
-
-    # center based on bounding box
-    work = work.translate((-1*(bounding_box['length']/2), -1*(bounding_box['width']/2), -1*(bounding_box['height']/2)))
-    meta = {'type':'series', 'length':bounding_box['length'], 'width':bounding_box['width'], 'height':bounding_box['height']}
-    work.metadata = meta
     return work
 
-def __resolve_hit_box(shape):
-    attributes = dir(shape)
-    if 'metadata' in attributes:
-        meta = shape.metadata
-        length = meta['length']
-        width = meta['width']
-        height = meta['height']
+def __resolve_hit_box(
+        shape:cq.Workplane
+    ) -> tuple[float,float,float]:
+    bounds = shape.val().BoundingBox() #type: ignore
+    if bounds:
+        length = bounds.xlen
+        width = bounds.ylen
+        height = bounds.zlen
     else:
-        bounds = shape.val().BoundingBox()
-        if bounds:
-            length = bounds.xlen
-            width = bounds.ylen
-            height = bounds.zlen
-        else:
-            raise Exception('Could not resolve shape metadata for series. OR bounding box')
+        raise Exception('Could not resolve for bounding box')
     return length, width, height

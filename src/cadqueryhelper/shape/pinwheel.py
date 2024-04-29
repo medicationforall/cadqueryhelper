@@ -1,28 +1,32 @@
 import cadquery as cq
 
-def make_circular_points(radius = 150, startAngle=0, count = 15):
+def make_circular_points(
+        radius:float = 150, 
+        startAngle:float = 0, 
+        count:int = 15
+    ):
     coords = []
-    def add_point(loc):
+    def add_point(loc:cq.Location):
         test = cq.Workplane("XY").box(10,10,10)
         coord_loc = loc.toTuple()[0]
         coords.append((coord_loc[0],coord_loc[1]))
-        return test.val().located(loc)
+        return test.val().located(loc) # type: ignore
         
     point_arc =(
         cq.Workplane("XY")
         .polarArray(
-            radius  = radius, 
+            radius = radius, 
             startAngle = startAngle, 
             angle = 360, 
             count = count,
             fill = True,
             rotate = False
         )
-        .eachpoint(callback = add_point)
+        .eachpoint(callback = add_point) # type: ignore
     )
     return point_arc, coords
 
-def interweave_lists(lists):
+def interweave_lists(lists:list) -> list:
     main_list = []
     for list in lists:
         main_list = main_list + list
@@ -37,7 +41,13 @@ def interweave_lists(lists):
     return main_list
             
 
-def pinwheel(count = 10, height = 3, ring_params = [{"radius": 150, "start_angle":0}, {"radius":100,"start_angle":40}]):
+def pinwheel(
+        count:int = 10, 
+        height:float = 3, 
+        ring_params:list[dict] = [
+            {"radius": 150, "start_angle":0}, 
+            {"radius":100, "start_angle":40}]
+    ) -> cq.Workplane:
     point_lists = []
     
     for ring_param in ring_params:

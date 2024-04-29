@@ -13,10 +13,17 @@
 # limitations under the License.
 import cadquery as cq
 
-def cross(length=10, width=10, height=2, cross_length=1, cross_width=1, x_translate=0, y_translate=0):
+def cross(
+        length:float = 10, 
+        width:float = 10, 
+        height:float = 2, 
+        cross_length:float = 1, 
+        cross_width:float = 1, 
+        x_translate:float = 0, 
+        y_translate:float = 0
+    ) -> cq.Workplane:
     work = cq.Workplane().rect(length, width)
     block = work.extrude(height)
-    vertices = work.vertices()
     corners = (
         work
         .vertices().rect(length-cross_length,width-cross_width)
@@ -27,8 +34,5 @@ def cross(length=10, width=10, height=2, cross_length=1, cross_width=1, x_transl
 
     # center
     result = result.translate((0,0,-1*(height/2)))
-
-    meta = {'type':'arrow','height':height, 'length':length, 'width':width}
-    result.metadata = meta
 
     return result

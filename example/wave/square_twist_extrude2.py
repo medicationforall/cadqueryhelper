@@ -47,5 +47,4 @@ composite = (
 )
 
 #show_object(composite)
-
-cq.exporters.export(composite,'out/wave_square_twist_extrude2.stl')
+cq.exporters.export(composite,'stl/wave_square_twist_extrude2.stl')

@@ -9,4 +9,6 @@ result = shape.i_beam(
     flange_thickness=2,
     join_distance=1.3
 )
-cq.exporters.export(result,'out/ibeam.stl')
+
+#show_object(result)
+cq.exporters.export(result,'stl/shape_ibeam.stl')

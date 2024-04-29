@@ -1,7 +1,13 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+## 1.0.0
+* Added type annotations
+* Removed setting meta attributes on Workplane objects (breaking change if you utilized this)
 * Update documentation shape coffin image
+* Removed *old* denoted examples
+* renamed out directory to stl to be more in line with other project structures
 
 ## 0.2.1
 * Added shape.coffin

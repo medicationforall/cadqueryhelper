@@ -13,7 +13,13 @@
 # limitations under the License.
 import cadquery as cq
 
-def corner_join(length, width, height, side_width = 1, corner_chamfer=0):
+def corner_join(
+        length:float = 10, 
+        width:float = 6, 
+        height:float = 5, 
+        side_width:float = 1, 
+        corner_chamfer:float = 0
+    ) -> cq.Workplane:
     side_a = cq.Workplane("XY").box(length, side_width, height)
     if corner_chamfer:
         side_a = side_a.faces("-X").edges("Y").chamfer(corner_chamfer)

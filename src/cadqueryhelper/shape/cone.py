@@ -14,7 +14,11 @@
 
 import cadquery as cq
 
-def cone(radius=1, radius_top=0, height=2 ):
+def cone(
+        radius:float = 1, 
+        radius_top:float = 0, 
+        height:float = 2
+    ) -> cq.Workplane:
     #https://cadquery.readthedocs.io/en/latest/classreference.html#cadquery.Solid.makeCone
     cone = cq.Solid.makeCone(radius, radius_top, height)
     diameter = radius
@@ -25,9 +29,5 @@ def cone(radius=1, radius_top=0, height=2 ):
     # center shape
     work = cq.Workplane().add(cone)
     work = work.translate((0,0,-1*(height/2)))
-
-    #set the bounding box metadata
-    meta = {'type':'cone','height':height, 'length':diameter, 'width':diameter}
-    work.metadata = meta
 
     return work

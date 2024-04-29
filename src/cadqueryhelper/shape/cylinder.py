@@ -13,11 +13,11 @@
 # limitations under the License.
 import cadquery as cq
 
-
-def cylinder(radius = 2.5, height = 5 ):
-    #cylinder = cq.Workplane().circle(diameter).extrude(height)
+#@deprecated
+def cylinder(
+        radius:float = 2.5, 
+        height:float = 5 
+    ) -> cq.Workplane:
+    print('Deprecated use cq.Workplane().cylinder(height, radius) instead')
     work = cq.Workplane().cylinder(height, radius)
-
-    meta = {'type':'cylinder', 'radius':radius, 'height':height, 'length':radius*2, 'width':radius*2}
-    work.metadata = meta
     return work

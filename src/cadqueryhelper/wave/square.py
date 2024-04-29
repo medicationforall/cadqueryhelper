@@ -2,13 +2,12 @@ import cadquery as cq
 import math
 
 def square(
-        length = 60,
-        width = 10,
-        height=3,
-        segment_length=5,
-        inner_width = 7
-
-    ):
+        length:float = 60,
+        width:float = 10,
+        height:float = 3,
+        segment_length:float = 5,
+        inner_width:float = 7
+    ) -> cq.Workplane:
     segment_count = math.ceil(length / segment_length)
 
     pts = [(0,0),(width,0)]

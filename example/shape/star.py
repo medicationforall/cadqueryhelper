@@ -7,7 +7,8 @@ result = shape.star(
     points=5,
     height=3
 )
-cq.exporters.export(result,'out/star.stl')
 
-if result.metadata:
-    print(result.metadata)
+#show_object(result)
+cq.exporters.export(result,'stl/shape_star.stl')
+
+

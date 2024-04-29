@@ -13,7 +13,13 @@
 # limitations under the License.
 import cadquery as cq
 
-def chevron(length=10, width=7, height=2, inner_width=3, alt=False):
+def chevron(
+        length:float = 10, 
+        width:float = 7, 
+        height:float = 2, 
+        inner_width:float = 3, 
+        alt:bool = False
+    ) -> cq.Workplane:
     if alt==False:
         points = [
             (0,inner_width),

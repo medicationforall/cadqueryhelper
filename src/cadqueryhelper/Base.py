@@ -15,7 +15,7 @@
 
 class Base:
     def __init__(self):
-        self.make_called = False
+        self.make_called:bool = False
         self.parent = None
 
     # make the class "with" compatible

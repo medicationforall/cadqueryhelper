@@ -9,4 +9,5 @@ join = shape.corner_join(
     corner_chamfer = 1
 )
 
-cq.exporters.export(join, 'out/cornerJoin.stl')
+#show_object(join)
+cq.exporters.export(join, 'stl/shape_cornerJoin.stl')

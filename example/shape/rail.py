@@ -1,8 +1,12 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-result = shape.rail(length=6, width=1, height=5, inner_height=1.5)
-cq.exporters.export(result,'out/rail.stl')
+result = shape.rail(
+    length=6, 
+    width=1, 
+    height=5, 
+    inner_height=1.5
+)
 
-if result.metadata:
-    print(result.metadata)
+#show_object(result)
+cq.exporters.export(result,'stl/shape_rail.stl')

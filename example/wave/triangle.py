@@ -8,4 +8,4 @@ result = wave.triangle(
     segment_length=5,
     inner_width=5
 )
-cq.exporters.export(result,'out/wave_triangle.stl')
+cq.exporters.export(result,'stl/wave_triangle.stl')

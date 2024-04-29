@@ -13,7 +13,12 @@
 # limitations under the License.
 import cadquery as cq
 
-def rail(length = 6, width = 1, height = 5, inner_height = 1.5):
+def rail(
+        length:float = 6, 
+        width:float = 1, 
+        height:float = 5, 
+        inner_height:float = 1.5
+    ) -> cq.Workplane:
     points = [
         (0,0),
         (0, inner_height),
@@ -33,9 +38,5 @@ def rail(length = 6, width = 1, height = 5, inner_height = 1.5):
     # center, rotate
     work = work.translate((0,0,-1*(width/2)))
     work = work.rotate((1, 0, 0), (0, 0, 0), -90)
-
-    # bounding box
-    meta = {'type':'rail','height':height, 'length':length, 'width':width}
-    work.metadata = meta
 
     return work

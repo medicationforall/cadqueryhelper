@@ -13,7 +13,11 @@
 # limitations under the License.
 import cadquery as cq
 
-def regular_polygon(radius=5, sides=6, height=5):
+def regular_polygon(
+        radius:float = 5, 
+        sides:int = 6, 
+        height:float = 5
+    ) -> cq.Workplane:
     polygon = (
         cq.Workplane("XY")
         .polygon(sides, radius)
@@ -25,7 +29,4 @@ def regular_polygon(radius=5, sides=6, height=5):
             .extrude(height)
             .translate((0,0,-1*(height/2)))
         )
-
-    meta = {'type':'regularPolygon','height':height, 'length':radius*2, 'width':radius*2}
-    polygon.metadata = meta
     return polygon

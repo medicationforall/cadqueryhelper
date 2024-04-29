@@ -13,7 +13,11 @@
 # limitations under the License.
 import cadquery as cq
 
-def rhombus(width = 10, offset = 4, height=5):
+def rhombus(
+        width:float = 10, 
+        offset:float = 4, 
+        height:float = 5
+    ) -> cq.Workplane:
     points = [
         (0,0),
         (0,width),
@@ -37,7 +41,4 @@ def rhombus(width = 10, offset = 4, height=5):
         bounding_width += offset
     else:
         bounding_width += -1*offset
-
-    meta = {'type':'rhombus','height':height, 'length':width, 'width':bounding_width}
-    work.metadata = meta
     return work

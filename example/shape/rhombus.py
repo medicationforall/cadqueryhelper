@@ -1,8 +1,12 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-result = shape.rhombus(width=10, offset=4, height=5)
-cq.exporters.export(result,'out/rhombus.stl')
+result = shape.rhombus(
+    width=10, 
+    offset=4, 
+    height=5
+)
 
-if result.metadata:
-    print(result.metadata)
+#show_object(result)
+cq.exporters.export(result,'stl/shape_rhombus.stl')
+

@@ -5,24 +5,27 @@ class Hinge(Base):
     def __init__(self):
         super().__init__()
         #parameters
-        self.length = 40
-        self.radius = 2
-        self.segments = 4 
-        self.pad = 1
+        self.length:float = 40
+        self.radius:float = 2
+        self.segments:int = 4 
+        self.pad:float = 1
 
-        self.base_inset = 0.6
-        self.key_length = 1.5
-        self.key_width = 0.5
+        self.base_inset:float = 0.6
+        self.key_length:float = 1.5
+        self.key_width:float = 0.5
 
-        self.tab_length = 10
-        self.rotate_deg = 0
-        self.plate_spacer = 0.4
+        self.tab_length:float = 10
+        self.rotate_deg:float = 0
+        self.plate_spacer:float = 0.4
 
         #parts
-        self.h_parts = None
-        self.join_plate = None
+        self.h_parts:cq.Workplane|None = None
+        self.join_plate:cq.Workplane|None = None
         
-    def __make_driver(self, length):
+    def __make_driver(
+            self, 
+            length:float
+        ):
         points = [
             (0,0),
             (length,0),
@@ -44,7 +47,10 @@ class Hinge(Base):
         
         return cyl
     
-    def __make_receiver(self,length):
+    def __make_receiver(
+            self,
+            length:float
+        ):
         points = [
             (0,0),
             (length,0),
@@ -65,7 +71,11 @@ class Hinge(Base):
         ).translate((-length/2,-self.radius,0))
         return cyl
     
-    def __make_tab(self, length, side):
+    def __make_tab(
+            self, 
+            length:float, 
+            side:int
+        ):
         direction = -1
         if side:
             direction = 1
@@ -81,7 +91,11 @@ class Hinge(Base):
         ).translate((0,direction*(self.tab_length/2),-self.radius/2))
         return tab.cut(cut_cylinder)
         
-    def __hinge_cylinder(self, length, side):
+    def __hinge_cylinder(
+            self, 
+            length:float, 
+            side:int
+        ):
         if side:
             cyl = self.__make_driver(length)
         else:
@@ -132,13 +146,21 @@ class Hinge(Base):
         self.__make_segments()
         self.__make_join_plate()
 
-    def build(self):
+    def build(self) -> cq.Workplane:
         super().build()
         p_x_translate = (self.tab_length/2)+(self.radius+self.plate_spacer)/2
-        hinge_build = (
-            cq.Workplane("XY")
-            .union(self.h_parts)
-            .union(self.join_plate.translate((0,p_x_translate,0)).rotate((1,0,0),(0,0,0),self.rotate_deg))
-            .union(self.join_plate.translate((0,-1*p_x_translate,0)))
-        )
+        hinge_build = cq.Workplane("XY")
+
+        if self.h_parts:
+            hinge_build = (
+                hinge_build
+                .union(self.h_parts)
+            )
+
+        if self.join_plate:
+            hinge_build = (
+                hinge_build
+                .union(self.join_plate.translate((0,p_x_translate,0)).rotate((1,0,0),(0,0,0),self.rotate_deg))
+                .union(self.join_plate.translate((0,-1*p_x_translate,0)))
+            )
         return hinge_build

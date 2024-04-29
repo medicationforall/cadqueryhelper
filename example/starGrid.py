@@ -5,4 +5,6 @@ from cadqueryhelper import grid
 star = shape.star()
 
 st_grid = grid.make_grid(part = star, dim = [20,20], odd_col_push = [0,0])
-cq.exporters.export(st_grid,'out/stargrid.stl')
+
+#show_object(st_grid)
+cq.exporters.export(st_grid,'stl/stargrid.stl')

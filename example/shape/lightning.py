@@ -9,4 +9,5 @@ result = shape.lightning(
     y_dist = 6
 )
 
-cq.exporters.export(result,'out/lightning.stl')
+#show_object(result)
+cq.exporters.export(result,'stl/shape_lightning.stl')

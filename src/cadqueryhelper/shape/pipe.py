@@ -17,8 +17,5 @@ import cadquery as cq
 def pipe():
     #https://github.com/CadQuery/cadquery/issues/1132
     pipe_path = cq.Workplane("XZ").spline([(0,0), (20,-20), (50,-20), (50,-30)])
-    pipe = cq.Workplane("XY").circle(5).sweep(pipe_path, multisection=0, isFrenet=False, clean=False)
-
-    meta = {'type':'pipe'}
-    pipe.metadata = meta
+    pipe = cq.Workplane("XY").circle(5).sweep(pipe_path, multisection = False, isFrenet=False, clean=False)
     return pipe

@@ -70,7 +70,7 @@ i_grid_4_sky_scapers = irregular_grid(
     make_item = custom_item
 )
 
-cq.exporters.export(i_grid, 'out/grid_irregular.stl')
-cq.exporters.export(i_grid_2, 'out/grid_irregular_2.stl')
-cq.exporters.export(i_grid_3_city, 'out/grid_irregular_3_city.stl')
-cq.exporters.export(i_grid_4_sky_scapers, 'out/grid_irregular_4_sky_scrapers.stl')
+cq.exporters.export(i_grid, 'stl/grid_irregular.stl')
+cq.exporters.export(i_grid_2, 'stl/grid_irregular_2.stl')
+cq.exporters.export(i_grid_3_city, 'stl/grid_irregular_3_city.stl')
+cq.exporters.export(i_grid_4_sky_scapers, 'stl/grid_irregular_4_sky_scrapers.stl')

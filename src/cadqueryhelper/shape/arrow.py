@@ -15,12 +15,12 @@
 import cadquery as cq
 
 def arrow(
-    length=10,
-    inner_length=5,
-    width=5,
-    width_outset=2,
-    height=3
-):
+    length:float = 10,
+    inner_length:float = 5,
+    width:float = 5,
+    width_outset:float = 2,
+    height:float = 3
+) -> cq.Workplane:
     points = [
         (0,0),
         (0,width),
@@ -54,6 +54,4 @@ def arrow(
         -1*(height/2)
     ))
 
-    meta = {'type':'arrow','height':height, 'length':length, 'width':box_width}
-    work.metadata = meta
     return work

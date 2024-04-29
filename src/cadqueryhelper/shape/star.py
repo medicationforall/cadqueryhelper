@@ -14,7 +14,12 @@
 import cqmore as cqm
 from cqmore.polygon import star as cqmStar
 
-def star(outer_radius = 10, inner_radius = 5, points = 5, height = 3):
+def star(
+        outer_radius:float = 10, 
+        inner_radius:float = 5, 
+        points:int = 5, 
+        height:float = 3
+    ) -> cqm.Workplane:
     diameter = outer_radius * 2
     work = (
         cqm.Workplane()
@@ -25,6 +30,4 @@ def star(outer_radius = 10, inner_radius = 5, points = 5, height = 3):
         work = work.extrude(height)
 
     work = work.translate((0,0,-(height/2)))
-    meta = {'type':'star','height':height, 'length':outer_radius*2, 'width':outer_radius*2}
-    work.metadata = meta
     return work

@@ -14,7 +14,13 @@
 
 import cadquery as cq
 
-def arch_pointed(length=30, width=5, height=50, inner_height=25):
+def arch_pointed(
+        length:float = 30, 
+        width:float = 5, 
+        height:float = 50, 
+        inner_height:float = 25
+    ) -> cq.Workplane:
+
     m_length = length/2 #mirror length
     sPnts = [
         (inner_height+.00001, m_length+0),
@@ -37,12 +43,13 @@ def arch_pointed(length=30, width=5, height=50, inner_height=25):
     result = result.rotate((0, 1, 0), (0, 0, 0), 90)
     result = result.rotate((0, 0, 1), (0, 0, 0), 90)
 
-    meta = {'type':'arch', 'height':height, 'length':length, 'width':width}
-    result.metadata = meta
-
     return result
 
-def arch_round(length=30, width=5, height=50):
+def arch_round(
+        length:float = 30, 
+        width:float = 5, 
+        height:float = 50
+    ) -> cq.Workplane:
     #create the initial shape
     arch = (cq.Workplane("XY")
               .box(length, width, height)

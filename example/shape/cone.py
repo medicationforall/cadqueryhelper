@@ -1,8 +1,12 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-result = shape.cone(radius=1, radius_top=0, height=2)
-cq.exporters.export(result,'out/cone.stl')
+result = shape.cone(
+    radius=1, 
+    radius_top=0, 
+    height=2
+)
 
-if part.metadata:
-    print(result.metadata)
+#show_object(result)
+cq.exporters.export(result,'stl/shape_cone.stl')
+
