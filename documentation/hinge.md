@@ -51,4 +51,4 @@ cq.exporters.export(hinge_test, 'out/hinge.stl')
 
 * [source Code](../src/cadqueryhelper/Hinge.py)
 * [example](../example/hinge.py)
-* [stl](../out/hinge.stl)
+* [stl](../stl/hinge.stl)

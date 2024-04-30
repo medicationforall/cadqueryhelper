@@ -13,7 +13,7 @@ simple loop that repeats the given shape n-number of times based on the *size* p
 
 * [source](../src/cadqueryhelper/series.py)
 * [example](../example/series.py)
-* [stl](../out/series.stl)
+* [stl](../stl/series.stl)
 
 ### Examples
 
@@ -86,6 +86,6 @@ cq.exporters.export(frame_series,'out/seriesOperation.stl')
 ```
 
 * [example](../example/seriesOperation.py)
-* [stl](../out/seriesOperation.stl)
+* [stl](../stl/seriesOperation.stl)
 
 ![](image/series/04.png)<br />

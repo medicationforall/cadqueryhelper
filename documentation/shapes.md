@@ -7,7 +7,7 @@ import cadquery as cq #main cadquery library
 from cadqueryhelper import shape # The shape library this document is about
 
 part = shape.arrow() # Generate a solid using it's default values
-cq.exporters.export(part,'out/arrow.stl') # write the file to an stil file
+cq.exporters.export(part,'stl/arrow.stl') # write the file to an stil file
 
 if part.metadata:
     print(part.metadata) # print the parts bounding box
@@ -59,7 +59,7 @@ result = shape.arch_pointed(
 
 * [source](../src/cadqueryhelper/shape/arch.py)
 * [example](../example/shape/arch_pointed.py)
-* [stl](../out/arch_pointed.stl)
+* [stl](../stl/shape_arch_pointed.stl)
 
 ---
 
@@ -78,7 +78,7 @@ result = shape.arch_round(length=30, width=5, height=50)
 
 * [source](../src/cadqueryhelper/shape/arch.py)
 * [example](../example/shape/arch_round.py)
-* [stl](../out/arch_round.stl)
+* [stl](../stl/shape_arch_round.stl)
 
 ---
 
@@ -104,7 +104,7 @@ result = shape.arrow(
 
 * [source](../src/cadqueryhelper/shape/arrow.py)
 * [example](../example/shape/arrow.py)
-* [stl](../out/arrow.stl)
+* [stl](../stl/shape_arrow.stl)
 
 
 ### Examples
@@ -141,7 +141,7 @@ result = shape.chevron(
 
 * [source](../src/cadqueryhelper/shape/chevron.py)
 * [example](../example/shape/chevron.py)
-* [stl](../out/chevron.stl)
+* [stl](../stl/shape_chevron.stl)
 
 
 ### Example
@@ -159,7 +159,7 @@ alt = shape.chevron(
 
 ![](image/shape/21.png)<br />
 
-* [stl](../out/chevron_alt.stl)
+* [stl](../stl/shape_chevron_alt.stl)
 
 ---
 ## Cone
@@ -176,7 +176,7 @@ result = shape.cone(radius=1, radius_top=0, height=2)
 
 * [source](../src/cadqueryhelper/shape/cone.py)
 * [example](../example/shape/cone.py)
-* [stl](../out/cone.stl)
+* [stl](../stl/shape_cone.stl)
 ---
 
 ## Coffin
@@ -203,7 +203,7 @@ result = shape.coffin(
 
 * [source](../src/cadqueryhelper/shape/coffin.py)
 * [example](../example/shape/coffin.py)
-* [stl](../out/coffin.stl)
+* [stl](../stl/shape_coffin.stl)
 
 ---
 
@@ -233,7 +233,7 @@ result = shape.cross(
 
 * [source](../src/cadqueryhelper/shape/cross.py)
 * [example](../example/shape/cross.py)
-* [stl](../out/cross.stl)
+* [stl](../stl/shape_cross.stl)
 
 ### Examples
 
@@ -273,7 +273,7 @@ chape = shape.corner_join(
 
 * [source](../src/cadqueryhelper/shape/cornerJoin.py)
 * [example](../example/shape/cornerJoin.py)
-* [stl](../out/cornerJoin.stl)
+* [stl](../stl/shape_cornerJoin.stl)
 
 ---
 ## Cube
@@ -290,7 +290,7 @@ result = shape.cube(length=5, width=5, height=5)
 
 * [source](../src/cadqueryhelper/shape/cube.py)
 * [example](../example/shape/cube.py)
-* [stl](../out/cube.stl)
+* [stl](../stl/shape_cube.stl)
 
 ---
 ## Cylinder
@@ -306,7 +306,7 @@ result = shape.cylinder(radius=2.5, height=5)
 
 * [source](../src/cadqueryhelper/shape/cylinder.py)
 * [example](../example/shape/cylinder.py)
-* [stl](../out/cylinder.stl)
+* [stl](../stl/shape_cylinder.stl)
 
 ---
 ## Diamond
@@ -323,7 +323,7 @@ result = shape.diamond(length=10, width=5, height=3)
 
 * [source](../src/cadqueryhelper/shape/diamond.py)
 * [example](../example/shape/diamond.py)
-* [stl](../out/diamond.stl)
+* [stl](../stl/shape_diamond.stl)
 ---
 
 ## I-Beam
@@ -352,7 +352,7 @@ result = shape.i_beam(
 
 * [source](../src/cadqueryhelper/shape/iBeam.py)
 * [example](../example/shape/iBeam.py)
-* [stl](../out/ibeam.stl)
+* [stl](../stl/shape_ibeam.stl)
 
 ### Wiki
 * [Wikpedia](https://en.wikipedia.org/wiki/I-beam)
@@ -382,7 +382,7 @@ result = shape.lightning(
 
 * [source](../src/cadqueryhelper/shape/lightning.py)
 * [example](../example/shape/lightning.py)
-* [stl](../out/lightning.stl)
+* [stl](../stl/shape_lightning.stl)
 
 ---
 
@@ -407,7 +407,7 @@ result = shape.pinwheel(count = 10, height = 3, ring_params = ring_params)
 
 * [source](../src/cadqueryhelper/shape/pinwheel.py)
 * [example](../example/shape/pinwheel.py)
-* [stl](../out/pinwheel.stl)
+* [stl](../stl/shape_pinwheel.stl)
 
 
 ---
@@ -427,7 +427,7 @@ result = shape.rail(length=6, width=1, height=5, inner_height=1.5)
 
 * [source](../src/cadqueryhelper/shape/rail.py)
 * [example](../example/shape/rail.py)
-* [stl](../out/rail.stl)
+* [stl](../stl/shape_rail.stl)
 
 ---
 ## Regular Polygon
@@ -445,7 +445,7 @@ result = shape.regular_polygon(radius=10, sides=6, height=5)
 
 * [source](../src/cadqueryhelper/shape/regularPolygon.py)
 * [example](../example/shape/hexagon.py)
-* [stl](../out/hexagon.stl)
+* [stl](../stl/shape_hexagon.stl)
 
 
 ---
@@ -463,7 +463,7 @@ result = shape.rhombus(width=10, offset=4, height=5)
 
 * [source](../src/cadqueryhelper/shape/rhombus.py)
 * [example](../example/shape/rhombus.py)
-* [stl](../out/rhombus.stl)
+* [stl](../stl/shape_rhombus.stl)
 
 ---
 ## Sphere
@@ -478,7 +478,7 @@ result = shape.sphere(radius=5)
 
 * [source](../src/cadqueryhelper/shape/sphere.py)
 * [example](../example/shape/sphere.py)
-* [stl](../out/sphere.stl)
+* [stl](../stl/shape_sphere.stl)
 
 ---
 ## Star
@@ -501,7 +501,7 @@ result = shape.star(
 
 * [source](../src/cadqueryhelper/shape/star.py)
 * [example](../example/shape/star.py)
-* [stl](../out/star.stl)
+* [stl](../stl/shape_star.stl)
 
 ---
 

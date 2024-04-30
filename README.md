@@ -13,8 +13,10 @@ CadQuery Helper library, has boilerplate code for shape primitives, and looping 
 * [Changelog](./changes.md)
 
 ## Dependencies
-* [CadQuery 2.1](https://github.com/CadQuery/cadquery)
+* [CadQuery 2.3>](https://github.com/CadQuery/cadquery)
 * [cqMore](https://github.com/JustinSDK/cqMore)
+  
+---
 
 ### Installation
 To install CadQuery Helper directly from GitHub, run the following `pip` command:
@@ -28,9 +30,19 @@ From the cloned cadqueryhelper directory run.
 
 	pip install ./
 
+---
 
 ## Running Example Scripts
-* From the root of the project run one of example scripts:
+* From the root of the project run of example_runner.py:
+
+``` bash
+C:\Users\<user>\cadqueryhelper>python example_runner.py
+```
+
+**OR**
+
+* From the root of the project run of the example scripts:
+
 
 ``` bash
 C:\Users\<user>\cadqueryhelper>python ./example/shape/arrow.py

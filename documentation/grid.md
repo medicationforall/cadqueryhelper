@@ -19,7 +19,7 @@ ex_grid = grid.make_grid(part=cube, dim = [10,11], rows=7)
 
 * [source](../src/cadqueryhelper/grid.py)
 * [example](../example/exampleGrid.py)
-* [stl](../out/grid.stl)
+* [stl](../stl/grid.stl)
 
 ### Examples
 
@@ -32,4 +32,4 @@ ex_grid = grid.make_grid(part = hexagon, dim = [9.5,8], odd_col_push = [4.7,0])
 ![](image/grid/03.png)<br />
 
 * [example](../example/hexagonGrid.py)
-* [stl](../out/hexgrid.stl)
+* [stl](../stl/hexgrid.stl)

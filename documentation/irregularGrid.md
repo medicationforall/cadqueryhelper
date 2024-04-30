@@ -75,5 +75,5 @@ i_grid_4_sky_scapers = irregular_grid(
 * [code](../src/cadqueryhelper/irregularGrid.py)
 * [example](../example/irregularGrid.py)
 * [hard coded example](../example/irregularGrid_hardCoded.py)
-* [stl](../out/grid_irregular.stl)
-* [stl skyscrapers](../out/grid_irregular_4_sky_scrapers.stl)
+* [stl](../stl/grid_irregular.stl)
+* [stl skyscrapers](../stl/grid_irregular_4_sky_scrapers.stl)

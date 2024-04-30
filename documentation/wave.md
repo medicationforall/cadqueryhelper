@@ -12,7 +12,7 @@ result = wave.triangle(
     segment_length=5,
     inner_width=5
 )
-cq.exporters.export(result,'out/wave_triangle.stl')
+cq.exporters.export(result,'stl/wave_triangle.stl')
 ```
 
 The code above:
@@ -53,7 +53,7 @@ result = pattern.triangle(
 
 * [source](../src/cadqueryhelper/wave/triangle.py)
 * [example](../example/wave/triangle.py)
-* [stl](../out/wave_triangle.stl)
+* [stl](../stl/wave_triangle.stl)
 
 ### Zero height
 
@@ -93,7 +93,7 @@ result = wave.sawtooth(
 
 * [source](../src/cadqueryhelper/wave/sawtooth.py)
 * [example](../example/wave/sawtooth.py)
-* [stl](../out/wave_sawtooth.stl)
+* [stl](../stl/wave_sawtooth.stl)
 
 ### Zero height
 
@@ -154,7 +154,7 @@ result = wave.square(
 
 * [source](../src/cadqueryhelper/wave/square.py)
 * [example](../example/wave/square.py)
-* [stl](../out/wave_square.stl)
+* [stl](../stl/wave_square.stl)
 
 ### Zero height & sweep
 
