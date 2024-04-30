@@ -21,3 +21,4 @@ from .lightning import lightning
 from .cornerJoin import corner_join
 from .pinwheel import make_circular_points, interweave_lists, pinwheel
 from .trapezoid import trapezoid
+from .backdrop import backdrop

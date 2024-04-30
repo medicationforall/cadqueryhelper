@@ -13,6 +13,7 @@
 * Added example_runner.py which runs all of the example scripts in one place
 * Modified the random function is used for calculating variable height with the irregular grid. The new functions supports better type safety for floats as opposed to implicit casting to integers but the generated outputs are now different from previous versions of the library.
 * Regenerated all of the examples.
+* Added backdrop shape, example, stl, and documentation
 
 ## 0.2.1
 * Added shape.coffin

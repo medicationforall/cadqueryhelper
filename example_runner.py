@@ -2,6 +2,7 @@
 import example.shape.arch_round
 import example.shape.arch
 import example.shape.arrow
+import example.shape.backdrop
 import example.shape.chevron
 import example.shape.coffin
 import example.shape.cone

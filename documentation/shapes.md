@@ -119,6 +119,38 @@ result = shape.arrow(width_outset=-1)
 
 ---
 
+---
+## backdrop
+### Parameters
+* length:float = 200 
+* width:float = 250 
+* height:float = 150
+* thickness:float = 4
+* operation:str = 'fillet' #chamfer, fillet
+* operation_dist:float = 20
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import backdrop
+
+result = backdrop(
+    length = 200, 
+    width = 250, 
+    height = 150,
+    thickness = 2,
+    operation= 'fillet',#'chamfer', 'fillet', None
+    operation_dist = 20
+)
+```
+
+![](image/shape/37.png)<br />
+
+* [source](../src/cadqueryhelper/shape/backdrop.py)
+* [example](../example/shape/backdrop.py)
+* [stl](../stl/shape_backdrop.stl)
+
+---
+
 ## Chevron
 ### Parameters
 * length
