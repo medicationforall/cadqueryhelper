@@ -14,8 +14,11 @@
 import cadquery as cq
 
 
-def pipe():
+def pipe(
+        shape:cq.Workplane = cq.Workplane("XY").circle(5), 
+        pts:list[tuple[int,int]] = [(0,0), (20,-20), (50,-20), (50,-30)]
+    )-> cq.Workplane:
     #https://github.com/CadQuery/cadquery/issues/1132
-    pipe_path = cq.Workplane("XZ").spline([(0,0), (20,-20), (50,-20), (50,-30)])
-    pipe = cq.Workplane("XY").circle(5).sweep(pipe_path, multisection = False, isFrenet=False, clean=False)
+    pipe_path = cq.Workplane("XZ").spline(pts)
+    pipe = shape.sweep(pipe_path, multisection = False, isFrenet=False, clean=False)
     return pipe

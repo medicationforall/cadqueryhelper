@@ -16,6 +16,9 @@
 * Added backdrop shape, example, stl, and documentation
 * Yoinked Jersey Barrier code from cqindustry and added it to the shapes.
 * Added license blocks
+* Formalized the pipe shape and added parameters.
+* Added vase shape and example / documentation
+
 
 ## 0.2.1
 * Added shape.coffin

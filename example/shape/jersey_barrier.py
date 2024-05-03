@@ -11,5 +11,5 @@ result = jersey_barrier(
     top_width_inset = -1
 )
 
-#show_object(j_barrier_ex)
+#show_object(result)
 cq.exporters.export(result,'stl/shape_jersey_barrier.stl')

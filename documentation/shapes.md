@@ -473,6 +473,28 @@ result = shape.pinwheel(count = 10, height = 3, ring_params = ring_params)
 * [example](../example/shape/pinwheel.py)
 * [stl](../stl/shape_pinwheel.stl)
 
+---
+
+## Pipe
+### Parameters
+* shape:cq.Workplane = cq.Workplane("XY").circle(5), 
+* pts:list[tuple[int,int]] = [(0,0), (20,-20), (50,-20), (50,-30)]
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import pipe
+
+test_shape = cq.Workplane('XY').rect(4,8)
+pst = pts = [(0,0), (20,-20), (50,-20), (50,-30)]
+result = pipe(test_shape, pts)
+
+![](image/shape/41.png)<br />
+
+* [source](../src/cadqueryhelper/shape/pipe.py)
+* [example](../example/shape/pipe.py)
+* [stl](../stl/shape_pipe.stl)
+
+```
 
 ---
 ## Rail
@@ -609,3 +631,39 @@ result = trapezoid(
 ```
 
 ![](image/shape/35.png)<br />
+
+---
+
+## Vase
+### Parameters
+* shape:cq.Workplane, 
+* workplane_axis:str = "YZ", #'XY', 'YZ', 'XZ'
+* radius:float = 1, 
+* angle:float = 0, 
+* rotation_angle:float = 0
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import vase
+from cadqueryhelper.wave import sine
+
+shape_wave = sine(
+    length=80,
+    width=20,
+    height=0,
+    segment_length=15,
+    inner_width=5
+)
+
+result = vase(
+    shape_wave, 
+    workplane_axis = "YZ",
+    radius = 10, 
+    angle=0, 
+    rotation_angle=0
+```
+![](image/shape/42.png)<br />
+
+* [source](../src/cadqueryhelper/shape/vase.py)
+* [example](../example/shape/vase.py)
+* [stl](../stl/shape_vase_ripple.stl)
