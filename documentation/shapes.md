@@ -392,6 +392,38 @@ result = shape.i_beam(
 
 ---
 
+## Jersey Barrier
+### Parameters
+* width:float = 10,
+* height:float = 10,
+* base_height:float = 2,
+* middle_width_inset:float = -2,
+* middle_height:float = 2,
+* top_width_inset:float = -1
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import jersey_barrier
+
+result = jersey_barrier(
+    length=75,
+    width = 20,
+    height = 25,
+    base_height = 4,
+    middle_width_inset = -4,
+    middle_height = 2,
+    top_width_inset = -1
+)
+```
+
+![](image/shape/38.png)<br />
+
+* [source](../src/cadqueryhelper/shape/jersey_barrier.py)
+* [example](../example/shape/jersey_barrier.py)
+* [stl](../stl/shape_jersey_barrier.stl)
+
+---
+
 ## Lightning
 ### Parameters
 * length

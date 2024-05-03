@@ -15,6 +15,7 @@ import example.shape.diamond
 import example.shape.heptagon
 import example.shape.hexagon
 import example.shape.iBeam
+import example.shape.jersey_barrier
 import example.shape.lightning
 import example.shape.nonagon
 import example.shape.octagon
