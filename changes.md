@@ -18,6 +18,7 @@
 * Added license blocks
 * Formalized the pipe shape and added parameters.
 * Added vase shape and example / documentation
+* Added HelperPlate
 
 
 ## 0.2.1

@@ -29,6 +29,7 @@ import example.shape.star_sweep
 import example.shape.star
 import example.shape.trapezoid
 import example.shape.triangle
+import example.shape.vase
 
 # waves
 import example.wave.sawtooth_sweep
