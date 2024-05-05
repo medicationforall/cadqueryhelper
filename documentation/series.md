@@ -27,7 +27,7 @@ if __name__ == "__main__":
     star = shape.star()
 
     st_series = series(shape = star, length_offset=None, width_offset=-11, height_offset=None, size=4)
-    cq.exporters.export(st_series,'out/series.stl')
+    cq.exporters.export(st_series,'stl/series.stl')
 
     if st_series.metadata:
         print(st_series.metadata)
@@ -82,7 +82,7 @@ frame = frame_shape(length=12, width = 5, height = 16)
 # appliy the operation in order to make alternating internal rail patern
 frame_series = series(shape=frame, size=5, length_offset=3, operation=rail_operation)
 
-cq.exporters.export(frame_series,'out/seriesOperation.stl')
+cq.exporters.export(frame_series,'stl/seriesOperation.stl')
 ```
 
 * [example](../example/seriesOperation.py)

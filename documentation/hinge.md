@@ -43,7 +43,7 @@ bp.make()
 hinge_test = bp.build()
 
 #show_object(hinge_test)
-cq.exporters.export(hinge_test, 'out/hinge.stl')
+cq.exporters.export(hinge_test, 'stl/hinge.stl')
 ```
 
 ![](image/hinge/05.png)<br /><br />
