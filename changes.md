@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 1.1.0
+* Added randomized_rotation_grid
+
 ## 1.0.0
 * This release has "breaking" changes.
 * Added type annotations.

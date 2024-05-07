@@ -19,7 +19,7 @@ def make_circular_points(
         count:int = 15
     ):
     coords = []
-    def add_point(loc:cq.Location):
+    def add_point(loc:cq.Location)->cq.Shape:
         test = cq.Workplane("XY").box(10,10,10)
         coord_loc = loc.toTuple()[0]
         coords.append((coord_loc[0],coord_loc[1]))
@@ -35,7 +35,7 @@ def make_circular_points(
             fill = True,
             rotate = False
         )
-        .eachpoint(callback = add_point) # type: ignore
+        .eachpoint(callback = add_point)
     )
     return point_arc, coords
 
