@@ -3,13 +3,13 @@ import random
 from typing import Callable
 
 def randomized_rotation_grid(
-        shape:cq.Workplane|None=None, 
-        seed:str="test",
-        rotate_increment:int=90, 
-        rotate_min:int =0, 
-        rotate_max:int = 270,
-        x_count:int=5,
-        y_count:int=5,
+        shape:cq.Workplane|None = None, 
+        seed:str = "test",
+        rotate_increment:int = 90, 
+        rotate_min:int = 0, 
+        rotate_max:int = 360,
+        x_count:int = 5,
+        y_count:int = 5,
         x_spacing:float = 10,
         y_spacing:float = 10
     ) -> cq.Workplane:
