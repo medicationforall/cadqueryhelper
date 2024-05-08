@@ -4,6 +4,7 @@
 
 ## 1.1.0
 * Added randomized_rotation_grid
+* add scheme_grid
 
 ## 1.0.0
 * This release has "breaking" changes.
