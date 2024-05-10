@@ -23,9 +23,10 @@ def series(
         height_offset:float|None = None, 
         skip_last:int = 0, 
         skip_first:int = 0, 
-        operation: Callable[[cq.Workplane, int, int, dict], cq.Workplane]|None=None
+        operation: Callable[[cq.Workplane, int, int, dict], cq.Workplane]|None=None,
+        union:bool=False
     ) -> cq.Workplane:
-    series = cq.Assembly()
+    series = cq.Workplane('XY')
     length, width, height = __resolve_hit_box(shape)
 
     bounding_box = {
@@ -35,7 +36,6 @@ def series(
     }
 
     for i in range(size):
-        #print(f'loop iteration {length} {width} {height}')
         x_coord = 0
         y_coord = 0
         z_coord = 0
@@ -60,20 +60,41 @@ def series(
                 series_shape = shape
                 if operation:
                     series_shape = operation(shape, size, i, bounding_box)
-                series.add(series_shape,  loc=cq.Location(cq.Vector(x_coord, y_coord, z_coord)))
+                    
+                # Would rather use union operation by default for performance 
+                # instead using add operation
+                # based on assumed interaction with the stack
+                # e.g. skirmishbunker
+                if(union):
+                    series = series.union(series_shape.translate((
+                        x_coord, 
+                        y_coord, 
+                        z_coord
+                    )))
+                else:
+                    series = series.add(series_shape.translate((
+                        x_coord, 
+                        y_coord, 
+                        z_coord
+                    )))
             else:
                 print('skipping first series tile')
         else:
             print('skipping last series tile')
 
-    comp = series.toCompound()
-    work = cq.Workplane("XZ").center(0, 0).workplane()
-    work.add(comp)
+    x_translate = 0
+    y_translate = 0
+    z_translate = 0
+    
+    if length_offset != None:
+        x_translate = ((size-1)*(length + length_offset))/2
+    
+    if width_offset != None:
+        y_translate = ((size-1)*(width + width_offset))/2
 
-    #print(f'I think the bounding box is', bounding_box)
-    # zero out the offset caused by the first node
-    work = work.translate((length/2,width/2,height/2))
-    return work
+    if height_offset != None:
+        z_translate = ((size-1)*(height + height_offset))/2
+    return series.translate((-x_translate,-y_translate, -(z_translate)))
 
 def __resolve_hit_box(
         shape:cq.Workplane

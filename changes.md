@@ -2,6 +2,10 @@
 
 ## main wip
 
+## 1.1.1
+* Refactored series to center ouput again
+  * No longer relies on assembly 
+
 ## 1.1.0
 * Added randomized_rotation_grid
 * add scheme_grid

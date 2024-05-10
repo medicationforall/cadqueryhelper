@@ -2,12 +2,18 @@
 
 ## Series
 ### Parameters
-* shape
-* size
-* length_offset
-* width_offset
-* height_offset
-* operation
+* shape:cq.Workplane, 
+* size:int = 5, 
+* length_offset:float|None = None, 
+* width_offset:float|None = None, 
+* height_offset:float|None = None, 
+* skip_last:int = 0, 
+* skip_first:int = 0, 
+* operation: Callable[[cq.Workplane, int, int, dict], cq.Workplane]|None=None,
+* union:bool=False
+
+### Returns
+* cq.Workplane
 
 simple loop that repeats the given shape n-number of times based on the *size* parameter.
 
