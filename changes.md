@@ -3,7 +3,7 @@
 ## main wip
 
 ## 1.1.2
-* Added rotated_grid
+* Added rotate_grid
 
 ## 1.1.1
 * Refactored series to center ouput again
