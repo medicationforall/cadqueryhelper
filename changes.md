@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 1.1.2
+* Added rotated_grid
+
 ## 1.1.1
 * Refactored series to center ouput again
   * No longer relies on assembly 
