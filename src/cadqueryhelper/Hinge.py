@@ -28,12 +28,22 @@ class Hinge(Base):
         self.key_width:float = 0.5
 
         self.tab_length:float = 10
+        self.tab_height:float|None = None
+        self.tab_z_translate:float = 0
+
         self.rotate_deg:float = 0
         self.plate_spacer:float = 0.4
 
         #parts
         self.h_parts:cq.Workplane|None = None
         self.join_plate:cq.Workplane|None = None
+
+    def _calculate_tab_height(self) -> float:
+        if self.tab_height:
+            tab_height = self.tab_height
+        else:
+            tab_height = self.radius
+        return tab_height
         
     def __make_driver(
             self, 
@@ -97,11 +107,12 @@ class Hinge(Base):
             cq.Workplane("XY")
             .cylinder(length, self.radius-.1).rotate((0,1,0),(0,0,0),90)
         )
-            
+
+        tab_height = self._calculate_tab_height()  
         tab = (
             cq.Workplane("XY")
-            .box(length,self.tab_length,self.radius)
-        ).translate((0,direction*(self.tab_length/2),-self.radius/2))
+            .box(length,self.tab_length,tab_height)
+        ).translate((0,direction*(self.tab_length/2),-(tab_height/2)+ self.tab_z_translate))
         return tab.cut(cut_cylinder)
         
     def __hinge_cylinder(
@@ -143,14 +154,16 @@ class Hinge(Base):
         self.h_parts = h_parts
         
     def __make_join_plate(self):
+        tab_height = self._calculate_tab_height()
+
         join_plate = (
             cq.Workplane("XY")
             .box(
                 self.length,
                 self.tab_length-self.radius-self.plate_spacer, 
-                self.radius
+                tab_height
             )
-            .translate((0,0,-self.radius/2))
+            .translate((0,0,-(tab_height/2) + self.tab_z_translate))
         )
         self.join_plate = join_plate
         

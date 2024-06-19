@@ -1,4 +1,5 @@
 #shapes
+print('building shapes')
 import example.shape.arch_round
 import example.shape.arch
 import example.shape.arrow
@@ -32,6 +33,7 @@ import example.shape.triangle
 import example.shape.vase
 
 # waves
+print('building waves')
 import example.wave.sawtooth_sweep
 import example.wave.sawtooth
 import example.wave.sine
@@ -40,9 +42,13 @@ import example.wave.square_twist_extrude2
 import example.wave.square
 import example.wave.triangle
 
+print('building hinges')
+import example.hinge
+import example.hinge_larger_tab
+
+print('building grids')
 import example.exampleGrid
 import example.hexagonGrid
-import example.hinge
 import example.irregularGrid_hardCoded
 import example.irregularGrid
 import example.series

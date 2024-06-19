@@ -2,6 +2,13 @@
 
 ## main wip
 
+## 1.2.0
+* Added additional parameters to Hinge
+    * tab_height
+    * tab_z_translate
+* Added hinge example hinge_larger_tab.py
+* Updated hinge documentation
+
 ## 1.1.2
 * Added rotate_grid
 
