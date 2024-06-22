@@ -13,6 +13,7 @@
 # limitations under the License.
 import cadquery as cq
 from . import Base
+from typing import Literal
 
 class Hinge(Base):
     def __init__(self):
@@ -33,6 +34,8 @@ class Hinge(Base):
 
         self.rotate_deg:float = 0
         self.plate_spacer:float = 0.4
+        
+        self.render:Literal['both', 'receiver', 'driver'] = "both"
 
         #parts
         self.h_parts:cq.Workplane|None = None
@@ -120,27 +123,47 @@ class Hinge(Base):
             length:float, 
             side:int
         ):
+        
         if side:
             cyl = self.__make_driver(length)
         else:
             cyl = self.__make_receiver(length)
-        
+
         tab = self.__make_tab(length, side)
         combined = cyl.union(tab)
         
         if side:
             combined = combined.rotate((1,0,0),(0,0,0),self.rotate_deg)
         return combined
-
+    
+    def __should_render(self, part_type="driver"):
+        if self.render == 'both' or part_type == self.render:
+            return True
+        else:
+            return False
 
     def __make_segments(self):
         segment_length = self.length/self.segments
         h_parts = cq.Workplane("XY")
+        
+        driver = self.__hinge_cylinder(
+            length = segment_length-self.pad/2,
+            side = 1
+        )
+        
+        receiver = cyl = self.__hinge_cylinder(
+            length = segment_length-self.pad/2,
+            side = 0
+        )
+        
         for i in range(0,self.segments):
-            cyl = self.__hinge_cylinder(
-                length = segment_length-self.pad/2,
-                side = i%2==0
-            )
+            
+            if i % 2 == 0:
+                part_type ="receiver"
+                cyl = receiver
+            else:
+                part_type ="driver"
+                cyl = driver
         
             if i == self.segments -1:
                 #log(f"end {segment_length-pad/2}")
@@ -148,7 +171,10 @@ class Hinge(Base):
             elif i == 0:
                 #log(f"begin {segment_length-pad/2}")
                 cyl = cyl.translate((-self.pad/4,0,0))
-            h_parts = h_parts.add(cyl.translate(((segment_length)*i,0,0)))
+                
+            
+            if self.__should_render(part_type):
+                h_parts = h_parts.add(cyl.translate(((segment_length)*i,0,0)))
             
         h_parts = h_parts.translate((segment_length/2-self.length/2,0,0))
         self.h_parts = h_parts
@@ -184,9 +210,16 @@ class Hinge(Base):
             )
 
         if self.join_plate:
-            hinge_build = (
-                hinge_build
-                .union(self.join_plate.translate((0,p_x_translate,0)).rotate((1,0,0),(0,0,0),self.rotate_deg))
-                .union(self.join_plate.translate((0,-1*p_x_translate,0)))
-            )
+            
+            if self.__should_render('driver'):
+                hinge_build = (
+                    hinge_build
+                    .union(self.join_plate.translate((0,p_x_translate,0)).rotate((1,0,0),(0,0,0),self.rotate_deg))
+                )
+            
+            if self.__should_render('receiver'):
+                hinge_build = (
+                    hinge_build
+                    .union(self.join_plate.translate((0,-1*p_x_translate,0)))
+                )
         return hinge_build

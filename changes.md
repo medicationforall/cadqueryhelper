@@ -2,6 +2,14 @@
 
 ## main wip
 
+## 1.2.1
+* Added additional parameters to Hinge
+  * render - accepts 'driver', 'receiver', or 'both'
+  * The value of render determines which parts of the hinge will be rendered.
+  * Addded hinge example hinder_render.py
+  * Updated hinge documentation
+
+
 ## 1.2.0
 * Added additional parameters to Hinge
     * tab_height

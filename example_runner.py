@@ -45,6 +45,7 @@ import example.wave.triangle
 print('building hinges')
 import example.hinge
 import example.hinge_larger_tab
+import example.hinge_render
 
 print('building grids')
 import example.exampleGrid
