@@ -36,6 +36,7 @@ class Hinge(Base):
         self.plate_spacer:float = 0.4
         
         self.render:Literal['both', 'receiver', 'driver'] = "both"
+        self.invert: bool = False
 
         #parts
         self.h_parts:cq.Workplane|None = None
@@ -102,9 +103,15 @@ class Hinge(Base):
             length:float, 
             side:int
         ):
-        direction = -1
-        if side:
+        
+        if self.invert ==  True:
+            direction = -1
+            if side:
+                direction = 1
+        else:
             direction = 1
+            if side:
+                direction = -1
             
         cut_cylinder = (
             cq.Workplane("XY")
@@ -132,7 +139,7 @@ class Hinge(Base):
         tab = self.__make_tab(length, side)
         combined = cyl.union(tab)
         
-        if side:
+        if (not self.invert and not side) or (self.invert and side):
             combined = combined.rotate((1,0,0),(0,0,0),self.rotate_deg)
         return combined
     
@@ -148,12 +155,12 @@ class Hinge(Base):
         
         driver = self.__hinge_cylinder(
             length = segment_length-self.pad/2,
-            side = 1
+            side =  1 if self.invert else 0
         )
         
         receiver = cyl = self.__hinge_cylinder(
             length = segment_length-self.pad/2,
-            side = 0
+            side = 0 if self.invert else 1
         )
         
         for i in range(0,self.segments):

@@ -18,6 +18,7 @@ Print in place hinge.
 * **rotate_deg**: float = 0
 * **plate_spacer**: float = 0.4
 * **render**: Literal['both', 'receiver', 'driver'] - determines which parts of the hinge will be rendered.
+* **invert**: bool - Inverts the driver and receiver. Defaults to *False*.
 
 ### Methods
 * **make** - lifecycle, must be called before build.
@@ -142,3 +143,8 @@ show_object(scene)
 
 * [example](../example/hinge_render.py)
 * [stl](../stl/hinge_render.stl)
+
+#### Flip Example
+``` python
+
+```

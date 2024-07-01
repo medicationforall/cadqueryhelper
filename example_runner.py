@@ -46,6 +46,7 @@ print('building hinges')
 import example.hinge
 import example.hinge_larger_tab
 import example.hinge_render
+import example.hinge_invert
 
 print('building grids')
 import example.exampleGrid

@@ -15,6 +15,7 @@ bp.key_width = 0.5
 bp.tab_length = 10
 bp.rotate_deg = 0
 bp.plate_spacer = 0.4
+bp.invert = False
 
 bp.make()
 hinge_test = bp.build()
