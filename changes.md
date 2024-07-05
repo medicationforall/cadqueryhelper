@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 1.2.3
+* Upped cadquery version to 2.4.x
+
 ## 1.2.2
 * Fixed a bug where I had changed the behavior of the hinge when I refactor.
   * the receiver and the driver were switched which had the knock effect of modifying existing projects in unexpected ways.
