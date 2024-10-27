@@ -41,6 +41,8 @@ import example.wave.square_twist_extrude
 import example.wave.square_twist_extrude2
 import example.wave.square
 import example.wave.triangle
+import example.wave.uneven
+import example.wave.uneven_grid
 
 print('building hinges')
 import example.hinge

@@ -32,12 +32,12 @@ The code above:
 
 ## Triangle
 
-### Parameters
-* length
-* width
-* height
-* segment_length
-* inner_width
+### parameters
+* length : float
+* width : float
+* height : float
+* segment_length : float
+* inner_width : float
 
 ``` python
 result = pattern.triangle(
@@ -72,12 +72,12 @@ Returns the line segment for further operations.
 ---
 ## Sawtooth
 
-### Parameters
-* length
-* width
-* height
-* segment_length
-* inner_width
+### parameters
+* length : float
+* width : float
+* height : float
+* segment_length : float
+* inner_width : float
 
 ``` python
 result = wave.sawtooth(
@@ -113,11 +113,12 @@ Returns the line segment for further operations.
 
 ## Sine
 
-* length
-* width
-* height
-* segment_length
-* inner_width
+### parameters
+* length : float
+* width : float
+* height : float
+* segment_length : float
+* inner_width : float
 
 ``` python
 result = wave.sine(
@@ -134,11 +135,13 @@ result = wave.sine(
 ---
 
 ## Square
-* length
-* width
-* height
-* segment_length
-* inner_width
+
+### parameters
+* length : float
+* width : float
+* height : float
+* segment_length : float
+* inner_width : float
 
 ``` python
 result = wave.square(
@@ -170,3 +173,87 @@ result = result = wave.square(
 ```
 
 ![](image/wave/07.png)<br />
+
+---
+
+## Uneven
+
+Creates an uneven collection or points
+
+### parameters
+* length : float 
+* width : float = 2.5 - Maximum width of points.
+* min_width : float = 0.0001 - Minimum width of points.
+* step : float = .5 - Step distance between min_width and width.
+* count : tuple[int,int]|int = (2,8) - can be a tuple for min/max points; or an int for a fixed number of points.
+* axis : str = "XY" - cadquery workplane axis.
+* seed : str|None = None - Sets the random seed, None leaves random.seed unchanged.
+* offset : float = 0 - Offset of the workplane.
+
+### returns
+* cq.Wire - will need to be extruded to generate a shape.
+
+``` python
+import cadquery as cq
+from cadqueryhelper.wave import uneven
+
+result = uneven(
+    length = 10, 
+    width = 2.5,
+    min_width = 0.0001,
+    step = .5,
+    count = (2,8), 
+    axis = "XY",
+    seed = "test",
+    offset = 0
+)
+
+show_object(result.extrude(1))
+```
+![](image/wave/10.png)<br />
+
+* [source](../src/cadqueryhelper/wave/uneven.py)
+* [example](../example/wave/uneven.py)
+* [stl](../stl/wave_uneven.stl)
+
+### Uneven Grid Example
+Highlights randomized different variations.
+
+``` python
+import cadquery as cq
+from cadqueryhelper.wave import uneven
+import random
+
+random.seed('test_3')
+def add_uneven(loc:cq.Location)->cq.Shape:
+    ex = uneven(
+        length = 10, 
+        width = 2.5,
+        min_width = 0.2,
+        step = .5,
+        count= (2,8), 
+        axis = "XY",
+        seed= None,
+        offset= 0
+    )
+    return ex.val().located(loc) #type:ignore
+
+uneven_grid_example = (
+    cq.Workplane("XY")
+    .rarray(
+        xSpacing = 11, 
+        ySpacing = 5,
+        xCount = 5, 
+        yCount= 5, 
+        center = True)
+    .eachpoint(callback = add_uneven)
+).extrude(1)
+
+show_object(uneven_grid_example)
+```
+
+![](image/wave/11.png)<br />
+
+* [example](../example/wave/uneven_grid.py)
+* [stl](../stl/wave_uneven_gid.stl)
+
