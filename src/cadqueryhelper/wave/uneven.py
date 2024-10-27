@@ -17,7 +17,7 @@ def uneven(
         random.seed(seed)
 
     pts:List[tuple[float,float]] = [(0, 0)]
-    widths = arange(min_width, width, step)
+    widths = arange(min_width, width+step, step)
     
     if type(count)==tuple:
         #log('count is tuple')

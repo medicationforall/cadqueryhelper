@@ -3,6 +3,9 @@
 ## main wip
 
 ## 1.2.4
+* Fix a bug with uneven wave
+
+## 1.2.4
 * Added uneven wave
   * Included two examples
 * Updated wave documentation
