@@ -2,7 +2,7 @@
 
 ## main wip
 
-## 1.2.4
+## 1.2.5
 * Fix a bug with uneven wave
 
 ## 1.2.4
