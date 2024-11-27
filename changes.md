@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 1.3.0
+* Set hard coded dependencies for nlopt, numpy and cadquery
+
 ## 1.2.5
 * Fix a bug with uneven wave
 
