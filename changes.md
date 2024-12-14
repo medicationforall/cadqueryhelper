@@ -2,6 +2,13 @@
 
 ## main wip
 
+## 1.4.0
+* Added mising wave.sine source, example, stl links.
+* Added wave uneven_spline and example.
+* Added wave uneven_spline_grid example.
+* Updated wave documentation.
+* Fix uneven_grid stl name typo.
+
 ## 1.3.0
 * Set hard coded dependencies for nlopt, numpy and cadquery
 

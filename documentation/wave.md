@@ -132,6 +132,10 @@ result = wave.sine(
 
 ![](image/wave/09.png)
 
+* [source](../src/cadqueryhelper/wave/sine.py)
+* [example](../example/wave/sine.py)
+* [stl](../stl/wave_sine.stl)
+
 ---
 
 ## Square
@@ -255,5 +259,82 @@ show_object(uneven_grid_example)
 ![](image/wave/11.png)<br />
 
 * [example](../example/wave/uneven_grid.py)
-* [stl](../stl/wave_uneven_gid.stl)
+* [stl](../stl/wave_uneven_grid.stl)
 
+---
+
+## Uneven Spline
+
+### parameters
+* length: float
+* width: float
+* min_width: float - Setting this low can throw errors
+* step: float
+* count: tuple[int,int]|int 
+* axis: str
+* seed: str|None
+* offset: float
+
+``` python
+import cadquery as cq
+from cadqueryhelper.wave import uneven_spline
+
+result = uneven_spline(
+    length = 10, 
+    width = 2.5,
+    min_width = 0.5,
+    step = .5,
+    count = (2,8), 
+    axis = "XY",
+    seed = "test",
+    offset = 0
+)
+
+show_object(result)
+```
+
+![](image/wave/12.png)<br />
+
+* [source](../src/cadqueryhelper/wave/uneven_spline.py)
+* [example](../example/wave/uneven_spline.py)
+* [stl](../stl/wave_uneven_spline.stl)
+
+### Uneven Spline Grid Example
+
+``` python
+import cadquery as cq
+from cadqueryhelper.wave import uneven_spline
+import random
+
+random.seed('test_3')
+def add_uneven(loc:cq.Location)->cq.Shape:
+    ex = uneven_spline(
+        length = 10, 
+        width = 2.5,
+        min_width = 1,
+        step = 0.5,
+        count= (4,8), 
+        axis = "XY",
+        seed= None,
+        offset= 0
+    )
+    return ex.val().located(loc) #type:ignore
+
+uneven_grid_example = (
+    cq.Workplane("XY")
+    .rarray(
+        xSpacing = 11, 
+        ySpacing = 5,
+        xCount = 5, 
+        yCount= 5, 
+        center = True)
+    .eachpoint(callback = add_uneven)
+).extrude(1)
+
+show_object(uneven_grid_example)
+```
+
+![](image/wave/13.png)<br />
+
+* [example](../example/wave/uneven_spline_grid.py)
+* [stl](../stl/wave_uneven_spline_grid.stl)

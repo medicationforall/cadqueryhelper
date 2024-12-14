@@ -43,6 +43,8 @@ import example.wave.square
 import example.wave.triangle
 import example.wave.uneven
 import example.wave.uneven_grid
+import example.wave.uneven_spline
+import example.wave.uneven_spline_grid
 
 print('building hinges')
 import example.hinge
