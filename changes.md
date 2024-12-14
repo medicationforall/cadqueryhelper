@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 1.4.1
+* Added license blocks
+
 ## 1.4.0
 * Added mising wave.sine source, example, stl links.
 * Added wave uneven_spline and example.
