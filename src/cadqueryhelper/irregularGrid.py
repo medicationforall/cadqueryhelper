@@ -41,12 +41,15 @@ def irregular_grid(
         include_outline:bool = False,
         union_grid:bool = True,
         passes_count:int|None = None,
-        seed:str = "test",
+        seed:str|None = "test",
         make_item:Callable[[float, float, float], cq.Workplane]|None = None,
         fill_cells:list|None = None
     ) -> cq.Workplane:
     #log('** make irregular_grid **')
-    random.seed(seed)
+
+    if seed:
+        random.seed(seed)
+        
     columns = math.floor(length/col_size)
     rows = math.floor(width / row_size)
     bool_grid = __boolean_matrix(columns, rows)

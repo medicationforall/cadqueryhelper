@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 1.4.2
+* Make seed property nullable for Irregular Grid and Randomized Rotation Grid
+
 ## 1.4.1
 * Added license blocks
 

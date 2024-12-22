@@ -18,7 +18,7 @@ from typing import Callable
 
 def randomized_rotation_grid(
         shape:cq.Workplane|None = None, 
-        seed:str = "test",
+        seed:str|None = "test",
         rotate_increment:int = 90, 
         rotate_min:int = 0, 
         rotate_max:int = 360,
@@ -27,7 +27,10 @@ def randomized_rotation_grid(
         x_spacing:float = 10,
         y_spacing:float = 10
     ) -> cq.Workplane:
-    random.seed(seed)
+
+    if seed:
+        random.seed(seed)
+
     if not shape:
         raise Exception("Missing shape")
     
