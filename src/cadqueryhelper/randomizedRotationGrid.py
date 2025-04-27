@@ -47,6 +47,6 @@ def randomized_rotation_grid(
             xCount = x_count, 
             yCount= y_count, 
             center = True)
-        .eachpoint(callback = add_rotate)
+        .eachpoint(add_rotate)
     )
     return result

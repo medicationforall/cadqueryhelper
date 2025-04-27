@@ -2,6 +2,16 @@
 
 ## main wip
 
+## 1.5.0
+* Updated dependecies in pyproject.toml
+  * Updated min python version to 3.10 
+  * Updated cadquery version 2.5.2
+  * Removed nlopt specific version.
+  * Removed numpy specific version.
+* Cleaned up page links in project.urls in pyproject.toml
+* Cleaned up instances where I was setting the callback parameter for workplane.eachpoint invocations.
+  * https://github.com/CadQuery/cadquery/issues/1395  
+
 ## 1.4.2
 * Make seed property nullable for Irregular Grid and Randomized Rotation Grid
 

@@ -45,6 +45,6 @@ def rotate_grid(
             xCount = 4, 
             yCount= 4, 
             center = True)
-        .eachpoint(callback = add_rotate)
+        .eachpoint(add_rotate)
     )
     return result

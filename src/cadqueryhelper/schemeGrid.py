@@ -46,7 +46,7 @@ def scheme_grid(
             xCount = x_count, 
             yCount= y_count, 
             center = True)
-        .eachpoint(callback = add_rotate)
+        .eachpoint(add_rotate)
     )
     
     composite_union = cq.Workplane("XY").union(composite_tile)
@@ -62,6 +62,6 @@ def scheme_grid(
             xCount = x_repeat, 
             yCount= y_repeat, 
             center = True)
-        .eachpoint(callback = add_composite)
+        .eachpoint(add_composite)
     )
     return result

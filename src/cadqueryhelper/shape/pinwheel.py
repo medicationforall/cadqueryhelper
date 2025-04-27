@@ -36,7 +36,7 @@ def make_circular_points(
             fill = True,
             rotate = False
         )
-        .eachpoint(callback = add_point)
+        .eachpoint(add_point)
     )
     return point_arc, coords
 

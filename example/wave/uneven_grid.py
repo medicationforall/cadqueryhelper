@@ -24,7 +24,7 @@ uneven_grid_example = (
         xCount = 5, 
         yCount= 5, 
         center = True)
-    .eachpoint(callback = add_uneven)
+    .eachpoint(add_uneven)
 ).extrude(1)
 
 #show_object(uneven_grid_example)
