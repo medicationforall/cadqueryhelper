@@ -60,3 +60,6 @@ import example.irregularGrid
 import example.series
 import example.seriesOperation
 import example.starGrid
+
+print("helper plate")
+import example.helper_plate
