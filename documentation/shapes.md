@@ -1,5 +1,7 @@
 # Shape Documentation
 
+
+
 ## Example Usage
 
 ``` python
@@ -9,8 +11,6 @@ from cadqueryhelper import shape # The shape library this document is about
 part = shape.arrow() # Generate a solid using it's default values
 cq.exporters.export(part,'stl/arrow.stl') # write the file to an stil file
 
-if part.metadata:
-    print(part.metadata) # print the parts bounding box
 ```
 
 The code above:
@@ -21,9 +21,6 @@ The code above:
 
 #### Generated Output
 ![](image/shape/01.png)<br />
-
-Metadata / bounding box (Deprecated)
-<br />![](image/shape/02.png)<br />
 
 ----
 
@@ -37,6 +34,31 @@ Metadata / bounding box (Deprecated)
 
 # Shapes
 
+* [Arch Pointed](#arch-pointed)
+* [Arch Round](#arch-round)
+* [Arrow](#arrow)
+* [Backdrop](#backdrop)
+* [Chevron](#chevron)
+* [Coffin](#coffin)
+* [Cone](#cone)
+* [Corner Join](#corner-join)
+* [Cross](#cross)
+* [Cube](#cube)
+* [Cylinder](#cylinder)
+* [Diamond](#diamond)
+* [I-Beam](#i-beam)
+* [Jersey Barrier](#jersey-barrier)
+* [Lightning](#lightning)
+* [Pinwheel](#pinwheel)
+* [Pipe](#pipe)
+* [Regular Polygon](#regular-polygon)
+* [Rhombus](#rhombus)
+* [Ring](#ring)
+* [Sphere](#sphere)
+* [Start](#start)
+* [Trapezoid](#trapezoid)
+* [Vase](#vase)
+
 ---
 
 ## Arch Pointed
@@ -47,12 +69,17 @@ Metadata / bounding box (Deprecated)
 * inner_height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper.shape import backdrop
+
 result = shape.arch_pointed(
   length=30,
   width=5,
   height=50,
   inner_height=25
 )
+
+show_object(result)
 ```
 
 ![](image/shape/24.png)<br />
@@ -71,7 +98,12 @@ result = shape.arch_pointed(
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper.shape import backdrop
+
 result = shape.arch_round(length=30, width=5, height=50)
+
+show_object(result)
 ```
 
 ![](image/shape/26.png)<br />
@@ -91,6 +123,9 @@ result = shape.arch_round(length=30, width=5, height=50)
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper.shape import backdrop
+
 result = shape.arrow(
   length=10,
   inner_length=5,
@@ -98,6 +133,8 @@ result = shape.arrow(
   width_outset=2,
   height=3
 )
+
+show_object(result)
 ```
 
 ![](image/shape/04.png)<br />
@@ -112,15 +149,19 @@ result = shape.arrow(
 #### Negative width_outset
 
 ``` python
+import cadquery as cq
+from cadqueryhelper.shape import backdrop
+
 result = shape.arrow(width_outset=-1)
+
+show_object(result)
 ```
 
 ![](image/shape/05.png)<br />
 
 ---
 
----
-## backdrop
+## Backdrop
 ### Parameters
 * length:float = 200 
 * width:float = 250 
@@ -141,6 +182,8 @@ result = backdrop(
     operation= 'fillet',#'chamfer', 'fillet', None
     operation_dist = 20
 )
+
+show_object(result)
 ```
 
 ![](image/shape/37.png)<br />
@@ -160,6 +203,9 @@ result = backdrop(
 * alt
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.chevron(
   length=10,
   width=7,
@@ -167,6 +213,8 @@ result = shape.chevron(
   inner_width=3,
   alt=False
 )
+
+show_object(result)
 ```
 
 ![](image/shape/22.png)<br />
@@ -180,6 +228,9 @@ result = shape.chevron(
 #### Chevron with alt set to True
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 alt = shape.chevron(
   length=10,
   width=7,
@@ -187,28 +238,14 @@ alt = shape.chevron(
   inner_width=3,
   alt=True
 )
+
+show_object(alt)
 ```
 
 ![](image/shape/21.png)<br />
 
 * [stl](../stl/shape_chevron_alt.stl)
 
----
-## Cone
-### Parameters
-* radius - base
-* radius_top
-* height
-
-``` python
-result = shape.cone(radius=1, radius_top=0, height=2)
-```
-
-![](image/shape/06.png)<br />
-
-* [source](../src/cadqueryhelper/shape/cone.py)
-* [example](../example/shape/cone.py)
-* [stl](../stl/shape_cone.stl)
 ---
 
 ## Coffin
@@ -221,6 +258,9 @@ result = shape.cone(radius=1, radius_top=0, height=2)
 * mid_offset - Middle points distance from the width center. Can be positive or negative.
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.coffin(
     length = 30, 
     width = 36,
@@ -229,6 +269,8 @@ result = shape.coffin(
     base_length = 20, 
     mid_offset = 5
 )
+
+show_object(result)
 ```
 
 ![](image/shape/32.png)<br />
@@ -238,6 +280,61 @@ result = shape.coffin(
 * [stl](../stl/shape_coffin.stl)
 
 ---
+
+## Cone
+### Parameters
+* radius - base
+* radius_top
+* height
+
+``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
+result = shape.cone(radius=1, radius_top=0, height=2)
+
+show_object(result)
+```
+
+![](image/shape/06.png)<br />
+
+* [source](../src/cadqueryhelper/shape/cone.py)
+* [example](../example/shape/cone.py)
+* [stl](../stl/shape_cone.stl)
+
+---
+
+## Corner Join
+### parameters
+* length
+* width
+* height
+* side_width = 1 
+* corner_chamfer = 0
+
+``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
+result = shape.corner_join(
+    length = 10,
+    width = 6,
+    height = 5,
+    side_width = 1,
+    corner_chamfer = 1
+)
+
+show_object(result)
+```
+
+![](image/shape/28.png)<br />
+
+* [source](../src/cadqueryhelper/shape/cornerJoin.py)
+* [example](../example/shape/cornerJoin.py)
+* [stl](../stl/shape_cornerJoin.stl)
+
+---
+
 
 ## Cross
 ### Parameters
@@ -250,6 +347,9 @@ result = shape.coffin(
 * y_translate - Distance of width crossbeam from center.
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.cross(
   length=10,
   width=10,
@@ -259,6 +359,8 @@ result = shape.cross(
   x_translate=0,
   y_translate=0
 )
+
+show_object(result)
 ```
 
 ![](image/shape/14.png)<br />
@@ -272,42 +374,23 @@ result = shape.cross(
 #### Move crossbeams from center
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.cross(
   cross_length=2,
   cross_width=2,
   x_translate=-1,
   y_translate=2.5
 )
+
+show_object(result)
 ```
 
 ![](image/shape/15.png)<br />
 
 ---
-## Corner Join
-### parameters
-* length
-* width
-* height
-* side_width = 1 
-* corner_chamfer = 0
 
-``` python
-chape = shape.corner_join(
-    length = 10,
-    width = 6,
-    height = 5,
-    side_width = 1,
-    corner_chamfer = 1
-)
-```
-
-![](image/shape/28.png)<br />
-
-* [source](../src/cadqueryhelper/shape/cornerJoin.py)
-* [example](../example/shape/cornerJoin.py)
-* [stl](../stl/shape_cornerJoin.stl)
-
----
 ## Cube
 ### Parameters
 * length
@@ -315,7 +398,12 @@ chape = shape.corner_join(
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.cube(length=5, width=5, height=5)
+
+show_object(result)
 ```
 
 ![](image/shape/07.png)<br />
@@ -324,14 +412,21 @@ result = shape.cube(length=5, width=5, height=5)
 * [example](../example/shape/cube.py)
 * [stl](../stl/shape_cube.stl)
 
+
 ---
+
 ## Cylinder
 ### Parameters
 * radius
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.cylinder(radius=2.5, height=5)
+
+show_object(result)
 ```
 
 ![](image/shape/08.png)<br />
@@ -348,7 +443,12 @@ result = shape.cylinder(radius=2.5, height=5)
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.diamond(length=10, width=5, height=3)
+
+show_object(result)
 ```
 
 ![](image/shape/19.png)<br />
@@ -368,6 +468,9 @@ result = shape.diamond(length=10, width=5, height=3)
 * join_distance
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.i_beam(
   length=30,
   width=5,
@@ -376,6 +479,8 @@ result = shape.i_beam(
   flange_thickness=2,
   join_distance=1.3
 )
+
+show_object(result)
 ```
 
 ![](image/shape/16.png)
@@ -414,6 +519,8 @@ result = jersey_barrier(
     middle_height = 2,
     top_width_inset = -1
 )
+
+show_object(result)
 ```
 
 ![](image/shape/38.png)<br />
@@ -433,6 +540,9 @@ result = jersey_barrier(
 * y_dist
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.lightning(
     length = 25,
     width = 50,
@@ -440,6 +550,8 @@ result = shape.lightning(
     x_dist = 3,
     y_dist = 6
 )
+
+show_object(result)
 ```
 
 ![](image/shape/27.png)<br />
@@ -459,11 +571,16 @@ result = shape.lightning(
   * start_angle
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 ring_params = []
 ring_params.append({"radius": 150, "start_angle":0})
 ring_params.append({"radius":100,"start_angle":30})
 ring_params.append({"radius":30,"start_angle":80})
 result = shape.pinwheel(count = 10, height = 3, ring_params = ring_params)
+
+show_object(result)
 ```
 
 ![](image/shape/29.png)<br />
@@ -488,13 +605,14 @@ test_shape = cq.Workplane('XY').rect(4,8)
 pst = pts = [(0,0), (20,-20), (50,-20), (50,-30)]
 result = pipe(test_shape, pts)
 
+show_object(result)
+```
+
 ![](image/shape/41.png)<br />
 
 * [source](../src/cadqueryhelper/shape/pipe.py)
 * [example](../example/shape/pipe.py)
 * [stl](../stl/shape_pipe.stl)
-
-```
 
 ---
 ## Rail
@@ -505,7 +623,12 @@ result = pipe(test_shape, pts)
 * inner_height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.rail(length=6, width=1, height=5, inner_height=1.5)
+
+show_object(result)
 ```
 
 ![](image/shape/09.png)
@@ -524,7 +647,12 @@ result = shape.rail(length=6, width=1, height=5, inner_height=1.5)
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.regular_polygon(radius=10, sides=6, height=5)
+
+show_object(result)
 ```
 
 ![](image/shape/11.png)<br />
@@ -542,7 +670,12 @@ result = shape.regular_polygon(radius=10, sides=6, height=5)
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.rhombus(width=10, offset=4, height=5)
+
+show_object(result)
 ```
 
 ![](image/shape/10.png)<br />
@@ -552,12 +685,48 @@ result = shape.rhombus(width=10, offset=4, height=5)
 * [stl](../stl/shape_rhombus.stl)
 
 ---
+
+
+## Ring
+### Parameters
+* diameter
+* inner_diameter
+* height
+
+``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
+ex_ring = shape.ring(
+    diameter = 100,
+    inner_diameter = 80,
+    height = 4
+)
+
+show_object(ex_ring)
+```
+
+![](image/shape/46.png)<br />
+
+* [source](../src/cadqueryhelper/shape/ring.py)
+* [example](../example/shape/ring.py)
+* [stl](../stl/shape_ring.stl)
+
+---
+
+
+
 ## Sphere
 ### Parameters
 * radius
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.sphere(radius=5)
+
+show_object(result)
 ```
 
 ![](image/shape/12.png)<br />
@@ -575,12 +744,17 @@ result = shape.sphere(radius=5)
 * height
 
 ``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
 result = shape.star(
   outer_radius=10,
   inner_radius=5,
   points=5,
   height=3
 )
+
+show_object(result)
 ```
 
 ![](image/shape/13.png)<br />
@@ -608,6 +782,8 @@ result = trapezoid(
     height = 25,
     top_width = 10
 )
+
+show_object(result)
 ```
 
 ![](image/shape/34.png)<br />
@@ -628,6 +804,8 @@ result = trapezoid(
     height = 25,
     top_width = 10
 )
+
+show_object(result)
 ```
 
 ![](image/shape/35.png)<br />
@@ -635,12 +813,39 @@ result = trapezoid(
 ---
 
 ## Vase
+Extrudes a given face into a cirular path.
+
 ### Parameters
 * shape:cq.Workplane, 
 * workplane_axis:str = "YZ", #'XY', 'YZ', 'XZ'
 * radius:float = 1, 
 * angle:float = 0, 
 * rotation_angle:float = 0
+
+### Simple Example
+Extrude a rectangle
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import vase
+
+test_shape = cq.Workplane("XY").rect(4,8)
+result = vase(
+    test_shape, 
+    workplane_axis = "YZ",
+    radius = 10, 
+    angle=0, 
+    rotation_angle=0
+)
+
+show_object(result)
+```
+
+![](image/shape/47.png)<br />
+
+
+### Sine example
+Extrude a sine wave
 
 ``` python
 import cadquery as cq
@@ -661,6 +866,9 @@ result = vase(
     radius = 10, 
     angle=0, 
     rotation_angle=0
+)
+
+show_object(result)
 ```
 ![](image/shape/42.png)<br />
 

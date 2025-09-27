@@ -25,6 +25,7 @@ import example.shape.pinwheel
 import example.shape.pipe
 import example.shape.rail
 import example.shape.rhombus
+import example.shape.ring
 import example.shape.sphere
 import example.shape.star_sweep
 import example.shape.star

@@ -2,6 +2,14 @@
 
 ## main wip
 
+## 1.6.0
+* Added ring shape.
+* Cleaned up shape documentation
+  * built out examples
+  * Removed deprecated references to metadata
+  * Added an index
+  * Built out vase examples
+
 ## 1.5.1
 * Changed from using assembly.save (deprecated) to assembly.export
 * Added example helper_plate to the example_runner
