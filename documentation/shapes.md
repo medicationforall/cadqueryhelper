@@ -765,6 +765,33 @@ show_object(result)
 
 ---
 
+## Teardrop
+### Parameters
+* diameter:float
+* length:float
+* height:float|None
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import teardrop
+
+example = teardrop(
+    diameter = 5,
+    length= 8,
+    height = 3
+)
+
+show_object(example)
+```
+
+![](image/shape/48.png)<br />
+
+* [source](../src/cadqueryhelper/shape/teardrop.py)
+* [example](../example/shape/teardrop.py)
+* [stl](../stl/shape_teardrop.stl)
+
+---
+
 ## Trapezoid
 ### Parameters
 * length:float|None = 75

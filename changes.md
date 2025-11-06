@@ -4,6 +4,7 @@
 
 ## 1.7.0
 * Upgraded to cadquery version 2.6.1
+* Added shape teardrop
 
 ## 1.6.0
 * Added ring shape.

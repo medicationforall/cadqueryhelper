@@ -24,5 +24,6 @@ from .trapezoid import trapezoid
 from .backdrop import backdrop
 from .jersey_barrier import jersey_barrier
 from .vase import vase
+from .teardrop import teardrop
 
 from .ring import ring
