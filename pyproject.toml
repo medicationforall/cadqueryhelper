@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cadqueryhelper"
-version = "1.6.0"
+version = "1.7.0"
 authors = [
   { name="James Adams", email="inklink28@gmail.com" },
 ]
@@ -18,7 +18,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-"cadquery==2.5.2",
+"cadquery==2.6.1",
 'cqmore @ git+https://github.com/JustinSDK/cqMore@a490603'
 ]
 

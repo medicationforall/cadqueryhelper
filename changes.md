@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 1.7.0
+* Upgraded to cadquery version 2.6.1
+
 ## 1.6.0
 * Added ring shape.
 * Cleaned up shape documentation
