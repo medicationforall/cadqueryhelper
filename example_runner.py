@@ -33,6 +33,7 @@ import example.shape.trapezoid
 import example.shape.triangle
 import example.shape.vase
 import example.shape.teardrop
+import example.shape.step_pyramid
 
 # waves
 print('building waves')

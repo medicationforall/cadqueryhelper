@@ -55,7 +55,9 @@ The code above:
 * [Rhombus](#rhombus)
 * [Ring](#ring)
 * [Sphere](#sphere)
-* [Start](#start)
+* [Star](#star)
+* [Teardrop](#teardrop)
+* [Step Pyramid](#step-pyramid)
 * [Trapezoid](#trapezoid)
 * [Vase](#vase)
 
@@ -762,6 +764,41 @@ show_object(result)
 * [source](../src/cadqueryhelper/shape/star.py)
 * [example](../example/shape/star.py)
 * [stl](../stl/shape_star.stl)
+
+---
+
+## Step Pyramid
+### Parameters
+* length: float
+* width: float
+* height: float
+* steps: int
+* min_length: float
+* min_width: float
+* ellipse: bool
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import step_pyramid
+
+example = step_pyramid(
+    length = 40,
+    width = 60,
+    height = 30,
+    steps = 3,
+    min_length = 10,
+    min_width = 15,
+    ellipse = False
+)
+
+show_object(example)
+```
+
+![](image/shape/49.png)<br />
+
+* [source](../src/cadqueryhelper/shape/step_pyramid.py)
+* [example](../example/shape/step_pyramid.py)
+* [stl](../stl/shape_step_pyramid.stl)
 
 ---
 
