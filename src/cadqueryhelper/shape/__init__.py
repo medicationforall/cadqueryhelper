@@ -27,5 +27,6 @@ from .vase import vase
 from .teardrop import teardrop
 from .step_pyramid import step_pyramid
 from .crescent import crescent
+from .triangle_right import triangle_right
 
 from .ring import ring

@@ -32,6 +32,7 @@ import example.shape.star_sweep
 import example.shape.star
 import example.shape.trapezoid
 import example.shape.triangle
+import example.shape.triangle_right
 import example.shape.vase
 import example.shape.teardrop
 import example.shape.step_pyramid

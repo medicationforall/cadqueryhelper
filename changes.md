@@ -12,6 +12,7 @@
   * Annotated teardrop example picture
 * Added shape 
   * crescent
+  * triangle_right
 
 ## 1.7.1
 * Added shape step_pyramid

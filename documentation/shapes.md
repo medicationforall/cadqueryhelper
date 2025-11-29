@@ -909,6 +909,34 @@ show_object(result)
 
 ---
 
+## Triangle Right
+### Parameters
+* length:float 
+* width:float 
+* height:float|None - If set to None or 0 returns the wire
+
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import triangle_right
+
+ex_triangle = triangle_right(
+    length = 50, 
+    width = 40, 
+    height= 5
+)
+
+how_object(ex_triangle)
+```
+
+![](image/shape/51a.png)<br />
+
+* [source](../src/cadqueryhelper/shape/triangle_right.py)
+* [example](../example/shape/triangle_right.py)
+* [stl](../stl/shape_triangle_right.stl)
+
+---
+
 ## Vase
 Extrudes a given face into a cirular path.
 
