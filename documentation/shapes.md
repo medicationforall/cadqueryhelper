@@ -42,6 +42,7 @@ The code above:
 * [Coffin](#coffin)
 * [Cone](#cone)
 * [Corner Join](#corner-join)
+* [Crescent](#crescent)
 * [Cross](#cross)
 * [Cube](#cube)
 * [Cylinder](#cylinder)
@@ -337,6 +338,33 @@ show_object(result)
 
 ---
 
+## Crescent
+### parameters
+* diameter: float 
+* shift: float
+* height: float
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import crescent 
+
+ex_crescent = crescent(
+    diameter = 30, 
+    shift = 10,
+    height = 5
+)
+
+show_object(ex_crescent)
+```
+
+![](image/shape/50a.png)<br />
+
+* [source](../src/cadqueryhelper/shape/crescent.py)
+* [example](../example/shape/crescent.py)
+* [stl](../stl/shape_crescent.stl)
+
+---
+
 
 ## Cross
 ### Parameters
@@ -394,6 +422,7 @@ show_object(result)
 ---
 
 ## Cube
+*Deprecated* Use cq.Workplane("XY").box(l, w, h)
 ### Parameters
 * length
 * width
@@ -418,6 +447,8 @@ show_object(result)
 ---
 
 ## Cylinder
+*deprecated* use cq.Workplane("XY").cylinder(h, r)
+
 ### Parameters
 * radius
 * height
@@ -719,6 +750,7 @@ show_object(ex_ring)
 
 
 ## Sphere
+*Deprecated* use cq.Workplane().sphere(radius)
 ### Parameters
 * radius
 
@@ -794,7 +826,8 @@ example = step_pyramid(
 show_object(example)
 ```
 
-![](image/shape/49.png)<br />
+![](image/shape/49a.png)<br />
+*Note* the height length and width of each step is calculated by the number to steps specified.
 
 * [source](../src/cadqueryhelper/shape/step_pyramid.py)
 * [example](../example/shape/step_pyramid.py)
@@ -821,7 +854,7 @@ example = teardrop(
 show_object(example)
 ```
 
-![](image/shape/48.png)<br />
+![](image/shape/48a.png)<br />
 
 * [source](../src/cadqueryhelper/shape/teardrop.py)
 * [example](../example/shape/teardrop.py)

@@ -13,37 +13,26 @@
 # limitations under the License.
 
 import cadquery as cq
-from typing import Tuple
 
-def teardrop(
-        diameter:float = 5,
-        length:float = 8,
-        height:float|None = 3
-    ):
-    
-    pts:list[Tuple[float,float]] = [
-        (-length*.1,0),
-        (0,length-.001),
-        (length*.1,0)
-    ]
-    
-    sk:cq.Sketch = (
-        cq.Sketch()
-        .push([(0,0)])
-        .circle((diameter/2))
-        .push([(0,diameter/2+.001)])
-        .polygon(pts)
-        .wires()
-        .hull()
+def crescent(
+        diameter:float = 30, 
+        shift:float = 10,
+        height:float = 5
+    ) -> cq.Workplane:
+    outer = (
+        cq.Workplane("XY")
+        .circle(diameter/2)
+        .extrude(height)
     )
     
-    if height:
-        part = (
+    if shift:
+        inner = (
             cq.Workplane("XY")
-            .placeSketch(sk)
+            .center(shift,0)
+            .circle(diameter/2)
             .extrude(height)
-        ).translate((0,0,-height/2))
-    else:
-        part = sk
+        )
         
-    return part
+        outer = outer.cut(inner)
+    
+    return outer

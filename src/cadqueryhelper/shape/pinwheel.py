@@ -13,12 +13,13 @@
 # limitations under the License.
 
 import cadquery as cq
+from typing import Tuple
 
 def make_circular_points(
         radius:float = 150, 
         startAngle:float = 0, 
         count:int = 15
-    ):
+    ) -> Tuple[cq.Workplane, list]:
     coords = []
     def add_point(loc:cq.Location)->cq.Shape:
         test = cq.Workplane("XY").box(10,10,10)

@@ -2,6 +2,17 @@
 
 ## main wip
 
+## 1.7.2
+* Cleaned up the shape code
+  * Removed unused variables
+  * Added license blocks
+* Cleanup shape documentation
+  * Added deprecation notices
+  * Annotated step_pyramid example picture
+  * Annotated teardrop example picture
+* Added shape 
+  * crescent
+
 ## 1.7.1
 * Added shape step_pyramid
 

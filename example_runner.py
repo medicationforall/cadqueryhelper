@@ -9,6 +9,7 @@ import example.shape.coffin
 import example.shape.cone
 import example.shape.cornerJoin
 import example.shape.coffin
+import example.shape.crescent
 import example.shape.cross
 import example.shape.cube
 import example.shape.cylinder

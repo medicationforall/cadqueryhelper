@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import cqmore as cqm
 from cqmore.polygon import star as cqmStar
 
@@ -20,7 +21,6 @@ def star(
         points:int = 5, 
         height:float = 3
     ) -> cqm.Workplane:
-    diameter = outer_radius * 2
     work = (
         cqm.Workplane()
         .makePolygon(cqmStar(outerRadius = outer_radius, innerRadius = inner_radius, n = points))

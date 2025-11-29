@@ -21,10 +21,6 @@ def cone(
     ) -> cq.Workplane:
     #https://cadquery.readthedocs.io/en/latest/classreference.html#cadquery.Solid.makeCone
     cone = cq.Solid.makeCone(radius, radius_top, height)
-    diameter = radius
-
-    if radius_top > radius:
-        diameter = radius_top
 
     # center shape
     work = cq.Workplane().add(cone)

@@ -26,5 +26,6 @@ from .jersey_barrier import jersey_barrier
 from .vase import vase
 from .teardrop import teardrop
 from .step_pyramid import step_pyramid
+from .crescent import crescent
 
 from .ring import ring
