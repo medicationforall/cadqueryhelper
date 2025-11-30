@@ -48,6 +48,7 @@ The code above:
 * [Cylinder](#cylinder)
 * [Cylinder Sector](#cylinder-sector)
 * [Diamond](#diamond)
+* [Ellipse Sector](#ellipse-sector)
 * [I-Beam](#i-beam)
 * [Jersey Barrier](#jersey-barrier)
 * [Lightning](#lightning)
@@ -502,7 +503,7 @@ show_object(ex_cylinder)
 
 
 ## Diamond
-### Parmeters
+### Parameters
 * length: float
 * width: float
 * height: float
@@ -521,6 +522,38 @@ show_object(result)
 * [source](../src/cadqueryhelper/shape/diamond.py)
 * [example](../example/shape/diamond.py)
 * [stl](../stl/shape_diamond.stl)
+---
+
+## Ellipse Sector
+### Parameters
+* diameter_x: float
+* diameter_y: float
+* angle: float
+* rotation_angle: float
+* height: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import ellipse_sector
+
+ex_sector = ellipse_sector(
+    diameter_x = 20,
+    diameter_y = 30,
+    angle = 30,
+    rotation_angle = 0,
+    height = 5,
+    debug = True
+)
+
+show_object(ex_sector)
+```
+
+![](image/shape/53.png)<br />
+
+* [source](../src/cadqueryhelper/shape/ellipse_sector.py)
+* [example](../example/shape/ellipse_sector.py)
+* [stl](../stl/shape_ellipse_sector.stl)
 ---
 
 ## I-Beam

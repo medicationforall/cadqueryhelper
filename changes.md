@@ -15,6 +15,7 @@
 * Added shape 
   * crescent
   * cylinder_sector
+  * ellipse_sector
   * triangle_right
 
 ## 1.7.1
