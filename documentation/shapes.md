@@ -46,6 +46,7 @@ The code above:
 * [Cross](#cross)
 * [Cube](#cube)
 * [Cylinder](#cylinder)
+* [Cylinder Sector](#cylinder-sector)
 * [Diamond](#diamond)
 * [I-Beam](#i-beam)
 * [Jersey Barrier](#jersey-barrier)
@@ -469,6 +470,37 @@ show_object(result)
 * [stl](../stl/shape_cylinder.stl)
 
 ---
+
+## Cylinder Sector
+Creates a pizza or cake slice.
+
+### Parameters
+* diameter: float
+* angle: float
+* height: float
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import cylinder_sector
+
+ex_cylinder = cylinder_sector(
+    diameter = 20,  
+    angle = 30,
+    height = 5
+)
+
+show_object(ex_cylinder)
+```
+
+![](image/shape/52a.png)<br />
+
+* [source](../src/cadqueryhelper/shape/cylinder_sector.py)
+* [example](../example/shape/cylinder_sector.py)
+* [stl](../stl/shape_cylinder_sector.stl)
+
+---
+
+
 ## Diamond
 ### Parmeters
 * length

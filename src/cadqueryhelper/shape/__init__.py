@@ -28,5 +28,6 @@ from .teardrop import teardrop
 from .step_pyramid import step_pyramid
 from .crescent import crescent
 from .triangle_right import triangle_right
+from .cylinder_sector import cylinder_sector
 
 from .ring import ring

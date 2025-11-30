@@ -13,6 +13,7 @@ import example.shape.crescent
 import example.shape.cross
 import example.shape.cube
 import example.shape.cylinder
+import example.shape.cylinder_sector
 import example.shape.diamond
 import example.shape.heptagon
 import example.shape.hexagon

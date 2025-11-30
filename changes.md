@@ -12,6 +12,7 @@
   * Annotated teardrop example picture
 * Added shape 
   * crescent
+  * cylinder_sector
   * triangle_right
 
 ## 1.7.1
