@@ -67,16 +67,16 @@ The code above:
 
 ## Arch Pointed
 ### Parameters
-* length
-* width
-* height
-* inner_height
+* length: float
+* width: float
+* height: float
+* inner_height: float
 
 ``` python
 import cadquery as cq
-from cadqueryhelper.shape import backdrop
+from cadqueryhelper.shape import arch_pointed
 
-result = shape.arch_pointed(
+result = arch_pointed(
   length=30,
   width=5,
   height=50,
@@ -97,15 +97,15 @@ show_object(result)
 
 ## Arch Round
 ### Parameters
-* length
-* width
-* height
+* length: float
+* width: float
+* height: float
 
 ``` python
 import cadquery as cq
-from cadqueryhelper.shape import backdrop
+from cadqueryhelper.shape import arch_round
 
-result = shape.arch_round(length=30, width=5, height=50)
+result = arch_round(length=30, width=5, height=50)
 
 show_object(result)
 ```
@@ -120,17 +120,17 @@ show_object(result)
 
 ## Arrow
 ### Parameters
-* length
-* inner_length
-* width
-* width_outset
-* height
+* length: float
+* inner_length: float
+* width:float
+* width_outset: float
+* height: float
 
 ``` python
 import cadquery as cq
-from cadqueryhelper.shape import backdrop
+from cadqueryhelper.shape import arrow
 
-result = shape.arrow(
+result = arrow(
   length=10,
   inner_length=5,
   width=5,
@@ -154,9 +154,9 @@ show_object(result)
 
 ``` python
 import cadquery as cq
-from cadqueryhelper.shape import backdrop
+from cadqueryhelper.shape import arrow
 
-result = shape.arrow(width_outset=-1)
+result = arrow(width_outset=-1)
 
 show_object(result)
 ```
@@ -167,12 +167,12 @@ show_object(result)
 
 ## Backdrop
 ### Parameters
-* length:float = 200 
-* width:float = 250 
-* height:float = 150
-* thickness:float = 4
-* operation:str = 'fillet' #chamfer, fillet
-* operation_dist:float = 20
+* length: float
+* width: float
+* height: float
+* thickness: float
+* operation:str - fillet, chamfer
+* operation_dist: float
 
 ``` python
 import cadquery as cq
@@ -200,11 +200,11 @@ show_object(result)
 
 ## Chevron
 ### Parameters
-* length
-* width
-* height
-* inner_width
-* alt
+* length: float
+* width: float
+* height: float
+* inner_width: float
+* alt: bool
 
 ``` python
 import cadquery as cq
@@ -254,12 +254,12 @@ show_object(alt)
 
 ## Coffin
 ### Parameters
-* length - Length between the two mid points
-* width - Distance between the top and base
-* height - Extruded height of the face, can be falsy
-* top_length - Length of the top
-* base_length - Length of the base
-* mid_offset - Middle points distance from the width center. Can be positive or negative.
+* length: float - Length between the two mid points
+* width: float - Distance between the top and base
+* height: float - Extruded height of the face, can be falsy
+* top_length: float - Length of the top
+* base_length: float - Length of the base
+* mid_offset: float - Middle points distance from the width center. Can be positive or negative.
 
 ``` python
 import cadquery as cq
@@ -287,9 +287,9 @@ show_object(result)
 
 ## Cone
 ### Parameters
-* radius - base
-* radius_top
-* height
+* radius: float - base
+* radius_top: float
+* height: float
 
 ``` python
 import cadquery as cq
@@ -310,11 +310,11 @@ show_object(result)
 
 ## Corner Join
 ### parameters
-* length
-* width
-* height
-* side_width = 1 
-* corner_chamfer = 0
+* length: float
+* width: float
+* height: float
+* side_width: float = 1 
+* corner_chamfer: float = 0
 
 ``` python
 import cadquery as cq
@@ -369,13 +369,13 @@ show_object(ex_crescent)
 
 ## Cross
 ### Parameters
-* length
-* width
-* height
-* cross_length
-* cross_width
-* x_translate - Distance of length crossbeam from center.
-* y_translate - Distance of width crossbeam from center.
+* length: float
+* width: float
+* height: float
+* cross_length: float
+* cross_width: float
+* x_translate: float - Distance of length crossbeam from center.
+* y_translate: float - Distance of width crossbeam from center.
 
 ``` python
 import cadquery as cq
@@ -425,9 +425,9 @@ show_object(result)
 ## Cube
 *Deprecated* Use cq.Workplane("XY").box(l, w, h)
 ### Parameters
-* length
-* width
-* height
+* length: float
+* width: float
+* height: float
 
 ``` python
 import cadquery as cq
@@ -451,8 +451,8 @@ show_object(result)
 *deprecated* use cq.Workplane("XY").cylinder(h, r)
 
 ### Parameters
-* radius
-* height
+* radius: float
+* height: float
 
 ``` python
 import cadquery as cq
@@ -503,9 +503,9 @@ show_object(ex_cylinder)
 
 ## Diamond
 ### Parmeters
-* length
-* width
-* height
+* length: float
+* width: float
+* height: float
 
 ``` python
 import cadquery as cq
@@ -564,19 +564,19 @@ show_object(result)
 
 ## Jersey Barrier
 ### Parameters
-* width:float = 10,
-* height:float = 10,
-* base_height:float = 2,
-* middle_width_inset:float = -2,
-* middle_height:float = 2,
-* top_width_inset:float = -1
+* width:float
+* height:float
+* base_height:float
+* middle_width_inset:float
+* middle_height:float
+* top_width_inset:float
 
 ``` python
 import cadquery as cq
 from cadqueryhelper.shape import jersey_barrier
 
 result = jersey_barrier(
-    length=75,
+    length = 75,
     width = 20,
     height = 25,
     base_height = 4,
@@ -598,11 +598,11 @@ show_object(result)
 
 ## Lightning
 ### Parameters
-* length
-* width
-* height
-* x_dist
-* y_dist
+* length: float
+* width: float
+* height: float
+* x_dist: float
+* y_dist: float
 
 ``` python
 import cadquery as cq
@@ -629,11 +629,11 @@ show_object(result)
 
 ## Pinwheel
 ### Parameters
-* count
-* height
-* ring_params - list of ring param dictionaries
-  * radius
-  * start_angle
+* count: int
+* height: float
+* ring_params: list - list of ring param dictionaries
+  * radius: float
+  * start_angle: float
 
 ``` python
 import cadquery as cq
@@ -659,8 +659,8 @@ show_object(result)
 
 ## Pipe
 ### Parameters
-* shape:cq.Workplane = cq.Workplane("XY").circle(5), 
-* pts:list[tuple[int,int]] = [(0,0), (20,-20), (50,-20), (50,-30)]
+* shape: cq.Workplane - cq.Workplane("XY").circle(5), 
+* pts: list[tuple[int,int]] - [(0,0), (20,-20), (50,-20), (50,-30)]
 
 ``` python
 import cadquery as cq
@@ -682,10 +682,10 @@ show_object(result)
 ---
 ## Rail
 ### Parameters
-* length
-* width
-* height
-* inner_height
+* length: float
+* width: float
+* height: float
+* inner_height: float
 
 ``` python
 import cadquery as cq
@@ -707,9 +707,9 @@ show_object(result)
 ## Regular Polygon
 [wikipedia](https://en.wikipedia.org/wiki/Regular_polygon)
 ### Parameters
-* radius
-* sides
-* height
+* radius: float
+* sides: float
+* height: float
 
 ``` python
 import cadquery as cq
@@ -730,9 +730,9 @@ show_object(result)
 ---
 ## Rhombus
 ### Parameters
-* width
-* offset
-* height
+* width: float
+* offset: float
+* height: float
 
 ``` python
 import cadquery as cq
@@ -754,9 +754,9 @@ show_object(result)
 
 ## Ring
 ### Parameters
-* diameter
-* inner_diameter
-* height
+* diameter: float
+* inner_diameter: float
+* height: float
 
 ``` python
 import cadquery as cq
@@ -804,10 +804,10 @@ show_object(result)
 ---
 ## Star
 ### Parameters
-* outer_radius
-* inner_radius
-* points
-* height
+* outer_radius: float
+* inner_radius: float
+* points: int
+* height: float
 
 ``` python
 import cadquery as cq
@@ -869,9 +869,9 @@ show_object(example)
 
 ## Teardrop
 ### Parameters
-* diameter:float
-* length:float
-* height:float|None
+* diameter: float
+* length: float
+* height: float|None
 
 ``` python
 import cadquery as cq
@@ -896,10 +896,10 @@ show_object(example)
 
 ## Trapezoid
 ### Parameters
-* length:float|None = 75
-* width:float = 25
-* height:float = 25
-* top_width:float = 10
+* length: float|None
+* width: float
+* height: float
+* top_width: float
 
 ``` python
 import cadquery as cq
@@ -943,9 +943,9 @@ show_object(result)
 
 ## Triangle Right
 ### Parameters
-* length:float 
-* width:float 
-* height:float|None - If set to None or 0 returns the wire
+* length: float 
+* width: float 
+* height: float|None - If set to None or 0 returns the wire
 
 
 ``` python
@@ -973,11 +973,11 @@ how_object(ex_triangle)
 Extrudes a given face into a cirular path.
 
 ### Parameters
-* shape:cq.Workplane, 
-* workplane_axis:str = "YZ", #'XY', 'YZ', 'XZ'
-* radius:float = 1, 
-* angle:float = 0, 
-* rotation_angle:float = 0
+* shape: cq.Workplane
+* workplane_axis:str - 'XY', 'YZ', 'XZ'
+* radius: float 
+* angle: float 
+* rotation_angle: float
 
 ### Simple Example
 Extrude a rectangle

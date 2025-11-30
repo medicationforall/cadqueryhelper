@@ -10,6 +10,8 @@
   * Added deprecation notices
   * Annotated step_pyramid example picture
   * Annotated teardrop example picture
+  * Fixed initial example import statements were using backdrop??
+  * Standardized the parameter definitions type annotations
 * Added shape 
   * crescent
   * cylinder_sector
