@@ -60,6 +60,7 @@ The code above:
 * [Sphere](#sphere)
 * [Star](#star)
 * [Teardrop](#teardrop)
+* [Triangle Right](#triangle-right)
 * [Step Pyramid](#step-pyramid)
 * [Trapezoid](#trapezoid)
 * [Vase](#vase)
