@@ -29,5 +29,6 @@ from .step_pyramid import step_pyramid
 from .crescent import crescent
 from .triangle_right import triangle_right
 from .cylinder_sector import cylinder_sector
+from .ellipse_sector import ellipse_sector
 
 from .ring import ring
