@@ -26,6 +26,7 @@ import example.shape.octagon
 import example.shape.pentagon
 import example.shape.pinwheel
 import example.shape.pipe
+import example.shape.pyramid
 import example.shape.rail
 import example.shape.rhombus
 import example.shape.ring
@@ -35,6 +36,7 @@ import example.shape.star
 import example.shape.trapezoid
 import example.shape.triangle
 import example.shape.triangle_right
+import example.shape.triangle_isosceles
 import example.shape.vase
 import example.shape.teardrop
 import example.shape.step_pyramid

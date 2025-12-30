@@ -7,5 +7,5 @@ ex_triangle = triangle_right(
     height= 5
 )
 
-#how_object(ex_triangle)
+#show_object(ex_triangle)
 cq.exporters.export(ex_triangle,'stl/shape_triangle_right.stl')

@@ -2,8 +2,12 @@
 
 ## main wip
 
+## 1.7.4
+* Added shape triangle_isosceles
+* Added shape pyramid 
+
 ## 1.7.3
-* Fix I bug I introduced ellipse_sector wasn't on the right import path
+* Fix a bug I introduced ellipse_sector wasn't on the right import path
 
 ## 1.7.2
 * Cleaned up the shape code

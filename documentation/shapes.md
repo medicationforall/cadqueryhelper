@@ -54,12 +54,14 @@ The code above:
 * [Lightning](#lightning)
 * [Pinwheel](#pinwheel)
 * [Pipe](#pipe)
+* [Pyramid](#pyramid)
 * [Regular Polygon](#regular-polygon)
 * [Rhombus](#rhombus)
 * [Ring](#ring)
 * [Sphere](#sphere)
 * [Star](#star)
 * [Teardrop](#teardrop)
+* [Triangle Isosceles](#triangle-isosceles)
 * [Triangle Right](#triangle-right)
 * [Step Pyramid](#step-pyramid)
 * [Trapezoid](#trapezoid)
@@ -714,6 +716,34 @@ show_object(result)
 * [stl](../stl/shape_pipe.stl)
 
 ---
+
+## Pyramid
+### Parameters
+* length: float
+* width: float 
+* height: float
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import pyramid
+
+ex_pyramid = pyramid(
+    length = 20, 
+    width = 30, 
+    height = 25
+)
+
+show_object(ex_pyramid)
+```
+
+![](image/shape/55.png)<br />
+
+* [source](../src/cadqueryhelper/shape/pyramid.py)
+* [example](../example/shape/pyramid.py)
+* [stl](../stl/shape_pyramid.stl)
+
+---
+
 ## Rail
 ### Parameters
 * length: float
@@ -974,6 +1004,36 @@ show_object(result)
 ![](image/shape/35.png)<br />
 
 ---
+## Triangle Isosceles
+### Parameters
+* length: float 
+* width: float 
+* height: float|None - If set to None or 0 returns the wire
+* axis: str - cadqueryworkplane axis default is XY
+
+
+``` python
+import cadquery as cq
+from cadqueryhelper.shape import triangle_isosceles
+
+ex_triangle = triangle_isosceles(
+    length = 20,
+    width = 20, 
+    height = 5,
+    axis = "XY"
+)
+
+show_object(ex_triangle)
+```
+
+![](image/shape/54.png)<br />
+
+* [source](../src/cadqueryhelper/shape/triangle_isosceles.py)
+* [example](../example/shape/triangle_isosceles.py)
+* [stl](../stl/shape_triangle_isosceles.stl)
+
+---
+
 
 ## Triangle Right
 ### Parameters
@@ -992,7 +1052,7 @@ ex_triangle = triangle_right(
     height= 5
 )
 
-how_object(ex_triangle)
+show_object(ex_triangle)
 ```
 
 ![](image/shape/51a.png)<br />

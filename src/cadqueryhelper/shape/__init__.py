@@ -28,7 +28,9 @@ from .teardrop import teardrop
 from .step_pyramid import step_pyramid
 from .crescent import crescent
 from .triangle_right import triangle_right
+from .triangle_isosceles import triangle_isosceles
 from .cylinder_sector import cylinder_sector
 from .ellipse_sector import ellipse_sector
+from .pyramid import pyramid
 
 from .ring import ring
