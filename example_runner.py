@@ -56,19 +56,19 @@ import example.wave.uneven_spline
 import example.wave.uneven_spline_grid
 
 print('building hinges')
-import example.hinge
-import example.hinge_larger_tab
-import example.hinge_render
-import example.hinge_invert
+import example.hinge.hinge
+import example.hinge.hinge_larger_tab
+import example.hinge.hinge_render
+import example.hinge.hinge_invert
 
 print('building grids')
-import example.exampleGrid
-import example.hexagonGrid
-import example.irregularGrid_hardCoded
-import example.irregularGrid
-import example.series
-import example.seriesOperation
-import example.starGrid
+import example.grid.exampleGrid
+import example.grid.hexagonGrid
+import example.grid.irregularGrid_hardCoded
+import example.grid.irregularGrid
+import example.grid.series
+import example.grid.seriesOperation
+import example.grid.starGrid
 
 print("helper plate")
 import example.helper_plate

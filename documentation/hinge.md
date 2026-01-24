@@ -26,7 +26,7 @@ Print in place hinge.
 
 ``` python
 import cadquery as cq
-from cadqueryhelper import Hinge
+from cadqueryhelper.hinge import Hinge
 
 bp = Hinge()
 
@@ -63,7 +63,7 @@ show_object(hinge_test)
 
 ``` python
 import cadquery as cq
-from cadqueryhelper import Hinge
+from cadqueryhelpe.hinge import Hinge
 bp = Hinge()
 
 bp.length = 100
@@ -100,7 +100,7 @@ show_object(hinge_test)
 #### Render Example
 ``` python
 import cadquery as cq
-from cadqueryhelper import Hinge
+from cadqueryhelper.hinge import Hinge
 
 bp = Hinge()
 

@@ -2,6 +2,12 @@
 
 ## main wip
 
+## 2.0.0
+* This release has "**breaking**" changes.
+* Moved all of the grid code into a grid package. (Will require path updates)
+* Moved all of the hinge code into a hinge package. (Will require path updatess)
+
+
 ## 1.7.4
 * Added shape triangle_isosceles
 * Added shape pyramid 

@@ -1,6 +1,6 @@
 import cadquery as cq
 from cadqueryhelper import shape
-from cadqueryhelper import series
+from cadqueryhelper.grid import series
 
 star = shape.star()
 box = cq.Workplane().box(1,2,3)

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import cadquery as cq
-from . import Base
+from .. import Base
 from typing import Literal
 
 class Hinge(Base):

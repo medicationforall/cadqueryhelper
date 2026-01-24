@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import Hinge
+from cadqueryhelper.hinge import Hinge
 
 bp = Hinge()
 

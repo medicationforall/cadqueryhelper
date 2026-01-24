@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import irregular_grid
+from cadqueryhelper.grid import irregular_grid
 
 i_grid = irregular_grid(
     length = 75,

@@ -1,6 +1,6 @@
 import cadquery as cq
 from cadqueryhelper import shape
-from cadqueryhelper import series
+from cadqueryhelper.grid import series
 
 # yoinked from cqterrain
 def frame_shape(length=20, width = 4, height = 40, frame_width=3):
