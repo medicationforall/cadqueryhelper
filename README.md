@@ -5,19 +5,17 @@ Code for shape primitives, looping groups of shapes, hinges, and various wave op
 ![](documentation/image/shape/43.png)
 
 ## Documentation
-* [Shapes](./documentation/shapes.md)
-* [Series](./documentation/series.md)
+## Index
 * [Grid](./documentation/grid.md)
-* [Irregular Grid](./documentation/irregularGrid.md)
-* [Wave](./documentation/wave.md)
 * [Hinge](./documentation/hinge.md)
+* [Shapes](./documentation/shapes.md)
+* [Wave](./documentation/wave.md)
 
 ## Changes
 * [Changelog](./changes.md)
 
 ## Dependencies
-* [CadQuery 2.3>](https://github.com/CadQuery/cadquery)
-* [cqMore](https://github.com/JustinSDK/cqMore)
+* [CadQuery](https://github.com/CadQuery/cadquery)
   
 ---
 
@@ -44,7 +42,7 @@ C:\Users\<user>\cadqueryhelper>python example_runner.py
 
 **OR**
 
-* From the root of the project run of the example scripts:
+* From the root of the project run one of the example scripts:
 
 
 ``` bash

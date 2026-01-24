@@ -6,6 +6,13 @@
 * This release has "**breaking**" changes.
 * Moved all of the grid code into a grid package. (Will require path updates)
 * Moved all of the hinge code into a hinge package. (Will require path updatess)
+* Updated stl paths
+* Moved Irregular Grid documentation to grid.md
+* Moved Series documentation for grid.md
+* Removed cqmore dependency
+  * Rewrote star shape from scratch
+* Updated README.md
+ 
 
 
 ## 1.7.4
