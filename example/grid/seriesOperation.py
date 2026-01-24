@@ -30,4 +30,4 @@ frame = frame_shape(length=12, width = 5, height = 16)
 frame_series = series(shape=frame, size=5, length_offset=3, operation=rail_operation, union=False)
 
 #show_object(frame_series)
-cq.exporters.export(frame_series,'stl/seriesOperation.stl')
+cq.exporters.export(frame_series,'stl/grid_seriesOperation.stl')

@@ -15,4 +15,4 @@ st_series = series(
 )
 
 #show_object(st_series)
-cq.exporters.export(st_series,'stl/series.stl')
+cq.exporters.export(st_series,'stl/grid_series.stl')
