@@ -229,6 +229,9 @@ ex_grid = rotate_grid(
 show_object(ex_grid)
 ```
 
+![](image/grid/05.png)
+
+
 * [source](../src/cadqueryhelper/grid/rotateGrid.py)
 * [example](../example/grid/rotate_grid.py)
 * [stl](../stl/grid_rotate.stl)
@@ -237,9 +240,44 @@ show_object(ex_grid)
 ## Scheme Grid
 
 ### parameters
+* shape: cq.Workplane|None
+* rotates: list[float]
+* x_count: int
+* y_count: int
+* x_spacing: float
+* y_spacing: float
+* x_repeat: int
+* y_repeat: int
 
 ``` python
+import cadquery as cq
+from cadqueryhelper.grid import scheme_grid
+from cadqueryhelper.shape import arrow
+
+ex_arrow = arrow(
+  length=10,
+  inner_length=5,
+  width=5,
+  width_outset=2,
+  height=3
+)
+
+ex_grid = scheme_grid(
+    shape = ex_arrow, 
+    rotates = [-270,0,-180,-90],
+    x_count = 2,
+    y_count = 2,
+    x_spacing = 10,
+    y_spacing = 10,
+    x_repeat = 2,
+    y_repeat = 2,
+)
+
+show_object(ex_grid)
 ```
+
+![](image/grid/06.png)
+
 
 * [source](../src/cadqueryhelper/grid/grid.py)
 * [example](../example/grid/exampleGrid.py)

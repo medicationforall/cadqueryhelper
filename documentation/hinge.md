@@ -66,8 +66,8 @@ show_object(hinge_test)
 ![](image/hinge/05.png)<br /><br />
 ![](image/hinge/06.png)
 
-* [source Code](../src/cadqueryhelper/Hinge.py)
-* [example](../example/hinge.py)
+* [source Code](../src/cadqueryhelper/hinge/Hinge.py)
+* [example](../example/hinge/hinge.py)
 * [stl](../stl/hinge.stl)
 
 #### Custom Tab Height Example
@@ -107,7 +107,7 @@ show_object(hinge_test)
 
 ![](image/hinge/09.png)
 
-* [example](../example/hinge_larger_tab.py)
+* [example](../example/hinge/hinge_larger_tab.py)
 * [stl](../stl/hinge_larger_tab.stl)
 
 #### Render Example
@@ -154,7 +154,7 @@ show_object(scene)
 
 ![](image/hinge/10.png)
 
-* [example](../example/hinge_render.py)
+* [example](../example/hinge/hinge_render.py)
 * [stl](../stl/hinge_render.stl)
 
 #### Flip Example
