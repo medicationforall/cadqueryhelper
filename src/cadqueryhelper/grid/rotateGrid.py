@@ -16,7 +16,12 @@ import cadquery as cq
 
 def rotate_grid(
         shape:cq.Workplane|None = None,
-        rotate_increment=-90
+        rotate_increment:float=-90,
+        x_spacing:float = 10, 
+        y_spacing:float = 10,
+        x_count:int = 4, 
+        y_count:int = 4,
+        mod_reset:int = 4
     ):
     rotation = 0
     count =0
@@ -27,7 +32,7 @@ def rotate_grid(
     def add_rotate(loc: cq.Location) -> cq.Shape:
         nonlocal rotation
         nonlocal count
-        if count% 4 == 0:
+        if count % mod_reset == 0:
             rotation=0
         
         shape_rotate = shape.rotate((0,0,1),(0,0,0),rotation)
@@ -40,10 +45,10 @@ def rotate_grid(
     result = (
         cq.Workplane("XY")
         .rarray(
-            xSpacing = 10, 
-            ySpacing = 10,
-            xCount = 4, 
-            yCount= 4, 
+            xSpacing = x_spacing, 
+            ySpacing = y_spacing,
+            xCount = x_count, 
+            yCount= y_count, 
             center = True)
         .eachpoint(add_rotate)
     )

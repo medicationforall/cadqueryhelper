@@ -1,4 +1,17 @@
 # Hinge Documentation
+---
+
+- [Hinge Documentation](#hinge-documentation)
+  - [Hinge](#hinge)
+    - [Parameters](#parameters)
+    - [Methods](#methods)
+      - [Custom Tab Height Example](#custom-tab-height-example)
+      - [Render Example](#render-example)
+      - [Flip Example](#flip-example)
+
+---
+
+## Hinge
 
 Print in place hinge.
 

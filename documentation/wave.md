@@ -1,5 +1,31 @@
 # Wave Documentation
 
+---
+
+- [Wave Documentation](#wave-documentation)
+  - [Example Usage](#example-usage)
+  - [Conventions](#conventions)
+  - [Triangle](#triangle)
+    - [parameters](#parameters)
+    - [Zero height](#zero-height)
+  - [Sawtooth](#sawtooth)
+    - [parameters](#parameters-1)
+    - [Zero height](#zero-height-1)
+  - [Sine](#sine)
+    - [parameters](#parameters-2)
+  - [Square](#square)
+    - [parameters](#parameters-3)
+    - [Zero height \& sweep](#zero-height--sweep)
+  - [Uneven](#uneven)
+    - [parameters](#parameters-4)
+    - [returns](#returns)
+    - [Uneven Grid Example](#uneven-grid-example)
+  - [Uneven Spline](#uneven-spline)
+    - [parameters](#parameters-5)
+    - [Uneven Spline Grid Example](#uneven-spline-grid-example)
+
+---
+
 ## Example Usage
 ``` python
 import cadquery as cq

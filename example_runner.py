@@ -66,6 +66,8 @@ import example.grid.exampleGrid
 import example.grid.hexagonGrid
 import example.grid.irregularGrid_hardCoded
 import example.grid.irregularGrid
+import example.grid.randomized_rotation_grid
+import example.grid.rotate_grid
 import example.grid.series
 import example.grid.seriesOperation
 import example.grid.starGrid

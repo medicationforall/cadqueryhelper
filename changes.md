@@ -12,6 +12,10 @@
 * Removed cqmore dependency
   * Rewrote star shape from scratch
 * Updated README.md
+* Added randomized_rotation_grid example
+* Added rotate_grid_example
+* Added parameter to rotate_grid
+* Built out grid.md documentation
  
 
 
