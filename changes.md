@@ -2,6 +2,15 @@
 
 ## main wip
 
+## 2.0.1
+* Hinge Package
+  * Added SimpleDoor
+  * Added SimpleFrame
+  * Added SimplePivot 
+  * Added SimpleHinge
+  * Added documentation 
+  * added examples
+
 ## 2.0.0
 * This release has "**breaking**" changes.
 * Moved all of the grid code into a grid package. (Will require path updates)

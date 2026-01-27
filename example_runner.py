@@ -60,6 +60,10 @@ import example.hinge.hinge
 import example.hinge.hinge_larger_tab
 import example.hinge.hinge_render
 import example.hinge.hinge_invert
+import example.hinge.simple_door
+import example.hinge.simple_frame
+import example.hinge.simple_pivot
+import example.hinge.simple_hinge
 
 print('building grids')
 import example.grid.exampleGrid

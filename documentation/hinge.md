@@ -7,7 +7,15 @@
     - [Methods](#methods)
       - [Custom Tab Height Example](#custom-tab-height-example)
       - [Render Example](#render-example)
-      - [Flip Example](#flip-example)
+  - [Simple Door](#simple-door)
+    - [parameters](#parameters-1)
+    - [blueprints](#blueprints)
+  - [Simple Frame](#simple-frame)
+    - [parameters](#parameters-2)
+  - [Simple Hinge](#simple-hinge)
+    - [parameters](#parameters-3)
+  - [Simple Pivot](#simple-pivot)
+    - [parameters](#parameters-4)
 
 ---
 
@@ -157,7 +165,137 @@ show_object(scene)
 * [example](../example/hinge/hinge_render.py)
 * [stl](../stl/hinge_render.stl)
 
-#### Flip Example
-``` python
+---
+## Simple Door
+### parameters
+* length: float
+* width: float
+* height: float
+* rotate_type: Literal['full','front','back']
 
+### blueprints
+* bp_door:Base|None = None
+
+
+``` python
+import cadquery as cq
+from cadqueryhelper.hinge import SimpleDoor
+
+bp_door = SimpleDoor()
+bp_door.length = 30
+bp_door.width = 4
+bp_door.height = 40
+bp_door.rotate_type = 'full'
+bp_door.make()
+ex_door = bp_door.build()
+
+show_object(ex_door)
 ```
+
+![](image/hinge/12.png)
+
+* [source Code](../src/cadqueryhelper/hinge/SimpleDoor.py)
+* [example](../example/hinge/simple_door.py)
+* [stl](../stl/hinge_simple_door.stl)
+
+---
+## Simple Frame
+
+### parameters
+* length: float
+* width: float
+* height: float
+* frame_width: float
+
+``` pyhon
+import cadquery as cq
+from cadqueryhelper.hinge import SimpleFrame
+
+bp_frame = SimpleFrame()
+bp_frame.length = 30
+bp_frame.width = 4
+bp_frame.height = 40
+bp_frame.frame_width = 1
+bp_frame.make()
+ex_frame = bp_frame.build()
+
+show_object(ex_frame) 
+```
+
+![](image/hinge/13.png)
+
+* [source Code](../src/cadqueryhelper/hinge/SimpleFrame.py)
+* [example](../example/hinge/simple_frame.py)
+* [stl](../stl/hinge_simple_frame.stl)
+
+---
+
+## Simple Hinge
+
+### parameters
+* length: float
+* width: float
+* height: float
+* margin: float
+* frame_width: float
+* pivot_diameter: float
+* pivot_height: float|None
+* door_width: float|None
+* rotate_type: Literal['full','front','back']
+* rotate: float
+
+``` python
+import cadquery as cq
+from cadqueryhelper.hinge import SimpleHinge
+
+bp_hinge = SimpleHinge()
+bp_hinge.length = 40
+bp_hinge.width = 4
+bp_hinge.height = 42
+bp_hinge.margin = 0.4
+bp_hinge.frame_width = 2
+bp_hinge.pivot_diameter = 3
+bp_hinge.pivot_height = bp_hinge.height - 1.5
+bp_hinge.door_width = None
+bp_hinge.rotate = 0
+bp_hinge.rotate_type = "full"
+bp_hinge.make()
+ex_hinge = bp_hinge.build()
+
+show_object(ex_hinge)
+```
+
+![](image/hinge/15.png)
+
+* [source Code](../src/cadqueryhelper/hinge/SimpleHinge.py)
+* [example](../example/hinge/simple_hinge.py)
+* [stl](../stl/hinge_simple_hinge.stl)
+
+---
+## Simple Pivot
+
+### parameters
+* diameter: float
+* height: float
+* margin: float
+
+``` python
+import cadquery as cq
+from cadqueryhelper.hinge import SimplePivot
+
+bp_pivot = SimplePivot()
+bp_pivot.diameter = 4
+bp_pivot.height = 43
+bp_pivot.make()
+ex_pivot= bp_pivot.build()
+
+show_object(ex_pivot)  
+```
+
+![](image/hinge/14.png)
+
+* [source Code](../src/cadqueryhelper/hinge/SimplePivot.py)
+* [example](../example/hinge/simple_pivot.py)
+* [stl](../stl/hinge_simple_pivot.stl)
+
+---
