@@ -1,28 +1,316 @@
 # Grid Documentation
 ---
 - [Grid Documentation](#grid-documentation)
+  - [Grid Arc Points](#grid-arc-points)
+  - [parameters](#parameters)
+    - [returns](#returns)
+    - [coord example](#coord-example)
+  - [Grid Points](#grid-points)
+    - [parameters](#parameters-1)
+    - [returns](#returns-1)
+    - [points data](#points-data)
+    - [coord example](#coord-example-1)
+    - [points data](#points-data-1)
+  - [Grid Points Random](#grid-points-random)
+    - [parameters](#parameters-2)
+    - [returns](#returns-2)
+    - [Points Data](#points-data-2)
+    - [Coord Example](#coord-example-2)
+    - [points data](#points-data-3)
   - [Irregular Grid](#irregular-grid)
-    - [parameters](#parameters)
+    - [parameters](#parameters-3)
     - [An Uninteresting Grid](#an-uninteresting-grid)
     - [Example](#example)
   - [make\_grid](#make_grid)
-    - [Parameters](#parameters-1)
+    - [Parameters](#parameters-4)
     - [Examples](#examples)
       - [Hex Grid with offset](#hex-grid-with-offset)
   - [Randomized Rotation Grid](#randomized-rotation-grid)
     - [paramaters](#paramaters)
   - [Rotate Grid](#rotate-grid)
-    - [parameters](#parameters-2)
+    - [parameters](#parameters-5)
   - [Scheme Grid](#scheme-grid)
-    - [parameters](#parameters-3)
+    - [parameters](#parameters-6)
   - [Series](#series)
-    - [parameters](#parameters-4)
-    - [returns](#returns)
+    - [parameters](#parameters-7)
+    - [returns](#returns-3)
     - [Examples](#examples-1)
       - [Star series repeated over the y-axis](#star-series-repeated-over-the-y-axis)
       - [Star series repeated over the y and z-axis](#star-series-repeated-over-the-y-and-z-axis)
       - [Star series repeated over the x, y and z-axis](#star-series-repeated-over-the-x-y-and-z-axis)
     - [Series with operation applied](#series-with-operation-applied)
+
+---
+
+## Grid Arc Points
+Generate gird points along an arc
+
+## parameters
+* columns: int
+* rows: int
+* x_spacing: float
+* angle: float
+* row_increment: int - increases the number of points per row
+
+### returns 
+* tuple[list[list[tuple[float,float]]], list[tuple[float,float]]]
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_arc_points
+
+points, stream = grid_arc_points(
+    columns = 10,
+    rows = 8,
+    x_spacing = 10,
+    angle = 90,
+    row_increment = 0
+)
+
+example = cq.Workplane("XY").pushPoints(stream).box(1,1,1)
+
+show_object(example)
+```
+
+![](image/grid/11.png)
+
+* [source](../src/cadqueryhelper/grid/grid_arc_points.py)
+* [example](../example/grid/grid_arc_points.py)
+* [stl](../stl/grid_arc_points.stl)
+
+### coord example
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_arc_points
+
+points, stream = grid_arc_points(
+    columns = 5,
+    rows = 6,
+    x_spacing = 10,
+    angle = 90,
+    row_increment = 0
+)
+
+counter = 0
+def add_coord_text(loc:cq.Location)->cq.Shape:
+    global counter
+    coord = loc.toTuple()[0]
+    x = coord[0]
+    y = coord[1]
+    t = cq.Workplane("XY").text(f"{counter}({int(x)},{int(y)})",2.5,1)
+    counter += 1
+    return t.val().located(loc) #type:ignore
+
+example = (
+    cq.Workplane("XY")
+    .pushPoints(stream)
+    .eachpoint(add_coord_text)
+)
+
+show_object(example)
+```
+
+![](image/grid/12.png)
+
+* [example](../example/grid/grid_arc_points_coords.py)
+* [stl](../stl/grid_arc_points_coords.stl)
+
+---
+
+## Grid Points
+Generates points data
+
+### parameters
+* columns: int
+* rows: int
+* x_spacing: float
+* y_spacing: float
+
+### returns
+* tuple[list[list[tuple[float,float]]], list[tuple[float,float]]]
+
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_points
+
+points, stream = grid_points(
+    columns = 5,
+    rows = 6,
+    x_spacing = 5,
+    y_spacing = 5
+)
+example = cq.Workplane("XY").pushPoints(stream).box(1,1,1)
+
+show_object(example)
+```
+### points data
+```
+[
+    [(0, 0), (5, 0), (10, 0), (15, 0), (20, 0)], 
+    [(0, -5), (5, -5), (10, -5), (15, -5), (20, -5)], 
+    [(0, -10), (5, -10), (10, -10), (15, -10), (20, -10)], 
+    [(0, -15), (5, -15), (10, -15), (15, -15), (20, -15)], 
+    [(0, -20), (5, -20), (10, -20), (15, -20), (20, -20)], 
+    [(0, -25), (5, -25), (10, -25), (15, -25), (20, -25)]
+]
+```
+
+![](image/grid/07.png)
+
+* [source](../src/cadqueryhelper/grid/grid_points.py)
+* [example](../example/grid/grid_points.py)
+* [stl](../stl/grid_points.stl)
+
+### coord example
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_points
+
+points, stream = grid_points(
+    columns = 5,
+    rows = 6,
+    x_spacing = 10,
+    y_spacing = 5
+)
+
+def add_coord_text(loc:cq.Location)->cq.Shape:
+    #log(loc.toTuple())
+    coord = loc.toTuple()[0]
+    x = coord[0]
+    y = coord[1]
+    t = cq.Workplane("XY").text(f"({int(x)},{int(y)})",2.5,1)
+    return t.val().located(loc) #type:ignore
+
+example = (
+    cq.Workplane("XY")
+    .pushPoints(stream)
+    .eachpoint(add_coord_text)
+)
+
+show_object(example)
+```
+
+### points data
+```
+[
+    [(0, 0), (10, 0), (20, 0), (30, 0), (40, 0)], 
+    [(0, -5), (10, -5), (20, -5), (30, -5), (40, -5)], 
+    [(0, -10), (10, -10), (20, -10), (30, -10), (40, -10)], 
+    [(0, -15), (10, -15), (20, -15), (30, -15), (40, -15)], 
+    [(0, -20), (10, -20), (20, -20), (30, -20), (40, -20)], 
+    [(0, -25), (10, -25), (20, -25), (30, -25), (40, -25)]
+]
+```
+
+![](image/grid/08.png)
+
+* [example](../example/grid/grid_points_coords.py)
+* [stl](../stl/grid_points_coords.stl)
+
+---
+
+## Grid Points Random
+Generates randomized point data in roughly a grid shape.
+
+### parameters
+* columns: int
+* rows: int
+* x_spacing: float
+* y_spacing: float
+* shift_x: tuple[float, float, float] - min max step
+* shift_y: tuple[float, float, float] - min max step
+* seed: str|None - Different strings will create different random results
+
+### returns
+* tuple[list[list[tuple[float,float]]], list[tuple[float,float]]]
+
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_points_random
+
+points, stream = grid_points_random(
+    columns = 5,
+    rows = 6,
+    x_spacing = 10,
+    y_spacing = 10,
+    shift_x = (-2, 5, 1),#min max step
+    shift_y = (-3, 5, .5),#min max step
+    seed = 'test'
+)
+
+example = cq.Workplane("XY").pushPoints(stream).box(1,1,1)
+
+show_object(example)
+```
+### Points Data
+```
+ [
+    [(2.0, 0.5), (11.0, -2.5), (24.0, -1.0), (31.0, 5.0), (43.0, 1.0)], 
+    [(3.0, -5.5), (13.0, -7.5), (24.0, -8.5), (31.0, -8.0), (41.0, -13.0)], 
+    [(1.0, -22.0), (12.0, -15.5), (23.0, -16.0), (29.0, -17.0), (41.0, -21.5)], 
+    [(-1.0, -27.5), (11.0, -32.5), (24.0, -27.5), (33.0, -30.0), (38.0, -32.5)], 
+    [(4.0, -42.0), (13.0, -36.0), (19.0, -37.0), (33.0, -38.0), (44.0, -42.0)], 
+    [(5.0, -46.5), (10.0, -52.0), (20.0, -48.5), (35.0, -46.5), (39.0, -52.0)]
+]
+```
+
+![](image/grid/09.png)
+
+
+* [source](../src/cadqueryhelper/grid/grid_points_random.py)
+* [example](../example/grid/grid_points_random.py)
+* [stl](../stl/grid_points_random.stl)
+
+### Coord Example
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_points_random
+
+points, stream = grid_points_random(
+    columns = 5,
+    rows = 6,
+    x_spacing = 10,
+    y_spacing = 5,
+    shift_x = (-2, 5, 1),#min max step
+    shift_y = (-3, 5, 1),#min max step
+    seed = 'test'
+)
+
+def add_coord_text(loc:cq.Location)->cq.Shape:
+    #log(loc.toTuple())
+    coord = loc.toTuple()[0]
+    x = coord[0]
+    y = coord[1]
+    t = cq.Workplane("XY").text(f"({int(x)},{int(y)})",2.5,1)
+    return t.val().located(loc) #type:ignore
+
+example = (
+    cq.Workplane("XY")
+    .pushPoints(stream)
+    .eachpoint(add_coord_text)
+)
+
+show_object(example)
+```
+
+### points data
+```
+ [
+    [(2.0, 0.0), (11.0, -3.0), (24.0, -1.0), (31.0, 5.0), (43.0, 1.0)], 
+    [(3.0, -6.0), (13.0, -8.0), (24.0, -9.0), (31.0, -8.0), (41.0, -13.0)], 
+    [(1.0, -22.0), (12.0, -16.0), (23.0, -16.0), (29.0, -17.0), (41.0, -22.0)], 
+    [(-1.0, -25.0), (13.0, -30.0), (18.0, -27.0), (33.0, -28.0), (41.0, -33.0)], 
+    [(-2.0, -37.0), (9.0, -38.0), (25.0, -42.0), (34.0, -38.0), (43.0, -37.0)], 
+    [(-1.0, -46.0), (14.0, -51.0), (19.0, -51.0), (32.0, -46.0), (44.0, -52.0)]
+]
+```
+
+![](image/grid/10.png)
+
+* [example](../example/grid/grid_points_random_coords.py)
+* [stl](../stl/grid_points_random_coords.stl)
 
 ---
 

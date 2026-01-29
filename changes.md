@@ -2,6 +2,13 @@
 
 ## main wip
 
+## 2.0.2
+* Grid Package
+  * Added grid_points
+  * Added grid_random_points
+  * Added grid_arc_points
+
+
 ## 2.0.1
 * Hinge Package
   * Added SimpleDoor
