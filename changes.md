@@ -4,6 +4,10 @@
 
 ## 2.0.2
 * Grid Package
+  * Added grid_arc_points_random
+
+## 2.0.2
+* Grid Package
   * Added grid_points
   * Added grid_random_points
   * Added grid_arc_points

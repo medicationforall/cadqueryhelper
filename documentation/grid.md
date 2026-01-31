@@ -5,34 +5,36 @@
   - [parameters](#parameters)
     - [returns](#returns)
     - [coord example](#coord-example)
-  - [Grid Points](#grid-points)
+  - [Grid Arc Points Random](#grid-arc-points-random)
     - [parameters](#parameters-1)
+  - [Grid Points](#grid-points)
+    - [parameters](#parameters-2)
     - [returns](#returns-1)
     - [points data](#points-data)
     - [coord example](#coord-example-1)
     - [points data](#points-data-1)
   - [Grid Points Random](#grid-points-random)
-    - [parameters](#parameters-2)
+    - [parameters](#parameters-3)
     - [returns](#returns-2)
     - [Points Data](#points-data-2)
     - [Coord Example](#coord-example-2)
     - [points data](#points-data-3)
   - [Irregular Grid](#irregular-grid)
-    - [parameters](#parameters-3)
+    - [parameters](#parameters-4)
     - [An Uninteresting Grid](#an-uninteresting-grid)
     - [Example](#example)
   - [make\_grid](#make_grid)
-    - [Parameters](#parameters-4)
+    - [Parameters](#parameters-5)
     - [Examples](#examples)
       - [Hex Grid with offset](#hex-grid-with-offset)
   - [Randomized Rotation Grid](#randomized-rotation-grid)
     - [paramaters](#paramaters)
   - [Rotate Grid](#rotate-grid)
-    - [parameters](#parameters-5)
-  - [Scheme Grid](#scheme-grid)
     - [parameters](#parameters-6)
-  - [Series](#series)
+  - [Scheme Grid](#scheme-grid)
     - [parameters](#parameters-7)
+  - [Series](#series)
+    - [parameters](#parameters-8)
     - [returns](#returns-3)
     - [Examples](#examples-1)
       - [Star series repeated over the y-axis](#star-series-repeated-over-the-y-axis)
@@ -114,6 +116,46 @@ show_object(example)
 
 * [example](../example/grid/grid_arc_points_coords.py)
 * [stl](../stl/grid_arc_points_coords.stl)
+
+---
+
+## Grid Arc Points Random
+
+### parameters
+* columns: int
+* rows: int
+* x_spacing: float
+* angle: float
+* row_increment: int
+* shift_x: tuple[float, float, float] - min max step
+* shift_y: tuple[float, float, float] - min max step
+* seed: str|None
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_arc_points_random
+
+points, stream = grid_arc_points_random(
+    columns = 10,
+    rows = 4,
+    x_spacing = 10,
+    angle = 90,
+    row_increment = 1,
+    shift_x = (-10, 10, 1), #min max step
+    shift_y = (-10, 10, 1.5), #min max step
+    seed= 'tes1'
+)
+
+example = cq.Workplane("XY").pushPoints(stream).box(1,1,1)
+
+show_object(example)
+```
+
+![](image/grid/13.png)
+
+* [source](../src/cadqueryhelper/grid/grid_arc_points_random.py)
+* [example](../example/grid/grid_arc_points_random.py)
+* [stl](../stl/grid_arc_points_random.stl)
 
 ---
 

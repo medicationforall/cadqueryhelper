@@ -5,6 +5,7 @@ from .rotateGrid import rotate_grid
 from .schemeGrid import scheme_grid
 from .series import series
 
-from .grid_arc_points import grid_arc_points
+from .grid_arc_points import grid_arc_points, rotate_point, make_arc_row_points
+from .grid_arc_points_random import grid_arc_points_random, make_arc_row_points_random
 from .grid_points import grid_points
 from .grid_points_random import grid_points_random

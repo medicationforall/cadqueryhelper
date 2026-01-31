@@ -69,6 +69,7 @@ print('building grids')
 import example.grid.exampleGrid
 import example.grid.grid_arc_points
 import example.grid.grid_arc_points_coords
+import example.grid.grid_arc_points_random
 import example.grid.grid_points
 import example.grid.grid_points_coords
 import example.grid.grid_points_random
