@@ -2,9 +2,11 @@
 
 ## main wip
 
-## 2.0.2
+## 2.0.3
 * Grid Package
   * Added grid_arc_points_random
+  * Added cell_stretch_points
+  * Added grid_cell_basic
 
 ## 2.0.2
 * Grid Package

@@ -7,34 +7,39 @@
     - [coord example](#coord-example)
   - [Grid Arc Points Random](#grid-arc-points-random)
     - [parameters](#parameters-1)
-  - [Grid Points](#grid-points)
+  - [Grid Cell Basic](#grid-cell-basic)
     - [parameters](#parameters-2)
+    - [Arc Example](#arc-example)
+  - [Grid Random Example](#grid-random-example)
+  - [Grid Arc Random Example](#grid-arc-random-example)
+  - [Grid Points](#grid-points)
+    - [parameters](#parameters-3)
     - [returns](#returns-1)
     - [points data](#points-data)
     - [coord example](#coord-example-1)
     - [points data](#points-data-1)
   - [Grid Points Random](#grid-points-random)
-    - [parameters](#parameters-3)
+    - [parameters](#parameters-4)
     - [returns](#returns-2)
     - [Points Data](#points-data-2)
     - [Coord Example](#coord-example-2)
     - [points data](#points-data-3)
   - [Irregular Grid](#irregular-grid)
-    - [parameters](#parameters-4)
+    - [parameters](#parameters-5)
     - [An Uninteresting Grid](#an-uninteresting-grid)
     - [Example](#example)
   - [make\_grid](#make_grid)
-    - [Parameters](#parameters-5)
+    - [Parameters](#parameters-6)
     - [Examples](#examples)
       - [Hex Grid with offset](#hex-grid-with-offset)
   - [Randomized Rotation Grid](#randomized-rotation-grid)
     - [paramaters](#paramaters)
   - [Rotate Grid](#rotate-grid)
-    - [parameters](#parameters-6)
-  - [Scheme Grid](#scheme-grid)
     - [parameters](#parameters-7)
-  - [Series](#series)
+  - [Scheme Grid](#scheme-grid)
     - [parameters](#parameters-8)
+  - [Series](#series)
+    - [parameters](#parameters-9)
     - [returns](#returns-3)
     - [Examples](#examples-1)
       - [Star series repeated over the y-axis](#star-series-repeated-over-the-y-axis)
@@ -156,6 +161,153 @@ show_object(example)
 * [source](../src/cadqueryhelper/grid/grid_arc_points_random.py)
 * [example](../example/grid/grid_arc_points_random.py)
 * [stl](../stl/grid_arc_points_random.stl)
+
+---
+
+## Grid Cell Basic
+Basic proof of concept grid built from cell stretch transformation
+
+### parameters
+cells_collection,
+height:float=1
+
+```
+import cadquery as cq
+from cadqueryhelper.grid import grid_points, cell_stretch_points, grid_cell_basic
+
+points, stream = grid_points(
+    columns = 10,
+    rows = 10,
+    x_spacing = 5,
+    y_spacing = 5
+)
+
+cell_points = cell_stretch_points(
+    points,
+    x_stretch = 3,
+    y_stretch = 3
+)
+
+grid = grid_cell_basic(
+    cell_points,
+    height=1,
+    taper= 25
+)
+
+#show_object(grid)
+```
+
+![](image/grid/15.png)
+
+
+* [source](../src/cadqueryhelper/grid/grid_cell_basic.py)
+* [example](../example/grid/grid_cell_basic.py)
+* [stl](../stl/grid_cell_basic.stl)
+
+
+### Arc Example
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_arc_points, cell_stretch_points, grid_cell_basic
+
+points, stream = grid_arc_points(
+    columns = 13,
+    rows = 13,
+    x_spacing = 5,
+    angle = 180
+)
+
+cell_points = cell_stretch_points(
+    points,
+    x_stretch = 1,
+    y_stretch = 1
+)
+
+grid = grid_cell_basic(
+    cell_points,
+    height=1,
+    taper= 25
+)
+
+show_object(grid)
+```
+
+![](image/grid/16.png)
+
+* [example](../example/grid/grid_cell_basic_arc.py)
+* [stl](../stl/grid_cell_basic_arc.stl)
+
+## Grid Random Example
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_points_random, cell_stretch_points, grid_cell_basic
+
+points, stream = grid_points_random(
+    columns = 10,
+    rows = 10,
+    x_spacing = 5,
+    y_spacing = 5,
+    shift_x = (-2, 2, 1),#min max step
+    shift_y = (-2, 2, .5),#min max step
+    seed = 'test9'
+)
+
+cell_points = cell_stretch_points(
+    points,
+    x_stretch = 3,
+    y_stretch = 2
+)
+
+grid = grid_cell_basic(
+    cell_points,
+    height=1,
+    taper= 15
+)
+
+show_object(grid)
+```
+
+![](image/grid/17.png)
+
+* [example](../example/grid/grid_cell_basic_random.py)
+* [stl](../stl/grid_cell_basic_random.stl)
+
+## Grid Arc Random Example
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_arc_points_random, cell_stretch_points, grid_cell_basic
+
+points, stream = grid_arc_points_random(
+    columns = 17,
+    rows = 6,
+    x_spacing = 5,
+    angle = 90,
+    shift_x = (-2, 2, 1),#min max step
+    shift_y = (-3, 2, .5),#min max step
+    seed = 'test'
+)
+
+cell_points = cell_stretch_points(
+    points,
+    x_stretch = 2,
+    y_stretch = 4
+)
+
+grid = grid_cell_basic(
+    cell_points,
+    height=1,
+    taper= 30
+)
+
+show_object(grid)
+```
+
+![](image/grid/18.png)
+
+* [example](../example/grid/grid_cell_basic_arc_random.py)
+* [stl](../stl/grid_cell_basic_arc_random.stl)
+
 
 ---
 
