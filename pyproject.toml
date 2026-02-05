@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cadqueryhelper"
-version = "2.0.3"
+version = "2.0.4"
 authors = [
   { name="James Adams", email="inklink28@gmail.com" },
 ]

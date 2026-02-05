@@ -2,6 +2,11 @@
 
 ## main wip
 
+## 2.0.4
+* Grid Package 
+* Added grid_points_mod
+
+
 ## 2.0.3
 * Grid Package
   * Added grid_arc_points_random
