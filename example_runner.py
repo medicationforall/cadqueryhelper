@@ -83,6 +83,8 @@ import example.grid.grid_points_random_coords
 import example.grid.hexagonGrid
 import example.grid.irregularGrid_hardCoded
 import example.grid.irregularGrid
+import example.grid.join_cells_interlock
+import example.grid.points_randomize
 import example.grid.randomized_rotation_grid
 import example.grid.rotate_grid
 import example.grid.series

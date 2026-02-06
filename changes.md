@@ -5,7 +5,8 @@
 ## 2.0.4
 * Grid Package 
 * Added grid_points_mod
-
+* Added points_randomize
+* Added join_cells_interlock
 
 ## 2.0.3
 * Grid Package

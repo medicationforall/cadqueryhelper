@@ -28,23 +28,28 @@
     - [Points Data](#points-data-2)
     - [Coord Example](#coord-example-2)
     - [points data](#points-data-3)
-  - [Irregular Grid](#irregular-grid)
+  - [Join Points Interlock](#join-points-interlock)
     - [parameters](#parameters-6)
+  - [Points Randomize](#points-randomize)
+    - [parameters](#parameters-7)
+    - [returns](#returns-4)
+  - [Irregular Grid](#irregular-grid)
+    - [parameters](#parameters-8)
     - [An Uninteresting Grid](#an-uninteresting-grid)
     - [Example](#example)
   - [make\_grid](#make_grid)
-    - [Parameters](#parameters-7)
+    - [Parameters](#parameters-9)
     - [Examples](#examples)
       - [Hex Grid with offset](#hex-grid-with-offset)
   - [Randomized Rotation Grid](#randomized-rotation-grid)
     - [paramaters](#paramaters)
   - [Rotate Grid](#rotate-grid)
-    - [parameters](#parameters-8)
-  - [Scheme Grid](#scheme-grid)
-    - [parameters](#parameters-9)
-  - [Series](#series)
     - [parameters](#parameters-10)
-    - [returns](#returns-4)
+  - [Scheme Grid](#scheme-grid)
+    - [parameters](#parameters-11)
+  - [Series](#series)
+    - [parameters](#parameters-12)
+    - [returns](#returns-5)
     - [Examples](#examples-1)
       - [Star series repeated over the y-axis](#star-series-repeated-over-the-y-axis)
       - [Star series repeated over the y and z-axis](#star-series-repeated-over-the-y-and-z-axis)
@@ -596,6 +601,110 @@ show_object(example)
 * [example](../example/grid/grid_points_random_coords.py)
 * [stl](../stl/grid_points_random_coords.stl)
 
+---
+
+## Join Points Interlock
+
+### parameters
+* points: list[list[tuple[float,float]]]
+* cells: list[list[tuple[float,float]]]
+* start: int
+* top_end_index: int
+* bottom_start_index: int
+* top_cap_index: int
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import (
+    grid_points_mod,
+    cell_stretch_points, 
+    join_cells_interlock,
+    grid_cell_basic
+)
+
+points, stream = grid_points_mod(
+    columns = 8,
+    rows = 7,
+    x_spacing = [5,10],
+    y_spacing = 5,
+    row_x_mod = [0,1],
+    row_x_offset = [0,-2.5]
+)
+
+cells = cell_stretch_points(
+    points,
+    x_stretch = 1,
+    y_stretch = 1
+ )
+
+joined_cells = join_cells_interlock(
+        points,
+        cells,
+        start = 1,
+        top_end_index = 3,
+        bottom_start_index = 2,
+        top_cap_index = 3
+)
+
+grid_ex_joined = grid_cell_basic(
+    joined_cells,
+    height=1,
+    taper= 25
+)
+
+show_object(grid_ex_joined)
+```
+
+![](image/grid/22.png)
+
+* [source](../src/cadqueryhelper/grid/join_cells_interlock.py)
+* [example](../example/grid/join_cells_interlock.py)
+* [stl](../stl/grid_joined_cells_interlock.stl)
+
+---
+
+## Points Randomize
+Takes a points collection and randomizes the position of each point randomly within a set range. 
+
+### parameters
+* points: list[list[tuple[float,float]]] 
+* shift_x: tuple[float,float,float] - (min,max,step)
+* shift_y: tuple[float,float,float] - (min,max,step)
+* seed: str
+
+### returns
+* tuple[list[list[tuple[float,float]]], list[tuple[float,float]]]
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_points_mod, points_randomize
+
+points, stream = grid_points_mod(
+    columns = 8,
+    rows = 7,
+    x_spacing = [5,10],
+    y_spacing = 5,
+    row_x_mod = [0,1],
+    row_x_offset = [0,-2.5]
+)
+
+r_points,r_stream = points_randomize(
+    points,
+    shift_x = (-2,2,.5),
+    shift_y = (-2,2,.5),
+    seed = 'test'
+)
+
+example = cq.Workplane("XY").pushPoints(r_stream).box(1,1,1)
+
+show_object(example)
+```
+
+![](image/grid/21.png)
+
+* [source](../src/cadqueryhelper/grid/points_randomize.py)
+* [example](../example/grid/points_randomize.py)
+* [stl](../stl/grid_points_randomize.stl)
 ---
 
 ## Irregular Grid

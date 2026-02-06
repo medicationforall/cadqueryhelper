@@ -12,3 +12,6 @@ from .grid_points_random import grid_points_random
 from .grid_points_mod import grid_points_mod
 from .cell_stretch_points import cell_stretch_points
 from .grid_cell_basic import grid_cell_basic
+
+from .points_randomize import points_randomize
+from .join_cells_interlock import join_cells_interlock
