@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper.grid import grid_points, cell_stretch_points, grid_cell_basic
+from cadqueryhelper.grid import grid_points, cell_stretch_points, grid_cell_random
 
 points, stream = grid_points(
     columns = 10,
@@ -14,12 +14,13 @@ cell_points = cell_stretch_points(
     y_stretch = 3
 )
 
-grid = grid_cell_basic(
+grid = grid_cell_random(
     cell_points,
-    height = 1,
-    taper = 25,
-    offset = None
+    height = (1,5,1),
+    offset = (-1,0,.25),
+    taper = (5,60,5),
+    seed = 'abhi'
 )
 
 #show_object(grid)
-cq.exporters.export(grid,'stl/grid_cell_basic.stl')
+cq.exporters.export(grid,'stl/grid_cell_random.stl')

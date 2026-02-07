@@ -66,11 +66,13 @@ import example.hinge.simple_pivot
 import example.hinge.simple_hinge
 
 print('building grids')
+import example.grid.cell_single
 import example.grid.exampleGrid
 import example.grid.grid_arc_points
 import example.grid.grid_arc_points_coords
 import example.grid.grid_arc_points_random
 import example.grid.grid_cell_basic
+import example.grid.grid_cell_random
 import example.grid.grid_cell_basic_arc
 import example.grid.grid_cell_basic_arc_random
 import example.grid.grid_cell_basic_mod

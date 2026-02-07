@@ -2,6 +2,14 @@
 
 ## main wip
 
+## 2.0.5
+* Grid Package
+  * Added cell_single 
+  * Added grid_cell_random
+* Updated grid_cell_basic
+  * Added offset parameter
+* Added Cell Stretch Points documentation to grid.md
+
 ## 2.0.4
 * Grid Package 
 * Added grid_points_mod

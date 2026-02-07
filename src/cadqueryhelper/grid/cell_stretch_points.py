@@ -1,10 +1,10 @@
 
 def _nav_cell(
-    points, 
-    x, 
-    y, 
-    x_stretch, 
-    y_stretch
+    points:list[list[tuple[float,float]]], 
+    x:int, 
+    y:int, 
+    x_stretch:int, 
+    y_stretch:int
 ):
     l_points = []
     # x+ side
@@ -36,10 +36,10 @@ def _nav_cell(
 
 
 def cell_stretch_points(
-        points,
+        points:list[list[tuple[float,float]]],
         x_stretch:int = 1,
         y_stretch:int = 1
-    ):
+    )->list[list[tuple[float,float]]]:
 
     if x_stretch < len(points[0])  :
         length = len(points[0]) - x_stretch

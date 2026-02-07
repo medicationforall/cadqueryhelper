@@ -1,6 +1,5 @@
 import random
 from numpy import arange
-from typing import Tuple
 
 def points_randomize(
     points:list[list[tuple[float,float]]],
