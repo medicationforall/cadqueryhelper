@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+cadquery/bin
+cadquery/lib64
+cadquery/pyvenv.cfg
+cadquery/share/man/man1/*

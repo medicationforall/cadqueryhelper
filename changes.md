@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 2.0.6
+* Clean up file imports on install
+
 ## 2.0.5
 * Grid Package
   * Added cell_single 
