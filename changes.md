@@ -2,6 +2,11 @@
 
 ## main wip
 
+## 2.1.0
+* Wrapped cell_single in a try statement it can generate brep errors.
+  * Attempt to fix bad cell generation from breaking.
+* Upgraded to cadquery version 2.7.0
+
 ## 2.0.6
 * Clean up file imports on install
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cadqueryhelper"
-version = "2.0.6"
+version = "2.1.0"
 authors = [
   { name="James Adams", email="inklink28@gmail.com" },
 ]
@@ -18,7 +18,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-"cadquery==2.6.1"
+"cadquery==2.7.0"
 ]
 
 [project.urls]

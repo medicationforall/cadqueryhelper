@@ -6,15 +6,18 @@ def cell_single(
     taper:float|None=None,
     offset:float|None=-.25
 ) -> cq.Workplane:
-    face = (
-        cq.Workplane("XY")
-        .polyline(points)
-        .close()
-    )
+    try:
+        face = (
+            cq.Workplane("XY")
+            .polyline(points)
+            .close()
+        )
 
-    if offset:
-        face = face.offset2D(offset)
+        if offset:
+            face = face.offset2D(offset)
 
-    if height:
-        face = face.extrude(height,taper=taper)
-    return face
+        if height:
+            face = face.extrude(height,taper=taper)
+        return face
+    except Exception:
+        return cq.Workplane("XY")
