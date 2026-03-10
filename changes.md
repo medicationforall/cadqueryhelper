@@ -1,6 +1,8 @@
 # cadqueryhelper Changelog
 
 ## main wip
+## 2.1.1
+* Split out build_door_frame in simple_hinge
 
 ## 2.1.0
 * Wrapped cell_single in a try statement it can generate brep errors.

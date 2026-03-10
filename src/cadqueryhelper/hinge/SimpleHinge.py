@@ -121,6 +121,10 @@ class SimpleHinge(Base):
         
     def build(self)->cq.Workplane:
         super().build()
+        part = self.build_door_frame()
+        return part
+
+    def build_door_frame(self):
         part = cq.Workplane("XY")
 
         if self.bp_frame:
@@ -141,7 +145,7 @@ class SimpleHinge(Base):
     
     def build_cross_section(self)->cq.Workplane:
         scene = cq.Workplane("XY")
-        door = self.build()
+        door = self.build_door_frame()
         outline = self.build_outline()
         
         scene = scene.add(door)
