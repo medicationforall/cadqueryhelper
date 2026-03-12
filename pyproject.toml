@@ -3,20 +3,23 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
+version = "2.1.2"
 name = "cadqueryhelper"
-version = "2.1.1"
+description = "CADQuery helper library"
+
 authors = [
   { name="James Adams", email="inklink28@gmail.com" },
 ]
-description = "CADQuery helper library"
+
 readme = "README.md"
-license = { file="LICENSE" }
-requires-python = ">=3.10"
+license = "Apache-2.0"
+
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
 ]
+
+requires-python = ">=3.10"
 dependencies = [
 "cadquery==2.7.0"
 ]
