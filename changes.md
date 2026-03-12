@@ -2,7 +2,9 @@
 
 ## main wip
 ## 2.1.1
-* Split out build_door_frame in simple_hinge
+* simple_hinge
+  * Split out build_door_frame code
+  * Added margin_z parameter
 
 ## 2.1.0
 * Wrapped cell_single in a try statement it can generate brep errors.

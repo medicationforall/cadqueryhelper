@@ -237,6 +237,7 @@ show_object(ex_frame)
 * width: float
 * height: float
 * margin: float
+* margin_z: float - Margin along the height of the door if margin z equals 0 uses margin parameter instead.
 * frame_width: float
 * pivot_diameter: float
 * pivot_height: float|None
@@ -253,6 +254,7 @@ bp_hinge.length = 40
 bp_hinge.width = 4
 bp_hinge.height = 42
 bp_hinge.margin = 0.4
+bp_hinge.margin_z = 0
 bp_hinge.frame_width = 2
 bp_hinge.pivot_diameter = 3
 bp_hinge.pivot_height = bp_hinge.height - 1.5

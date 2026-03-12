@@ -6,6 +6,7 @@ bp_hinge.length = 40
 bp_hinge.width = 4
 bp_hinge.height = 42
 bp_hinge.margin = 0.4
+bp_hinge.margin_z = 0
 bp_hinge.frame_width = 2
 bp_hinge.pivot_diameter = 3
 bp_hinge.pivot_height = bp_hinge.height - 1.5

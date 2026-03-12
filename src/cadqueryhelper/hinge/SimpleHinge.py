@@ -11,6 +11,7 @@ class SimpleHinge(Base):
         self.width:float = 4
         self.height:float = 42
         self.margin:float = 0.4
+        self.margin_z:float = 0
         self.frame_width:float = 1
         self.pivot_diameter:float = 3
         self.pivot_height:float|None = None
@@ -39,7 +40,10 @@ class SimpleHinge(Base):
         return width
     
     def calculate_door_height(self):
-        height = self.height - self.frame_width*2 - self.margin*2
+        if self.margin_z:
+            height = self.height - self.frame_width*2 - self.margin_z*2
+        else:
+         height = self.height - self.frame_width*2 - self.margin*2
         return height
 
     def make_outline(self):
