@@ -2,6 +2,10 @@
 
 ## main wip
 
+## 2.2.0
+* Testing for packaging and deploying to pypi.
+* Added PACKAGE_README.md
+
 ## 2.1.2
 * Modified pyproject.toml to to fix setuptools deprecations warnings hanging the build.
 
