@@ -1,6 +1,10 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+## 2.1.2
+* Modified pyproject.toml to to fix setuptools deprecations warnings hanging the build.
+
 ## 2.1.1
 * simple_hinge
   * Split out build_door_frame code
