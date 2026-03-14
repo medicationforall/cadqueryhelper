@@ -1,6 +1,9 @@
 # cadqueryhelper Changelog
 
 ## main wip
+## 2.2.2
+* Updated README.md
+  * Link fix
 
 ## 2.2.1
 * Updated README.md

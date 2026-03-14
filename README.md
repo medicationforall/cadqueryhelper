@@ -20,9 +20,9 @@ Code for shape primitives, looping groups of shapes, hinges, and various wave op
 ---
 
 ### Installation
-Pip install from Pypi https://pypi.org/project/cqterrain/
+Pip install from Pypi https://pypi.org/project/cadqueryhelper/
 
-    pip install cqterrain
+    pip install cadqueryhelper
 
 
 **OR**
