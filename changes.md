@@ -2,6 +2,10 @@
 
 ## main wip
 
+## 2.2.1
+* Updated README.md
+  * Added pypi install directions
+
 ## 2.2.0
 * Testing for packaging and deploying to pypi.
 * Added PACKAGE_README.md

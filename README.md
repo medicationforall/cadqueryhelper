@@ -20,6 +20,13 @@ Code for shape primitives, looping groups of shapes, hinges, and various wave op
 ---
 
 ### Installation
+Pip install from Pypi https://pypi.org/project/cqterrain/
+
+    pip install cqterrain
+
+
+**OR**
+
 To install CadQuery Helper directly from GitHub, run the following `pip` command:
 
 	pip install git+https://github.com/medicationforall/cadqueryhelper
