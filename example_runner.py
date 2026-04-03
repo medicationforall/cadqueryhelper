@@ -16,6 +16,7 @@ import example.shape.cylinder
 import example.shape.cylinder_sector
 import example.shape.diamond
 import example.shape.ellipse_sector
+import example.shape.heart
 import example.shape.heptagon
 import example.shape.hexagon
 import example.shape.iBeam

@@ -1,7 +1,5 @@
 # Shape Documentation
 
-
-
 ## Example Usage
 
 ``` python
@@ -49,6 +47,7 @@ The code above:
 * [Cylinder Sector](#cylinder-sector)
 * [Diamond](#diamond)
 * [Ellipse Sector](#ellipse-sector)
+* [Heart](#heart)
 * [I-Beam](#i-beam)
 * [Jersey Barrier](#jersey-barrier)
 * [Lightning](#lightning)
@@ -557,6 +556,34 @@ show_object(ex_sector)
 * [source](../src/cadqueryhelper/shape/ellipse_sector.py)
 * [example](../example/shape/ellipse_sector.py)
 * [stl](../stl/shape_ellipse_sector.stl)
+
+---
+
+## Heart
+### Parameters
+* diameter:float
+* length:float
+* height:float
+
+``` python
+import cadquery as cq
+from cadqueryhelper import shape
+
+result = shape.heart(
+    diameter = 15,
+    length = 15,
+    height = 3
+)
+
+show_object(result)
+```
+
+![](image/shape/56.png)<br />
+
+* [source](../src/cadqueryhelper/shape/heart.py)
+* [example](../example/shape/heart.py)
+* [stl](../stl/shape_heart.stl)
+
 ---
 
 ## I-Beam

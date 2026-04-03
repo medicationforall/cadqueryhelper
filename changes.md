@@ -1,6 +1,10 @@
 # cadqueryhelper Changelog
 
 ## main wip
+
+## 2.2.3
+* Add Heart shape
+
 ## 2.2.2
 * Updated README.md
   * Link fix

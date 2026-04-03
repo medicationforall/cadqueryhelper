@@ -35,3 +35,4 @@ from .ellipse_sector import ellipse_sector
 from .pyramid import pyramid
 
 from .ring import ring
+from .heart import heart
