@@ -2,6 +2,9 @@
 
 ## main wip
 
+## 2.2.4
+* Build fix
+
 ## 2.2.3
 * Add Heart shape
 
