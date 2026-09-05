@@ -2,6 +2,11 @@
 
 ## main wip
 
+## 2.2.5
+* Added cell_stretch_points_random
+* Upgraded to cadquery version 2.8.0
+* cleaned up grid documentation index
+
 ## 2.2.4
 * Build fix
 

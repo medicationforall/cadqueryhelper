@@ -1,67 +1,25 @@
 # Grid Documentation
 ---
-- [Grid Documentation](#grid-documentation)
-  - [Cell Single](#cell-single)
-    - [parameters](#parameters)
-  - [Cell Stretch Points](#cell-stretch-points)
-    - [parameters](#parameters-1)
-    - [returns](#returns)
-  - [Grid Arc Points](#grid-arc-points)
-  - [parameters](#parameters-2)
-    - [returns](#returns-1)
-    - [coord example](#coord-example)
-  - [Grid Arc Points Random](#grid-arc-points-random)
-    - [parameters](#parameters-3)
-  - [Grid Cell Basic](#grid-cell-basic)
-    - [parameters](#parameters-4)
-    - [Arc Example](#arc-example)
-  - [Grid Random Example](#grid-random-example)
-  - [Grid Arc Random Example](#grid-arc-random-example)
-  - [Grid Mod Example](#grid-mod-example)
-  - [Grid Cell Random](#grid-cell-random)
-    - [parameters](#parameters-5)
-  - [Grid Points](#grid-points)
-    - [parameters](#parameters-6)
-    - [returns](#returns-2)
-    - [points data](#points-data)
-    - [coord example](#coord-example-1)
-    - [points data](#points-data-1)
-  - [Grid Points Mod](#grid-points-mod)
-    - [parameters](#parameters-7)
-    - [returns](#returns-3)
-  - [Grid Points Random](#grid-points-random)
-    - [parameters](#parameters-8)
-    - [returns](#returns-4)
-    - [Points Data](#points-data-2)
-    - [Coord Example](#coord-example-2)
-    - [points data](#points-data-3)
-  - [Join Points Interlock](#join-points-interlock)
-    - [parameters](#parameters-9)
-  - [Points Randomize](#points-randomize)
-    - [parameters](#parameters-10)
-    - [returns](#returns-5)
-  - [Irregular Grid](#irregular-grid)
-    - [parameters](#parameters-11)
-    - [An Uninteresting Grid](#an-uninteresting-grid)
-    - [Example](#example)
-  - [make\_grid](#make_grid)
-    - [Parameters](#parameters-12)
-    - [Examples](#examples)
-      - [Hex Grid with offset](#hex-grid-with-offset)
-  - [Randomized Rotation Grid](#randomized-rotation-grid)
-    - [paramaters](#paramaters)
-  - [Rotate Grid](#rotate-grid)
-    - [parameters](#parameters-13)
-  - [Scheme Grid](#scheme-grid)
-    - [parameters](#parameters-14)
-  - [Series](#series)
-    - [parameters](#parameters-15)
-    - [returns](#returns-6)
-    - [Examples](#examples-1)
-      - [Star series repeated over the y-axis](#star-series-repeated-over-the-y-axis)
-      - [Star series repeated over the y and z-axis](#star-series-repeated-over-the-y-and-z-axis)
-      - [Star series repeated over the x, y and z-axis](#star-series-repeated-over-the-x-y-and-z-axis)
-    - [Series with operation applied](#series-with-operation-applied)
+* [Cell Single](#cell-single)
+* [Cell Stretch Points](#cell-stretch-points)
+* [Grid Arc Points](#grid-arc-points)
+* [Grid Arc Points Random](#grid-arc-points-random)
+* [Grid Cell Basic](#grid-cell-basic)
+* [Grid Random Example](#grid-random-example)
+* [Grid Arc Random Example](#grid-arc-random-example)
+* [Grid Mod Example](#grid-mod-example)
+* [Grid Cell Random](#grid-cell-random)
+* [Grid Points](#grid-points)
+* [Grid Points Mod](#grid-points-mod)
+* [Grid Points Random](#grid-points-random)
+* [Join Points Interlock](#join-points-interlock)
+* [Points Randomize](#points-randomize)
+* [Irregular Grid](#irregular-grid)
+* [make\_grid](#make_grid)
+* [Randomized Rotation Grid](#randomized-rotation-grid)
+* [Rotate Grid](#rotate-grid)
+* [Scheme Grid](#scheme-grid)
+* [Series](#series)
 
 ---
 
@@ -104,7 +62,7 @@ show_object(ex_cell)
 ---
 
 ## Cell Stretch Points
-Transforms a list grid of rows and column coordinates into a list list of cells coordinates.
+Transforms a list grid of rows and column coordinates into a list of cells coordinates.
 
 ### parameters
 * points: list[list[tuple[float,float]]]
@@ -272,7 +230,111 @@ output x_stretch = 1, y_stretch = 1:
 
 * [source](../src/cadqueryhelper/grid/cell_stretch_points.py)
 * [example](../example/grid/cell_stretch_points.py)
-  
+
+---
+
+## Cell Stretch Points Random
+Transforms a list grid of rows and column coordinates into a list of cells coordinates whose dimensions are randomly distributed. aka Packing algorithm.
+
+### parameters
+* points: list[list[tuple[float,float]]]
+* x_stretch: tuple[int,int,int]
+* y_stretch: tuple[int,int,int]
+* uniform_split: bool
+
+### returns
+* list[list[tuple[float,float]]]
+
+``` python
+import cadquery as cq
+from cadqueryhelper.grid import grid_points, cell_stretch_points_random
+
+points, stream = grid_points(
+    columns = 10,
+    rows = 10,
+    x_spacing = 5,
+    y_spacing = 5
+)
+
+example_points = (
+    cq.Workplane("XY")
+    .pushPoints(stream)
+    .box(1,1,1)
+)
+
+
+cell_points = cell_stretch_points_random(
+    points,
+    x_stretch = (1,3,1),
+    y_stretch = (1,3,1),
+    seed="chaos",
+    uniform_split = True
+)
+
+pattern = cq.Workplane("XY")
+
+for points in cell_points:
+    face = cq.Workplane("XY").polyline(points).close()
+    pattern = pattern.add(face)
+
+show_object(pattern)
+show_object(example_points)
+
+print(cell_points)
+```
+
+input columns = 10, rows = 10, x_spacing = 5, y_spacing = 5:
+```
+[
+    [(0, 0), (5, 0), (10, 0), (15, 0), (20, 0), (25, 0), (30, 0), (35, 0), (40, 0), (45, 0)], 
+    [(0, -5), (5, -5), (10, -5), (15, -5), (20, -5), (25, -5), (30, -5), (35, -5), (40, -5), (45, -5)], 
+    [(0, -10), (5, -10), (10, -10), (15, -10), (20, -10), (25, -10), (30, -10), (35, -10), (40, -10), (45, -10)], 
+    [(0, -15), (5, -15), (10, -15), (15, -15), (20, -15), (25, -15), (30, -15), (35, -15), (40, -15), (45, -15)], 
+    [(0, -20), (5, -20), (10, -20), (15, -20), (20, -20), (25, -20), (30, -20), (35, -20), (40, -20), (45, -20)], 
+    [(0, -25), (5, -25), (10, -25), (15, -25), (20, -25), (25, -25), (30, -25), (35, -25), (40, -25), (45, -25)], 
+    [(0, -30), (5, -30), (10, -30), (15, -30), (20, -30), (25, -30), (30, -30), (35, -30), (40, -30), (45, -30)], 
+    [(0, -35), (5, -35), (10, -35), (15, -35), (20, -35), (25, -35), (30, -35), (35, -35), (40, -35), (45, -35)], 
+    [(0, -40), (5, -40), (10, -40), (15, -40), (20, -40), (25, -40), (30, -40), (35, -40), (40, -40), (45, -40)], 
+    [(0, -45), (5, -45), (10, -45), (15, -45), (20, -45), (25, -45), (30, -45), (35, -45), (40, -45), (45, -45)]
+]
+```
+![](image/grid/24.png)<br />
+
+output x_stretch = (1,3,1), y_stretch = (1,3,1) seed = "chaos":
+```
+ [
+    [(0, 0), (5, 0), (5, -5), (0, -5)], 
+    [(5, 0), (10, 0), (10, -5), (5, -5)], 
+    [(0, -5), (5, -5), (10, -5), (10, -10), (5, -10), (0, -10)], 
+    [(0, -10), (5, -10), (5, -15), (5, -20), (5, -25), (0, -25), (0, -20), (0, -15)], [(5, -10), (10, -10), (10, -15), (10, -20), (10, -25), (5, -25), (5, -20), (5, -15)], 
+    [(0, -25), (5, -25), (5, -30), (5, -35), (0, -35), (0, -30)], 
+    [(5, -25), (10, -25), (10, -30), (10, -35), (5, -35), (5, -30)], 
+    [(0, -35), (5, -35), (5, -40), (0, -40)], 
+    [(5, -35), (10, -35), (10, -40), (5, -40)], 
+    [(0, -40), (5, -40), (10, -40), (10, -45), (5, -45), (0, -45)], 
+    [(10, 0), (15, 0), (15, -5), (10, -5)], [(15, 0), (20, 0), (20, -5), (15, -5)], [(10, -5), (15, -5), (20, -5), (20, -10), (15, -10), (10, -10)], 
+    [(10, -10), (15, -10), (15, -15), (10, -15)], 
+    [(15, -10), (20, -10), (20, -15), (15, -15)], 
+    [(10, -15), (15, -15), (20, -15), (20, -20), (20, -25), (15, -25), (10, -25), (10, -20)], 
+    [(10, -25), (15, -25), (20, -25), (20, -30), (20, -35), (15, -35), (10, -35), (10, -30)], 
+    [(10, -35), (15, -35), (15, -40), (15, -45), (10, -45), (10, -40)], 
+    [(15, -35), (20, -35), (20, -40), (20, -45), (15, -45), (15, -40)], 
+    [(20, 0), (25, 0), (30, 0), (30, -5), (30, -10), (25, -10), (20, -10), (20, -5)], [(20, -10), (25, -10), (30, -10), (30, -15), (25, -15), (20, -15)], 
+    [(20, -15), (25, -15), (25, -20), (25, -25), (20, -25), (20, -20)], 
+    [(25, -15), (30, -15), (30, -20), (30, -25), (25, -25), (25, -20)], 
+    [(20, -25), (25, -25), (30, -25), (30, -30), (30, -35), (30, -40), (25, -40), (20, -40), (20, -35), (20, -30)], [(20, -40), (25, -40), (25, -45), (20, -45)], 
+    [(25, -40), (30, -40), (30, -45), (25, -45)], [(30, 0), (35, 0), (40, 0), (40, -5), (35, -5), (30, -5)], 
+    [(40, 0), (45, 0), (45, -5), (40, -5)], [(30, -5), (35, -5), (35, -10), (30, -10)], [(35, -5), (40, -5), (45, -5), (45, -10), (40, -10), (35, -10)], [(30, -10), (35, -10), (35, -15), (35, -20), (35, -25), (30, -25), (30, -20), (30, -15)], 
+    [(35, -10), (40, -10), (45, -10), (45, -15), (45, -20), (45, -25), (40, -25), (35, -25), (35, -20), (35, -15)], [(30, -25), (35, -25), (40, -25), (40, -30), (40, -35), (40, -40), (35, -40), (30, -40), (30, -35), (30, -30)], [(40, -25), (45, -25), (45, -30), (45, -35), (45, -40), (40, -40), (40, -35), (40, -30)], 
+    [(30, -40), (35, -40), (40, -40), (45, -40), (45, -45), (40, -45), (35, -45), (30, -45)]]
+```
+
+![](image/grid/29.png)<br />
+
+* [source](../src/cadqueryhelper/grid/cell_stretch_points_random.py)
+* [example](../example/grid/cell_stretch_points_random.py)
+
+
 ---
 
 ## Grid Arc Points
